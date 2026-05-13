@@ -1,0 +1,67 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Annual Population Change - Australia",
+    "data": {
+        "url": "https://raw.githubusercontent.com/nngu0229/FIT2179/refs/heads/main/data/Chart1-annual%20population%20change.csv"
+    },
+    "transform": [
+        {
+            "filter": "datum.Time != null && datum.Time != ''"
+        },
+        {
+            "calculate": "replace(datum['Natural increase'], ',', '')",
+            "as": "natural_increase_str"
+        },
+        {
+            "calculate": "replace(datum['Net overseas migration'], ',', '')",
+            "as": "net_migration_str"
+        },
+        {
+            "calculate": "toNumber(datum.natural_increase_str)",
+            "as": "Natural Increase"
+        },
+        {
+            "calculate": "toNumber(datum.net_migration_str)",
+            "as": "Net Overseas Migration"
+        },
+        {
+            "fold": [
+                "Natural Increase",
+                "Net Overseas Migration"
+            ],
+            "as": [
+                "Series",
+                "Value"
+            ]
+        }
+    ],
+    "mark": {
+        "type": "line",
+        "point": false
+    },
+    "encoding": {
+        "x": {
+            "field": "Time",
+            "type": "ordinal",
+            "axis": {
+                "labelAngle": -45,
+                "tickMinStep": 4,
+                "labelOverlap": true
+            },
+            "title": "Quarter"
+        },
+        "y": {
+            "field": "Value",
+            "type": "quantitative",
+            "title": "Population Change"
+        },
+        "color": {
+            "field": "Series",
+            "type": "nominal",
+            "title": "Component"
+        }
+    },
+    "title": "Annual Population Change - Australia",
+    "width": 700,
+    "height": 400
+}
