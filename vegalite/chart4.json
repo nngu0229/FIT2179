@@ -1,0 +1,83 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 720,
+    "height": 420,
+    "data": {
+        "url": "https://raw.githubusercontent.com/nngu0229/FIT2179/refs/heads/main/data/chart4%20-%20Migrant%20workers%20by%20industry%20and%20state%20.csv"
+    },
+    "transform": [
+        {
+            "filter": "datum['Number of Jobs'] != null && datum['Number of Jobs'] != 'np' && datum['Number of Jobs'] != '-'"
+        },
+        {
+            "calculate": "toNumber(replace(replace(datum['Number of Jobs'], ',', ''), ' ', ''))",
+            "as": "Jobs"
+        },
+        {
+            "filter": "datum.Industry == 'Construction' || datum.Industry == 'Health Care and Social Assistance' || datum.Industry == 'Professional, Scientific and Technical Services' || datum.Industry == 'Accommodation and Food Services' || datum.Industry == 'Information Media and Telecommunications' || datum.Industry == 'Education and Training' || datum.Industry == 'Retail Trade' || datum.Industry == 'Manufacturing'"
+        }
+    ],
+    "mark": {
+        "type": "rect",
+        "cornerRadius": 2
+    },
+    "encoding": {
+        "x": {
+            "field": "Industry",
+            "type": "ordinal",
+            "title": null,
+            "axis": {
+                "labelAngle": -35,
+                "labelFontSize": 10,
+                "labelLimit": 160
+            }
+        },
+        "y": {
+            "field": "State Name",
+            "type": "ordinal",
+            "title": null
+        },
+        "color": {
+            "field": "Jobs",
+            "type": "quantitative",
+            "title": "Migrant workers",
+            "scale": {
+                "scheme": "teals",
+                "domain": [
+                    50,
+                    3000
+                ]
+            },
+            "legend": {
+                "format": ",.0f"
+            }
+        },
+        "tooltip": [
+            {
+                "field": "State Name",
+                "type": "nominal",
+                "title": "State"
+            },
+            {
+                "field": "Industry",
+                "type": "nominal",
+                "title": "Industry"
+            },
+            {
+                "field": "Jobs",
+                "type": "quantitative",
+                "title": "Jobs",
+                "format": ",.0f"
+            }
+        ]
+    },
+    "title": {
+        "text": "Migrant Workers Support Key Australian Industries",
+        "subtitle": "Temporary skilled migrant workers by industry and state, 2022–23"
+    },
+    "config": {
+        "view": {
+            "stroke": null
+        }
+    }
+}
