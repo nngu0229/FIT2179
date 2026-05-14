@@ -1,0 +1,197 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Temporary Visa Holders in Australia by Category",
+        "subtitle": "COVID-19 caused a sharp drop in 2020–2021 across all visa types",
+        "fontSize": 16,
+        "subtitleFontSize": 12,
+        "anchor": "start"
+    },
+    "width": 700,
+    "height": 420,
+    "data": {
+        "url": "https://raw.githubusercontent.com/nngu0229/FIT2179/refs/heads/main/data/chart7%20-%20visa%20categories.csv"
+    },
+    "transform": [
+        {
+            "filter": "datum['Visa Category'] != 'Grand Total'"
+        },
+        {
+            "calculate": "indexof(['Crew and Transit','Temporary Resident (Other Employment)','Temporary Graduate','Other Temporary','Temporary Protection'], datum['Visa Category']) >= 0 ? 'Other' : datum['Visa Category']",
+            "as": "Category"
+        },
+        {
+            "fold": [
+                "2011",
+                "2012",
+                "2013",
+                "2014",
+                "2015",
+                "2016",
+                "2017",
+                "2018",
+                "2019",
+                "2020",
+                "2021",
+                "2022",
+                "2023",
+                "2024",
+                "2025"
+            ],
+            "as": [
+                "Year",
+                "Raw"
+            ]
+        },
+        {
+            "calculate": "toNumber(replace(replace(datum.Raw, ',', ''), ' ', ''))",
+            "as": "Value"
+        },
+        {
+            "filter": "datum.Value > 0"
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "Value",
+                    "as": "Value"
+                }
+            ],
+            "groupby": [
+                "Category",
+                "Year"
+            ]
+        }
+    ],
+    "layer": [
+        {
+            "mark": {
+                "type": "bar"
+            },
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "ordinal",
+                    "axis": {
+                        "labelAngle": -45,
+                        "title": "Year",
+                        "labelFontSize": 11
+                    }
+                },
+                "y": {
+                    "field": "Value",
+                    "type": "quantitative",
+                    "stack": true,
+                    "axis": {
+                        "title": "Number of Visa Holders",
+                        "format": ".1~s",
+                        "labelFontSize": 11
+                    }
+                },
+                "color": {
+                    "field": "Category",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": [
+                            "Special Category",
+                            "Visitor",
+                            "Student",
+                            "Working Holiday Maker",
+                            "Temporary Resident (Skilled Employment)",
+                            "Bridging",
+                            "Other"
+                        ],
+                        "range": [
+                            "#1D9E75",
+                            "#378ADD",
+                            "#D85A30",
+                            "#BA7517",
+                            "#534AB7",
+                            "#D4537E",
+                            "#B4B2A9"
+                        ]
+                    },
+                    "legend": {
+                        "title": "Visa Category",
+                        "labelFontSize": 11,
+                        "orient": "right"
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "Category",
+                        "type": "nominal",
+                        "title": "Category"
+                    },
+                    {
+                        "field": "Year",
+                        "type": "ordinal"
+                    },
+                    {
+                        "field": "Value",
+                        "type": "quantitative",
+                        "title": "Visa Holders",
+                        "format": ","
+                    }
+                ]
+            }
+        },
+        {
+            "data": {
+                "values": [
+                    {
+                        "Year": "2020"
+                    }
+                ]
+            },
+            "mark": {
+                "type": "rule",
+                "color": "red",
+                "strokeDash": [
+                    4,
+                    4
+                ],
+                "strokeWidth": 1.5
+            },
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "ordinal"
+                }
+            }
+        },
+        {
+            "data": {
+                "values": [
+                    {
+                        "Year": "2020",
+                        "y": 2700000
+                    }
+                ]
+            },
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 6,
+                "dy": -6,
+                "fontSize": 11,
+                "fontStyle": "italic",
+                "color": "red"
+            },
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "y",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "value": "COVID-19 border closure"
+                }
+            }
+        }
+    ]
+}
