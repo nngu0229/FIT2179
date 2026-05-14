@@ -1,154 +1,153 @@
 ﻿State Name,Industry,Year,Number of Jobs
-New South Wales,"Agriculture, Forestry and Fishing",2022-23, 396 
-New South Wales,Mining,2022-23, 167 
-New South Wales,Manufacturing,2022-23," 2,484 "
-New South Wales,"Electricity, Gas, Water and Waste Services",2022-23, 173 
-New South Wales,Construction,2022-23," 3,520 "
-New South Wales,Wholesale Trade,2022-23," 2,176 "
-New South Wales,Retail Trade,2022-23," 2,325 "
-New South Wales,Accommodation and Food Services,2022-23," 4,682 "
-New South Wales,"Transport, Postal and Warehousing",2022-23, 893 
-New South Wales,Information Media and Telecommunications,2022-23," 1,458 "
-New South Wales,Financial and Insurance Services,2022-23," 2,654 "
-New South Wales,"Rental, Hiring and Real Estate Services",2022-23, 568 
-New South Wales,"Professional, Scientific and Technical Services",2022-23," 13,050 "
-New South Wales,Administrative and Support Services,2022-23," 4,098 "
-New South Wales,Public Administration and Safety,2022-23, 334 
-New South Wales,Education and Training,2022-23," 1,124 "
-New South Wales,Health Care and Social Assistance,2022-23," 3,469 "
-New South Wales,Arts and Recreation Services,2022-23, 448 
-New South Wales,Other Services,2022-23," 1,240 "
-Victoria,"Agriculture, Forestry and Fishing",2022-23, 741 
-Victoria,Mining,2022-23, 119 
-Victoria,Manufacturing,2022-23," 2,127 "
-Victoria,"Electricity, Gas, Water and Waste Services",2022-23, 136 
-Victoria,Construction,2022-23," 1,587 "
-Victoria,Wholesale Trade,2022-23," 1,349 "
-Victoria,Retail Trade,2022-23," 1,640 "
-Victoria,Accommodation and Food Services,2022-23," 3,027 "
-Victoria,"Transport, Postal and Warehousing",2022-23, 756 
-Victoria,Information Media and Telecommunications,2022-23, 505 
-Victoria,Financial and Insurance Services,2022-23, 904 
-Victoria,"Rental, Hiring and Real Estate Services",2022-23, 327 
-Victoria,"Professional, Scientific and Technical Services",2022-23," 7,590 "
-Victoria,Administrative and Support Services,2022-23," 2,549 "
-Victoria,Public Administration and Safety,2022-23, 165 
-Victoria,Education and Training,2022-23, 797 
-Victoria,Health Care and Social Assistance,2022-23," 3,220 "
-Victoria,Arts and Recreation Services,2022-23, 262 
-Victoria,Other Services,2022-23, 927 
-Queensland,"Agriculture, Forestry and Fishing",2022-23, 509 
-Queensland,Mining,2022-23, 579 
-Queensland,Manufacturing,2022-23," 1,531 "
-Queensland,"Electricity, Gas, Water and Waste Services",2022-23, 88 
-Queensland,Construction,2022-23, 942 
-Queensland,Wholesale Trade,2022-23, 620 
-Queensland,Retail Trade,2022-23, 795 
-Queensland,Accommodation and Food Services,2022-23," 2,113 "
-Queensland,"Transport, Postal and Warehousing",2022-23, 363 
-Queensland,Information Media and Telecommunications,2022-23, 136 
-Queensland,Financial and Insurance Services,2022-23, 380 
-Queensland,"Rental, Hiring and Real Estate Services",2022-23, 205 
-Queensland,"Professional, Scientific and Technical Services",2022-23," 2,274 "
-Queensland,Administrative and Support Services,2022-23," 1,191 "
-Queensland,Public Administration and Safety,2022-23, 78 
-Queensland,Education and Training,2022-23, 400 
-Queensland,Health Care and Social Assistance,2022-23," 2,399 "
-Queensland,Arts and Recreation Services,2022-23, 150 
-Queensland,Other Services,2022-23, 662 
-South Australia,"Agriculture, Forestry and Fishing",2022-23, 198 
-South Australia,Mining,2022-23, 59 
-South Australia,Manufacturing,2022-23, 352 
-South Australia,"Electricity, Gas, Water and Waste Services",2022-23, 14 
-South Australia,Construction,2022-23, 182 
-South Australia,Wholesale Trade,2022-23, 120 
-South Australia,Retail Trade,2022-23, 120 
-South Australia,Accommodation and Food Services,2022-23, 214 
-South Australia,"Transport, Postal and Warehousing",2022-23, 78 
-South Australia,Information Media and Telecommunications,2022-23, 15 
-South Australia,Financial and Insurance Services,2022-23, 70 
-South Australia,"Rental, Hiring and Real Estate Services",2022-23, 30 
-South Australia,"Professional, Scientific and Technical Services",2022-23, 399 
-South Australia,Administrative and Support Services,2022-23, 191 
-South Australia,Public Administration and Safety,2022-23, 29 
-South Australia,Education and Training,2022-23, 58 
-South Australia,Health Care and Social Assistance,2022-23, 471 
-South Australia,Arts and Recreation Services,2022-23, 24 
-South Australia,Other Services,2022-23, 118 
-Western Australia,"Agriculture, Forestry and Fishing",2022-23, 336 
-Western Australia,Mining,2022-23," 1,602 "
-Western Australia,Manufacturing,2022-23," 1,155 "
-Western Australia,"Electricity, Gas, Water and Waste Services",2022-23, 76 
-Western Australia,Construction,2022-23," 1,273 "
-Western Australia,Wholesale Trade,2022-23, 625 
-Western Australia,Retail Trade,2022-23, 622 
-Western Australia,Accommodation and Food Services,2022-23," 1,356 "
-Western Australia,"Transport, Postal and Warehousing",2022-23, 322 
-Western Australia,Information Media and Telecommunications,2022-23, 62 
-Western Australia,Financial and Insurance Services,2022-23, 280 
-Western Australia,"Rental, Hiring and Real Estate Services",2022-23, 239 
-Western Australia,"Professional, Scientific and Technical Services",2022-23," 1,926 "
-Western Australia,Administrative and Support Services,2022-23," 1,197 "
-Western Australia,Public Administration and Safety,2022-23, 88 
-Western Australia,Education and Training,2022-23, 337 
-Western Australia,Health Care and Social Assistance,2022-23," 1,808 "
-Western Australia,Arts and Recreation Services,2022-23, 111 
-Western Australia,Other Services,2022-23, 638 
-Tasmania,"Agriculture, Forestry and Fishing",2022-23, 62 
-Tasmania,Mining,2022-23, 23 
-Tasmania,Manufacturing,2022-23, 60 
-Tasmania,"Electricity, Gas, Water and Waste Services",2022-23, 3 
-Tasmania,Construction,2022-23, 41 
-Tasmania,Wholesale Trade,2022-23, 6 
-Tasmania,Retail Trade,2022-23, 22 
-Tasmania,Accommodation and Food Services,2022-23, 45 
-Tasmania,"Transport, Postal and Warehousing",2022-23, 9 
+New South Wales,"Agriculture, Forestry and Fishing",2022-23,396
+New South Wales,Mining,2022-23,167
+New South Wales,Manufacturing,2022-23,2484
+New South Wales,"Electricity, Gas, Water and Waste Services",2022-23,173
+New South Wales,Construction,2022-23,3520
+New South Wales,Wholesale Trade,2022-23,2176
+New South Wales,Retail Trade,2022-23,2325
+New South Wales,Accommodation and Food Services,2022-23,4682
+New South Wales,"Transport, Postal and Warehousing",2022-23,893
+New South Wales,Information Media and Telecommunications,2022-23,1458
+New South Wales,Financial and Insurance Services,2022-23,2654
+New South Wales,"Rental, Hiring and Real Estate Services",2022-23,568
+New South Wales,"Professional, Scientific and Technical Services",2022-23,13050
+New South Wales,Administrative and Support Services,2022-23,4098
+New South Wales,Public Administration and Safety,2022-23,334
+New South Wales,Education and Training,2022-23,1124
+New South Wales,Health Care and Social Assistance,2022-23,3469
+New South Wales,Arts and Recreation Services,2022-23,448
+New South Wales,Other Services,2022-23,1240
+Victoria,"Agriculture, Forestry and Fishing",2022-23,741
+Victoria,Mining,2022-23,119
+Victoria,Manufacturing,2022-23,2127
+Victoria,"Electricity, Gas, Water and Waste Services",2022-23,136
+Victoria,Construction,2022-23,1587
+Victoria,Wholesale Trade,2022-23,1349
+Victoria,Retail Trade,2022-23,1640
+Victoria,Accommodation and Food Services,2022-23,3027
+Victoria,"Transport, Postal and Warehousing",2022-23,756
+Victoria,Information Media and Telecommunications,2022-23,505
+Victoria,Financial and Insurance Services,2022-23,904
+Victoria,"Rental, Hiring and Real Estate Services",2022-23,327
+Victoria,"Professional, Scientific and Technical Services",2022-23,7590
+Victoria,Administrative and Support Services,2022-23,2549
+Victoria,Public Administration and Safety,2022-23,165
+Victoria,Education and Training,2022-23,797
+Victoria,Health Care and Social Assistance,2022-23,3220
+Victoria,Arts and Recreation Services,2022-23,262
+Victoria,Other Services,2022-23,927
+Queensland,"Agriculture, Forestry and Fishing",2022-23,509
+Queensland,Mining,2022-23,579
+Queensland,Manufacturing,2022-23,1531
+Queensland,"Electricity, Gas, Water and Waste Services",2022-23,88
+Queensland,Construction,2022-23,942
+Queensland,Wholesale Trade,2022-23,620
+Queensland,Retail Trade,2022-23,795
+Queensland,Accommodation and Food Services,2022-23,2113
+Queensland,"Transport, Postal and Warehousing",2022-23,363
+Queensland,Information Media and Telecommunications,2022-23,136
+Queensland,Financial and Insurance Services,2022-23,380
+Queensland,"Rental, Hiring and Real Estate Services",2022-23,205
+Queensland,"Professional, Scientific and Technical Services",2022-23,2274
+Queensland,Administrative and Support Services,2022-23,1191
+Queensland,Public Administration and Safety,2022-23,78
+Queensland,Education and Training,2022-23,400
+Queensland,Health Care and Social Assistance,2022-23,2399
+Queensland,Arts and Recreation Services,2022-23,150
+Queensland,Other Services,2022-23,662
+South Australia,"Agriculture, Forestry and Fishing",2022-23,198
+South Australia,Mining,2022-23,59
+South Australia,Manufacturing,2022-23,352
+South Australia,"Electricity, Gas, Water and Waste Services",2022-23,14
+South Australia,Construction,2022-23,182
+South Australia,Wholesale Trade,2022-23,120
+South Australia,Retail Trade,2022-23,120
+South Australia,Accommodation and Food Services,2022-23,214
+South Australia,"Transport, Postal and Warehousing",2022-23,78
+South Australia,Information Media and Telecommunications,2022-23,15
+South Australia,Financial and Insurance Services,2022-23,70
+South Australia,"Rental, Hiring and Real Estate Services",2022-23,30
+South Australia,"Professional, Scientific and Technical Services",2022-23,399
+South Australia,Administrative and Support Services,2022-23,191
+South Australia,Public Administration and Safety,2022-23,29
+South Australia,Education and Training,2022-23,58
+South Australia,Health Care and Social Assistance,2022-23,471
+South Australia,Arts and Recreation Services,2022-23,24
+South Australia,Other Services,2022-23,118
+Western Australia,"Agriculture, Forestry and Fishing",2022-23,336
+Western Australia,Mining,2022-23,1602
+Western Australia,Manufacturing,2022-23,1155
+Western Australia,"Electricity, Gas, Water and Waste Services",2022-23,76
+Western Australia,Construction,2022-23,1273
+Western Australia,Wholesale Trade,2022-23,625
+Western Australia,Retail Trade,2022-23,622
+Western Australia,Accommodation and Food Services,2022-23,1356
+Western Australia,"Transport, Postal and Warehousing",2022-23,322
+Western Australia,Information Media and Telecommunications,2022-23,62
+Western Australia,Financial and Insurance Services,2022-23,280
+Western Australia,"Rental, Hiring and Real Estate Services",2022-23,239
+Western Australia,"Professional, Scientific and Technical Services",2022-23,1926
+Western Australia,Administrative and Support Services,2022-23,1197
+Western Australia,Public Administration and Safety,2022-23,88
+Western Australia,Education and Training,2022-23,337
+Western Australia,Health Care and Social Assistance,2022-23,1808
+Western Australia,Arts and Recreation Services,2022-23,111
+Western Australia,Other Services,2022-23,638
+Tasmania,"Agriculture, Forestry and Fishing",2022-23,62
+Tasmania,Mining,2022-23,23
+Tasmania,Manufacturing,2022-23,60
+Tasmania,"Electricity, Gas, Water and Waste Services",2022-23,3
+Tasmania,Construction,2022-23,41
+Tasmania,Wholesale Trade,2022-23,6
+Tasmania,Retail Trade,2022-23,22
+Tasmania,Accommodation and Food Services,2022-23,45
+Tasmania,"Transport, Postal and Warehousing",2022-23,9
 Tasmania,Information Media and Telecommunications,2022-23, np 
-Tasmania,Financial and Insurance Services,2022-23, 10 
-Tasmania,"Rental, Hiring and Real Estate Services",2022-23, 6 
-Tasmania,"Professional, Scientific and Technical Services",2022-23, 48 
-Tasmania,Administrative and Support Services,2022-23, 25 
-Tasmania,Public Administration and Safety,2022-23, 3 
-Tasmania,Education and Training,2022-23, 13 
-Tasmania,Health Care and Social Assistance,2022-23, 175 
-Tasmania,Arts and Recreation Services,2022-23, 3 
-Tasmania,Other Services,2022-23, 30 
-Northern Territory,"Agriculture, Forestry and Fishing",2022-23, 53 
-Northern Territory,Mining,2022-23, 38 
-Northern Territory,Manufacturing,2022-23, 55 
-Northern Territory,"Electricity, Gas, Water and Waste Services",2022-23, 3 
-Northern Territory,Construction,2022-23, 103 
-Northern Territory,Wholesale Trade,2022-23, 27 
-Northern Territory,Retail Trade,2022-23, 107 
-Northern Territory,Accommodation and Food Services,2022-23, 250 
-Northern Territory,"Transport, Postal and Warehousing",2022-23, 49 
+Tasmania,Financial and Insurance Services,2022-23,10
+Tasmania,"Rental, Hiring and Real Estate Services",2022-23,6
+Tasmania,"Professional, Scientific and Technical Services",2022-23,48
+Tasmania,Administrative and Support Services,2022-23,25
+Tasmania,Public Administration and Safety,2022-23,3
+Tasmania,Education and Training,2022-23,13
+Tasmania,Health Care and Social Assistance,2022-23,175
+Tasmania,Arts and Recreation Services,2022-23,3
+Tasmania,Other Services,2022-23,30
+Northern Territory,"Agriculture, Forestry and Fishing",2022-23,53
+Northern Territory,Mining,2022-23,38
+Northern Territory,Manufacturing,2022-23,55
+Northern Territory,"Electricity, Gas, Water and Waste Services",2022-23,3
+Northern Territory,Construction,2022-23,103
+Northern Territory,Wholesale Trade,2022-23,27
+Northern Territory,Retail Trade,2022-23,107
+Northern Territory,Accommodation and Food Services,2022-23,250
+Northern Territory,"Transport, Postal and Warehousing",2022-23,49
 Northern Territory,Information Media and Telecommunications,2022-23, -   
-Northern Territory,Financial and Insurance Services,2022-23, 5 
-Northern Territory,"Rental, Hiring and Real Estate Services",2022-23, 17 
-Northern Territory,"Professional, Scientific and Technical Services",2022-23, 105 
-Northern Territory,Administrative and Support Services,2022-23, 77 
-Northern Territory,Public Administration and Safety,2022-23, 37 
-Northern Territory,Education and Training,2022-23, 48 
-Northern Territory,Health Care and Social Assistance,2022-23, 255 
-Northern Territory,Arts and Recreation Services,2022-23, 23 
-Northern Territory,Other Services,2022-23, 112 
+Northern Territory,Financial and Insurance Services,2022-23,5
+Northern Territory,"Rental, Hiring and Real Estate Services",2022-23,17
+Northern Territory,"Professional, Scientific and Technical Services",2022-23,105
+Northern Territory,Administrative and Support Services,2022-23,77
+Northern Territory,Public Administration and Safety,2022-23,37
+Northern Territory,Education and Training,2022-23,48
+Northern Territory,Health Care and Social Assistance,2022-23,255
+Northern Territory,Arts and Recreation Services,2022-23,23
+Northern Territory,Other Services,2022-23,112
 Australian Capital Territory,"Agriculture, Forestry and Fishing",2022-23, np 
 Australian Capital Territory,Mining,2022-23, -   
-Australian Capital Territory,Manufacturing,2022-23, 49 
-Australian Capital Territory,"Electricity, Gas, Water and Waste Services",2022-23, 6 
-Australian Capital Territory,Construction,2022-23, 134 
-Australian Capital Territory,Wholesale Trade,2022-23, 24 
-Australian Capital Territory,Retail Trade,2022-23, 88 
-Australian Capital Territory,Accommodation and Food Services,2022-23, 197 
-Australian Capital Territory,"Transport, Postal and Warehousing",2022-23, 4 
-Australian Capital Territory,Information Media and Telecommunications,2022-23, 15 
-Australian Capital Territory,Financial and Insurance Services,2022-23, 13 
-Australian Capital Territory,"Rental, Hiring and Real Estate Services",2022-23, 13 
-Australian Capital Territory,"Professional, Scientific and Technical Services",2022-23, 170 
-Australian Capital Territory,Administrative and Support Services,2022-23, 80 
-Australian Capital Territory,Public Administration and Safety,2022-23, 70 
-Australian Capital Territory,Education and Training,2022-23, 100 
-Australian Capital Territory,Health Care and Social Assistance,2022-23, 104 
-Australian Capital Territory,Arts and Recreation Services,2022-23, 14 
-Australian Capital Territory,Other Services,2022-23, 61 
-,,,
+Australian Capital Territory,Manufacturing,2022-23,49
+Australian Capital Territory,"Electricity, Gas, Water and Waste Services",2022-23,6
+Australian Capital Territory,Construction,2022-23,134
+Australian Capital Territory,Wholesale Trade,2022-23,24
+Australian Capital Territory,Retail Trade,2022-23,88
+Australian Capital Territory,Accommodation and Food Services,2022-23,197
+Australian Capital Territory,"Transport, Postal and Warehousing",2022-23,4
+Australian Capital Territory,Information Media and Telecommunications,2022-23,15
+Australian Capital Territory,Financial and Insurance Services,2022-23,13
+Australian Capital Territory,"Rental, Hiring and Real Estate Services",2022-23,13
+Australian Capital Territory,"Professional, Scientific and Technical Services",2022-23,170
+Australian Capital Territory,Administrative and Support Services,2022-23,80
+Australian Capital Territory,Public Administration and Safety,2022-23,70
+Australian Capital Territory,Education and Training,2022-23,100
+Australian Capital Territory,Health Care and Social Assistance,2022-23,104
+Australian Capital Territory,Arts and Recreation Services,2022-23,14
+Australian Capital Territory,Other Services,2022-23,61
