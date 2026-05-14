@@ -1,0 +1,144 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Chart 2 - Overseas-born resident population by Australian state and territory with year slider",
+    "width": 700,
+    "height": 500,
+    "projection": {
+        "type": "mercator",
+        "center": [
+            133,
+            -28
+        ],
+        "scale": 700,
+        "translate": [
+            350,
+            250
+        ]
+    },
+    "params": [
+        {
+            "name": "selectedYear",
+            "value": 2021,
+            "bind": {
+                "input": "range",
+                "min": 2001,
+                "max": 2021,
+                "step": 5,
+                "name": "Year: "
+            }
+        }
+    ],
+    "layer": [
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+                "format": {
+                    "type": "json",
+                    "property": "features"
+                }
+            },
+            "transform": [
+                {
+                    "lookup": "properties.STATE_NAME",
+                    "from": {
+                        "data": {
+                            "url": "https://raw.githubusercontent.com/nngu0229/FIT2179/refs/heads/main/data/Chart2-resident%20population%20by%20state%20and%20territory.csv"
+                        },
+                        "key": "State",
+                        "fields": [
+                            "Abbr",
+                            "2001 (%)",
+                            "2006 (%)",
+                            "2011 (%)",
+                            "2016 (%)",
+                            "2021 (%)"
+                        ]
+                    }
+                },
+                {
+                    "fold": [
+                        "2001 (%)",
+                        "2006 (%)",
+                        "2011 (%)",
+                        "2016 (%)",
+                        "2021 (%)"
+                    ],
+                    "as": [
+                        "Year",
+                        "Population"
+                    ]
+                },
+                {
+                    "calculate": "toNumber(replace(datum.Year, ' (%)', ''))",
+                    "as": "YearNum"
+                },
+                {
+                    "calculate": "toNumber(datum.Population)",
+                    "as": "PopulationPercent"
+                },
+                {
+                    "filter": "datum.YearNum == selectedYear"
+                }
+            ],
+            "mark": {
+                "type": "geoshape",
+                "stroke": "white",
+                "strokeWidth": 1
+            },
+            "encoding": {
+                "color": {
+                    "field": "PopulationPercent",
+                    "type": "quantitative",
+                    "title": "Overseas-born population (%)",
+                    "scale": {
+                        "domain": [
+                            10,
+                            35
+                        ],
+                        "scheme": "blues"
+                    },
+                    "legend": {
+                        "values": [
+                            10,
+                            15,
+                            20,
+                            25,
+                            30,
+                            35
+                        ]
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "properties.STATE_NAME",
+                        "type": "nominal",
+                        "title": "State/Territory"
+                    },
+                    {
+                        "field": "YearNum",
+                        "type": "quantitative",
+                        "title": "Year",
+                        "format": ".0f"
+                    },
+                    {
+                        "field": "PopulationPercent",
+                        "type": "quantitative",
+                        "title": "Overseas-born population",
+                        "format": ".1f"
+                    }
+                ]
+            }
+        }
+    ],
+    "title": {
+        "text": "Where Migrants Settle in Australia",
+        "subtitle": "Share of resident population born overseas by state and territory, 2001–2021",
+        "fontSize": 16,
+        "subtitleFontSize": 12
+    },
+    "config": {
+        "view": {
+            "stroke": null
+        }
+    }
+}
