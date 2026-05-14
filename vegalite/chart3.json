@@ -1,0 +1,128 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 700,
+    "height": 400,
+    "data": {
+        "values": [
+            {
+                "Country": "India",
+                "Population": 971020
+            },
+            {
+                "Country": "England",
+                "Population": 970950
+            },
+            {
+                "Country": "China",
+                "Population": 731540
+            },
+            {
+                "Country": "New Zealand",
+                "Population": 637680
+            },
+            {
+                "Country": "Philippines",
+                "Population": 412503
+            },
+            {
+                "Country": "Vietnam",
+                "Population": 326630
+            },
+            {
+                "Country": "South Africa",
+                "Population": 229950
+            },
+            {
+                "Country": "Nepal",
+                "Population": 213580
+            },
+            {
+                "Country": "Sri Lanka",
+                "Population": 184800
+            },
+            {
+                "Country": "Malaysia",
+                "Population": 184320
+            }
+        ]
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "bar",
+                "cornerRadiusEnd": 4
+            },
+            "encoding": {
+                "y": {
+                    "field": "Country",
+                    "type": "ordinal",
+                    "sort": "-x",
+                    "title": null
+                },
+                "x": {
+                    "field": "Population",
+                    "type": "quantitative",
+                    "title": "Estimated resident population",
+                    "axis": {
+                        "format": ",.0f"
+                    }
+                },
+                "color": {
+                    "field": "Population",
+                    "type": "quantitative",
+                    "scale": {
+                        "scheme": "teals"
+                    },
+                    "legend": null
+                },
+                "tooltip": [
+                    {
+                        "field": "Country",
+                        "title": "Country of birth"
+                    },
+                    {
+                        "field": "Population",
+                        "title": "Population",
+                        "format": ",.0f"
+                    }
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "middle",
+                "dx": 5,
+                "fontSize": 11
+            },
+            "encoding": {
+                "y": {
+                    "field": "Country",
+                    "type": "ordinal",
+                    "sort": "-x"
+                },
+                "x": {
+                    "field": "Population",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "Population",
+                    "type": "quantitative",
+                    "format": ",.0f"
+                }
+            }
+        }
+    ],
+    "title": {
+        "text": "Australia's Largest Migrant Communities",
+        "subtitle": "Top countries of birth in Australia's overseas-born population",
+        "fontSize": 18,
+        "subtitleFontSize": 12
+    },
+    "config": {
+        "view": {
+            "stroke": null
+        }
+    }
+}
