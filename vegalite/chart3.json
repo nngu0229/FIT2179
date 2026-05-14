@@ -1,128 +1,314 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 700,
-    "height": 400,
+    "title": {
+        "text": "Top Migrant-Origin Countries in Australia",
+        "subtitle": "Estimated resident population ('000) — 2015 vs 2025",
+        "fontSize": 16,
+        "subtitleFontSize": 12,
+        "anchor": "start"
+    },
+    "width": 480,
+    "height": 500,
     "data": {
         "values": [
             {
-                "Country": "India",
-                "Population": 971020
+                "country": "India",
+                "year": "2015",
+                "pop": 449.04
             },
             {
-                "Country": "England",
-                "Population": 970950
+                "country": "India",
+                "year": "2025",
+                "pop": 971.02
             },
             {
-                "Country": "China",
-                "Population": 731540
+                "country": "England",
+                "year": "2015",
+                "pop": 1006.54
             },
             {
-                "Country": "New Zealand",
-                "Population": 637680
+                "country": "England",
+                "year": "2025",
+                "pop": 970.95
             },
             {
-                "Country": "Philippines",
-                "Population": 412503
+                "country": "China",
+                "year": "2015",
+                "pop": 508.87
             },
             {
-                "Country": "Vietnam",
-                "Population": 326630
+                "country": "China",
+                "year": "2025",
+                "pop": 731.54
             },
             {
-                "Country": "South Africa",
-                "Population": 229950
+                "country": "New Zealand",
+                "year": "2015",
+                "pop": 575.43
             },
             {
-                "Country": "Nepal",
-                "Population": 213580
+                "country": "New Zealand",
+                "year": "2025",
+                "pop": 637.68
             },
             {
-                "Country": "Sri Lanka",
-                "Population": 184800
+                "country": "Philippines",
+                "year": "2015",
+                "pop": 241.13
             },
             {
-                "Country": "Malaysia",
-                "Population": 184320
+                "country": "Philippines",
+                "year": "2025",
+                "pop": 412.53
+            },
+            {
+                "country": "Vietnam",
+                "year": "2015",
+                "pop": 235.59
+            },
+            {
+                "country": "Vietnam",
+                "year": "2025",
+                "pop": 326.63
+            },
+            {
+                "country": "South Africa",
+                "year": "2015",
+                "pop": 177.39
+            },
+            {
+                "country": "South Africa",
+                "year": "2025",
+                "pop": 229.95
+            },
+            {
+                "country": "Nepal",
+                "year": "2015",
+                "pop": 50.15
+            },
+            {
+                "country": "Nepal",
+                "year": "2025",
+                "pop": 213.58
+            },
+            {
+                "country": "Sri Lanka",
+                "year": "2015",
+                "pop": 119.7
+            },
+            {
+                "country": "Sri Lanka",
+                "year": "2025",
+                "pop": 184.8
+            },
+            {
+                "country": "Malaysia",
+                "year": "2015",
+                "pop": 143.42
+            },
+            {
+                "country": "Malaysia",
+                "year": "2025",
+                "pop": 184.32
             }
         ]
     },
     "layer": [
         {
             "mark": {
-                "type": "bar",
-                "cornerRadiusEnd": 4
+                "type": "line",
+                "strokeWidth": 2,
+                "opacity": 0.7
             },
             "encoding": {
-                "y": {
-                    "field": "Country",
-                    "type": "ordinal",
-                    "sort": "-x",
-                    "title": null
-                },
                 "x": {
-                    "field": "Population",
-                    "type": "quantitative",
-                    "title": "Estimated resident population",
+                    "field": "year",
+                    "type": "ordinal",
                     "axis": {
-                        "format": ",.0f"
+                        "labelFontSize": 13,
+                        "labelFontWeight": "bold",
+                        "domain": true,
+                        "ticks": false,
+                        "grid": false,
+                        "orient": "bottom",
+                        "labelPadding": 10
+                    },
+                    "title": "Year"
+                },
+                "y": {
+                    "field": "pop",
+                    "type": "quantitative",
+                    "axis": {
+                        "title": "Population ('000)",
+                        "grid": true,
+                        "gridOpacity": 0.3
+                    },
+                    "scale": {
+                        "zero": false,
+                        "padding": 30
                     }
                 },
                 "color": {
-                    "field": "Population",
+                    "field": "country",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": [
+                            "India",
+                            "England",
+                            "China",
+                            "New Zealand",
+                            "Philippines",
+                            "Vietnam",
+                            "South Africa",
+                            "Nepal",
+                            "Sri Lanka",
+                            "Malaysia"
+                        ],
+                        "range": [
+                            "#E85D30",
+                            "#378ADD",
+                            "#D4537E",
+                            "#1D9E75",
+                            "#BA7517",
+                            "#534AB7",
+                            "#0F6E56",
+                            "#E24B4A",
+                            "#888780",
+                            "#5DCAA5"
+                        ]
+                    },
+                    "legend": null
+                },
+                "detail": {
+                    "field": "country"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "point",
+                "filled": true,
+                "size": 80
+            },
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "pop",
                     "type": "quantitative",
                     "scale": {
-                        "scheme": "teals"
-                    },
+                        "zero": false,
+                        "padding": 30
+                    }
+                },
+                "color": {
+                    "field": "country",
+                    "type": "nominal",
                     "legend": null
                 },
                 "tooltip": [
                     {
-                        "field": "Country",
-                        "title": "Country of birth"
+                        "field": "country",
+                        "type": "nominal",
+                        "title": "Country"
                     },
                     {
-                        "field": "Population",
-                        "title": "Population",
-                        "format": ",.0f"
+                        "field": "year",
+                        "type": "ordinal",
+                        "title": "Year"
+                    },
+                    {
+                        "field": "pop",
+                        "type": "quantitative",
+                        "title": "Population ('000)",
+                        "format": ".1f"
                     }
                 ]
             }
         },
         {
+            "transform": [
+                {
+                    "filter": "datum.year == '2015'"
+                },
+                {
+                    "calculate": "datum.country == 'Philippines' ? datum.pop + 18 : datum.country == 'Vietnam' ? datum.pop - 18 : datum.country == 'Malaysia' ? datum.pop + 16 : datum.country == 'Sri Lanka' ? datum.pop - 16 : datum.country == 'South Africa' ? datum.pop + 10 : datum.pop",
+                    "as": "pop_offset"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "dx": -10,
+                "fontSize": 11,
+                "fontWeight": "500"
+            },
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "pop_offset",
+                    "type": "quantitative",
+                    "scale": {
+                        "zero": false,
+                        "padding": 30
+                    }
+                },
+                "text": {
+                    "field": "country",
+                    "type": "nominal"
+                },
+                "color": {
+                    "field": "country",
+                    "type": "nominal",
+                    "legend": null
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": "datum.year == '2025'"
+                },
+                {
+                    "calculate": "datum.country == 'England' ? datum.pop + 18 : datum.country == 'India' ? datum.pop - 18 : datum.country == 'Malaysia' ? datum.pop + 16 : datum.country == 'Sri Lanka' ? datum.pop - 16 : datum.country == 'South Africa' ? datum.pop + 10 : datum.pop",
+                    "as": "pop_offset"
+                }
+            ],
             "mark": {
                 "type": "text",
                 "align": "left",
-                "baseline": "middle",
-                "dx": 5,
-                "fontSize": 11
+                "dx": 10,
+                "fontSize": 11,
+                "fontWeight": "500"
             },
             "encoding": {
-                "y": {
-                    "field": "Country",
-                    "type": "ordinal",
-                    "sort": "-x"
-                },
                 "x": {
-                    "field": "Population",
-                    "type": "quantitative"
+                    "field": "year",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "pop_offset",
+                    "type": "quantitative",
+                    "scale": {
+                        "zero": false,
+                        "padding": 30
+                    }
                 },
                 "text": {
-                    "field": "Population",
-                    "type": "quantitative",
-                    "format": ",.0f"
+                    "field": "country",
+                    "type": "nominal"
+                },
+                "color": {
+                    "field": "country",
+                    "type": "nominal",
+                    "legend": null
                 }
             }
         }
-    ],
-    "title": {
-        "text": "Australia's Largest Migrant Communities",
-        "subtitle": "Top countries of birth in Australia's overseas-born population",
-        "fontSize": 18,
-        "subtitleFontSize": 12
-    },
-    "config": {
-        "view": {
-            "stroke": null
-        }
-    }
+    ]
 }
