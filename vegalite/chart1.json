@@ -47,7 +47,7 @@
             "mark": {
                 "type": "rect",
                 "opacity": 0.12,
-                "color": "#D9534F"
+                "color": "#ffffff"
             },
             "encoding": {
                 "x": {
@@ -62,7 +62,7 @@
         {
             "mark": {
                 "type": "line",
-                "strokeWidth": 2
+                "strokeWidth": 3
             },
             "encoding": {
                 "x": {
@@ -73,7 +73,8 @@
                         "labelOverlap": true,
                         "labelFontSize": 9
                     },
-                    "title": "Year"
+                    "title": "Year",
+                    "fontColor": "#ffffff"
                 },
                 "y": {
                     "field": "Value",
@@ -94,10 +95,15 @@
                             "Total Growth"
                         ],
                         "range": [
-                            "#2196F3",
-                            "#FF9800",
-                            "#4CAF50"
+                            "#560BAD",
+                            "#FFC300",
+                            "#E80054"
                         ]
+                    },
+                    "legend": {
+                        "orient": "bottom",
+                        "direction": "horizontal",
+                        "titleOrient": "left"
                     }
                 },
                 "tooltip": [
@@ -125,7 +131,7 @@
                 "values": [
                     {
                         "Time": "21-Dec",
-                        "Value": 650000,
+                        "Value": 680000,
                         "label": "COVID-19 border closures\nmigration drops"
                     }
                 ]
@@ -137,7 +143,7 @@
                 "fontSize": 12,
                 "fontWeight": "bold",
                 "lineBreak": "\n",
-                "color": "#B23A48"
+                "color": "#ffffff"
             },
             "encoding": {
                 "x": {
@@ -159,5 +165,28 @@
         "subtitle": "Natural Increase, Net Overseas Migration, and Total Growth (per quarter)",
         "fontSize": 16,
         "subtitleFontSize": 12
+    },
+    "config": {
+        "axis": {
+            "labelColor": "#ffffff",
+            "titleColor": "#ffffff",
+            "tickColor": "#ffffff",
+            "domainColor": "#ffffff",
+            "gridColor": "rgba(255,255,255,0.2)"
+        },
+        "title": {
+            "color": "#ffffff",
+            "subtitleColor": "#ffffff"
+        },
+        "legend": {
+            "labelColor": "#ffffff",
+            "titleColor": "#ffffff"
+        },
+        "text": {
+            "color": "#ffffff"
+        },
+        "view": {
+            "stroke": null
+        }
     }
 }

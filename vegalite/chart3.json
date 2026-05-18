@@ -4,8 +4,7 @@
         "text": "Top Migrant-Origin Countries in Australia",
         "subtitle": "Estimated resident population ('000) — 2015 vs 2025",
         "fontSize": 16,
-        "subtitleFontSize": 12,
-        "anchor": "start"
+        "subtitleFontSize": 12
     },
     "width": 480,
     "height": 500,
@@ -117,8 +116,7 @@
         {
             "mark": {
                 "type": "line",
-                "strokeWidth": 2,
-                "opacity": 0.7
+                "strokeWidth": 3
             },
             "encoding": {
                 "x": {
@@ -131,7 +129,8 @@
                         "ticks": false,
                         "grid": false,
                         "orient": "bottom",
-                        "labelPadding": 10
+                        "labelPadding": 10,
+                        "labelAngle": 0
                     },
                     "title": "Year"
                 },
@@ -141,7 +140,7 @@
                     "axis": {
                         "title": "Population ('000)",
                         "grid": true,
-                        "gridOpacity": 0.3
+                        "gridOpacity": 1
                     },
                     "scale": {
                         "zero": false,
@@ -160,21 +159,17 @@
                             "Philippines",
                             "Vietnam",
                             "South Africa",
-                            "Nepal",
-                            "Sri Lanka",
-                            "Malaysia"
+                            "Sri Lanka"
                         ],
                         "range": [
-                            "#E85D30",
-                            "#378ADD",
-                            "#D4537E",
-                            "#1D9E75",
-                            "#BA7517",
-                            "#534AB7",
-                            "#0F6E56",
-                            "#E24B4A",
-                            "#888780",
-                            "#5DCAA5"
+                            "#FFC300",
+                            "#FFC300",
+                            "#B5179E",
+                            "#CF68C0",
+                            "#B5179E",
+                            "#CF68C0",
+                            "#B5179E",
+                            "#CF68C0"
                         ]
                     },
                     "legend": null
@@ -243,7 +238,7 @@
                 "align": "right",
                 "dx": -10,
                 "fontSize": 11,
-                "fontWeight": "500"
+                "fontWeight": 500
             },
             "encoding": {
                 "x": {
@@ -284,7 +279,7 @@
                 "align": "left",
                 "dx": 10,
                 "fontSize": 11,
-                "fontWeight": "500"
+                "fontWeight": 500
             },
             "encoding": {
                 "x": {
@@ -310,5 +305,28 @@
                 }
             }
         }
-    ]
+    ],
+    "config": {
+        "axis": {
+            "labelColor": "#ffffff",
+            "titleColor": "#ffffff",
+            "tickColor": "#ffffff",
+            "domainColor": "#ffffff",
+            "gridColor": "rgba(255,255,255,0.2)"
+        },
+        "title": {
+            "color": "#ffffff",
+            "subtitleColor": "#ffffff"
+        },
+        "legend": {
+            "labelColor": "#ffffff",
+            "titleColor": "#ffffff"
+        },
+        "text": {
+            "color": "#ffffff"
+        },
+        "view": {
+            "stroke": null
+        }
+    }
 }

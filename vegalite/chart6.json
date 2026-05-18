@@ -4,8 +4,7 @@
         "text": "Temporary Visa Holders in Australia by Category",
         "subtitle": "COVID-19 caused a sharp drop in 2020–2021 across all visa types",
         "fontSize": 16,
-        "subtitleFontSize": 12,
-        "anchor": "start"
+        "subtitleFontSize": 12
     },
     "width": 700,
     "height": 420,
@@ -92,6 +91,11 @@
                 "color": {
                     "field": "Category",
                     "type": "nominal",
+                    "sort": {
+                        "op": "sum",
+                        "field": "Value",
+                        "order": "desc"
+                    },
                     "scale": {
                         "domain": [
                             "Special Category",
@@ -103,19 +107,21 @@
                             "Other"
                         ],
                         "range": [
-                            "#1D9E75",
-                            "#378ADD",
-                            "#D85A30",
-                            "#BA7517",
-                            "#534AB7",
-                            "#D4537E",
-                            "#B4B2A9"
+                            "#480CA8",
+                            "#E80054",
+                            "#FF69B4",
+                            "#7209B7",
+                            "#560BAD",
+                            "#F72585",
+                            "#00234A"
                         ]
                     },
                     "legend": {
                         "title": "Visa Category",
                         "labelFontSize": 11,
-                        "orient": "right"
+                        "orient": "bottom",
+                        "direction": "vertical",
+                        "titleOrient": "left"
                     }
                 },
                 "tooltip": [
@@ -147,7 +153,7 @@
             },
             "mark": {
                 "type": "rule",
-                "color": "red",
+                "color": "white",
                 "strokeDash": [
                     4,
                     4
@@ -166,7 +172,7 @@
                 "values": [
                     {
                         "Year": "2020",
-                        "y": 2700000
+                        "y": 3300000
                     }
                 ]
             },
@@ -177,7 +183,7 @@
                 "dy": -6,
                 "fontSize": 11,
                 "fontStyle": "italic",
-                "color": "red"
+                "color": "white"
             },
             "encoding": {
                 "x": {
@@ -193,5 +199,30 @@
                 }
             }
         }
-    ]
+    ],
+    "config": {
+        "view": {
+            "stroke": null
+        },
+        "axis": {
+            "labelFontSize": 11,
+            "titleFontSize": 12,
+            "labelColor": "#ffffff",
+            "titleColor": "#ffffff",
+            "tickColor": "#ffffff",
+            "domainColor": "#ffffff",
+            "gridColor": "rgba(255,255,255,0.2)"
+        },
+        "title": {
+            "color": "#ffffff",
+            "subtitleColor": "#ffffff"
+        },
+        "legend": {
+            "labelColor": "#ffffff",
+            "titleColor": "#ffffff"
+        },
+        "text": {
+            "color": "#ffffff"
+        }
+    }
 }

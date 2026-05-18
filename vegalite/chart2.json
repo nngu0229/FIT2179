@@ -95,9 +95,18 @@
                             10,
                             35
                         ],
-                        "scheme": "blues"
+                        "range": [
+                            "#FFFFFF",
+                            "#ADE8F4",
+                            "#48CAE4",
+                            "#0096C7",
+                            "#023E8A"
+                        ]
                     },
                     "legend": {
+                        "orient": "bottom",
+                        "direction": "horizontal",
+                        "titleOrient": "left",
                         "values": [
                             10,
                             15,
@@ -137,6 +146,24 @@
         "subtitleFontSize": 12
     },
     "config": {
+        "axis": {
+            "labelColor": "#ffffff",
+            "titleColor": "#ffffff",
+            "tickColor": "#ffffff",
+            "domainColor": "#ffffff",
+            "gridColor": "rgba(255,255,255,0.2)"
+        },
+        "title": {
+            "color": "#ffffff",
+            "subtitleColor": "#ffffff"
+        },
+        "legend": {
+            "labelColor": "#ffffff",
+            "titleColor": "#ffffff"
+        },
+        "text": {
+            "color": "#ffffff"
+        },
         "view": {
             "stroke": null
         }

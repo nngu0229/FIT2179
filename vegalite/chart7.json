@@ -206,23 +206,22 @@
                             "Agriculture"
                         ],
                         "range": [
-                            "#1D9E75",
-                            "#378ADD",
-                            "#D85A30",
-                            "#534AB7",
-                            "#BA7517",
-                            "#E24B4A",
-                            "#5DCAA5",
-                            "#D4537E",
-                            "#888780",
-                            "#0F6E56",
-                            "#1D9E75",
-                            "#378ADD",
-                            "#D85A30",
-                            "#534AB7",
-                            "#BA7517",
-                            "#E24B4A",
-                            "#5DCAA5"
+                            "#bc00dd",
+                            "#db00b6",
+                            "#f20089",
+                            "#ff8500",
+                            "#ff9e00",
+                            "#ffb600",
+                            "#25a244",
+                            "#208b3a",
+                            "#155d27",
+                            "#ff4d6d",
+                            "#c9184a",
+                            "#800f2f",
+                            "#ff9e00",
+                            "#ff8500",
+                            "#ff5400",
+                            "#ff4800"
                         ]
                     },
                     "legend": {
@@ -284,6 +283,26 @@
     "config": {
         "view": {
             "stroke": null
+        },
+        "axis": {
+            "labelFontSize": 11,
+            "titleFontSize": 12,
+            "labelColor": "#ffffff",
+            "titleColor": "#ffffff",
+            "tickColor": "#ffffff",
+            "domainColor": "#ffffff",
+            "gridColor": "rgba(255,255,255,0.2)"
+        },
+        "title": {
+            "color": "#ffffff",
+            "subtitleColor": "#ffffff"
+        },
+        "legend": {
+            "labelColor": "#ffffff",
+            "titleColor": "#ffffff"
+        },
+        "text": {
+            "color": "#ffffff"
         }
     }
 }

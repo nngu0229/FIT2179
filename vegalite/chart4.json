@@ -42,10 +42,18 @@
             "type": "quantitative",
             "title": "Migrant workers",
             "scale": {
-                "scheme": "teals",
                 "domain": [
                     50,
-                    3000
+                    15000
+                ],
+                "range": [
+                    "#E7B2DF",
+                    "#CF68C0",
+                    "#8B38BA",
+                    "#8626B2",
+                    "#5D17B5",
+                    "#5518C1",
+                    "#0400DA"
                 ]
             },
             "legend": {
@@ -76,6 +84,24 @@
         "subtitle": "Temporary skilled migrant workers by industry and state, 2022–23"
     },
     "config": {
+        "axis": {
+            "labelColor": "#ffffff",
+            "titleColor": "#ffffff",
+            "tickColor": "#ffffff",
+            "domainColor": "#ffffff",
+            "gridColor": "rgba(255,255,255,0.2)"
+        },
+        "title": {
+            "color": "#ffffff",
+            "subtitleColor": "#ffffff"
+        },
+        "legend": {
+            "labelColor": "#ffffff",
+            "titleColor": "#ffffff"
+        },
+        "text": {
+            "color": "#ffffff"
+        },
         "view": {
             "stroke": null
         }

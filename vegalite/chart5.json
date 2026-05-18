@@ -79,7 +79,10 @@
                     "field": "Jobs",
                     "type": "quantitative",
                     "scale": {
-                        "scheme": "teals"
+                        "range": [
+                            "#7209B7",
+                            "#F72585"
+                        ]
                     },
                     "legend": null
                 },
@@ -103,7 +106,7 @@
                 "dy": -8,
                 "fontSize": 10,
                 "fontWeight": "bold",
-                "color": "#333333"
+                "color": "#ffffff"
             },
             "encoding": {
                 "x": {
@@ -135,7 +138,23 @@
         },
         "axis": {
             "labelFontSize": 11,
-            "titleFontSize": 12
+            "titleFontSize": 12,
+            "labelColor": "#ffffff",
+            "titleColor": "#ffffff",
+            "tickColor": "#ffffff",
+            "domainColor": "#ffffff",
+            "gridColor": "rgba(255,255,255,0.2)"
+        },
+        "title": {
+            "color": "#ffffff",
+            "subtitleColor": "#ffffff"
+        },
+        "legend": {
+            "labelColor": "#ffffff",
+            "titleColor": "#ffffff"
+        },
+        "text": {
+            "color": "#ffffff"
         }
     }
 }
