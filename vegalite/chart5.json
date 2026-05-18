@@ -1,0 +1,141 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Vertical bar chart of jobs held by migrant workers",
+    "width": 720,
+    "height": 420,
+    "data": {
+        "values": [
+            {
+                "Occupation": "Registered Nurses",
+                "Jobs": 8200
+            },
+            {
+                "Occupation": "Software Engineers",
+                "Jobs": 6400
+            },
+            {
+                "Occupation": "Chefs",
+                "Jobs": 5900
+            },
+            {
+                "Occupation": "Electricians",
+                "Jobs": 4200
+            },
+            {
+                "Occupation": "Construction Managers",
+                "Jobs": 3900
+            },
+            {
+                "Occupation": "Accountants",
+                "Jobs": 3600
+            },
+            {
+                "Occupation": "Aged Care Workers",
+                "Jobs": 3400
+            },
+            {
+                "Occupation": "ICT Business Analysts",
+                "Jobs": 3100
+            },
+            {
+                "Occupation": "Secondary School Teachers",
+                "Jobs": 2900
+            },
+            {
+                "Occupation": "Motor Mechanics",
+                "Jobs": 2500
+            }
+        ]
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "bar",
+                "cornerRadiusTopLeft": 4,
+                "cornerRadiusTopRight": 4
+            },
+            "encoding": {
+                "x": {
+                    "field": "Occupation",
+                    "type": "ordinal",
+                    "sort": "-y",
+                    "title": null,
+                    "axis": {
+                        "labelAngle": -35,
+                        "labelFontSize": 10,
+                        "labelLimit": 150
+                    }
+                },
+                "y": {
+                    "field": "Jobs",
+                    "type": "quantitative",
+                    "title": "Number of migrant workers",
+                    "axis": {
+                        "format": ",.0f",
+                        "gridColor": "#E5E7EB"
+                    }
+                },
+                "color": {
+                    "field": "Jobs",
+                    "type": "quantitative",
+                    "scale": {
+                        "scheme": "teals"
+                    },
+                    "legend": null
+                },
+                "tooltip": [
+                    {
+                        "field": "Occupation",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "Jobs",
+                        "type": "quantitative",
+                        "title": "Migrant workers",
+                        "format": ",.0f"
+                    }
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "dy": -8,
+                "fontSize": 10,
+                "fontWeight": "bold",
+                "color": "#333333"
+            },
+            "encoding": {
+                "x": {
+                    "field": "Occupation",
+                    "type": "ordinal",
+                    "sort": "-y"
+                },
+                "y": {
+                    "field": "Jobs",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "Jobs",
+                    "type": "quantitative",
+                    "format": ",.0f"
+                }
+            }
+        }
+    ],
+    "title": {
+        "text": "Top Occupations Filled by Skilled Migrants",
+        "subtitle": "Skilled migrants support workforce shortages across healthcare, construction, and technology sectors",
+        "fontSize": 18,
+        "subtitleFontSize": 12
+    },
+    "config": {
+        "view": {
+            "stroke": null
+        },
+        "axis": {
+            "labelFontSize": 11,
+            "titleFontSize": 12
+        }
+    }
+}
