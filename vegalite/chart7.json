@@ -226,9 +226,11 @@
                     },
                     "legend": {
                         "title": "Industry Sector",
-                        "orient": "right",
                         "labelFontSize": 11,
-                        "titleFontSize": 12
+                        "titleFontSize": 12,
+                        "columns": 4,
+                        "direction": "horizontal",
+                        "orient": "bottom"
                     }
                 },
                 "order": {
@@ -278,7 +280,9 @@
         "text": "Industries with Skill Shortages Depend More on Migrant Workers",
         "subtitle": "Bubble size = GDP contribution - Click legend to filter by sector - Hover for details",
         "fontSize": 18,
-        "subtitleFontSize": 12
+        "subtitleFontSize": 12,
+        "orient": "top",
+        "anchor": "center"
     },
     "config": {
         "view": {

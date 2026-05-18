@@ -119,9 +119,10 @@
                     "legend": {
                         "title": "Visa Category",
                         "labelFontSize": 11,
-                        "orient": "bottom",
-                        "direction": "vertical",
-                        "titleOrient": "left"
+                        "titleFontSize": 12,
+                        "columns": 3,
+                        "direction": "horizontal",
+                        "orient": "bottom"
                     }
                 },
                 "tooltip": [
