@@ -1,0 +1,236 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 720,
+    "height": 420,
+    "data": {
+        "values": [
+            {
+                "Period": "17-Dec",
+                "Migration": 241.66,
+                "GDP": 2.3
+            },
+            {
+                "Period": "18-Mar",
+                "Migration": 238,
+                "GDP": 3
+            },
+            {
+                "Period": "18-Jun",
+                "Migration": 238.22,
+                "GDP": 3.2
+            },
+            {
+                "Period": "18-Sep",
+                "Migration": 242.32,
+                "GDP": 2.6
+            },
+            {
+                "Period": "18-Dec",
+                "Migration": 252.22,
+                "GDP": 2.4
+            },
+            {
+                "Period": "19-Mar",
+                "Migration": 250.67,
+                "GDP": 2.1
+            },
+            {
+                "Period": "19-Jun",
+                "Migration": 241.34,
+                "GDP": 1.7
+            },
+            {
+                "Period": "19-Sep",
+                "Migration": 242.04,
+                "GDP": 1.9
+            },
+            {
+                "Period": "19-Dec",
+                "Migration": 247.62,
+                "GDP": 2.2
+            },
+            {
+                "Period": "20-Mar",
+                "Migration": 239.25,
+                "GDP": 1.3
+            },
+            {
+                "Period": "20-Jun",
+                "Migration": 192.7,
+                "GDP": -5.9
+            },
+            {
+                "Period": "20-Sep",
+                "Migration": 75.61,
+                "GDP": -3.1
+            },
+            {
+                "Period": "20-Dec",
+                "Migration": -4.97,
+                "GDP": -0.4
+            },
+            {
+                "Period": "21-Mar",
+                "Migration": -94.34,
+                "GDP": 2
+            },
+            {
+                "Period": "21-Jun",
+                "Migration": -84.94,
+                "GDP": 10.2
+            },
+            {
+                "Period": "21-Sep",
+                "Migration": -55.38,
+                "GDP": 4.7
+            },
+            {
+                "Period": "21-Dec",
+                "Migration": 9.3,
+                "GDP": 4.9
+            },
+            {
+                "Period": "22-Mar",
+                "Migration": 131.02,
+                "GDP": 3.7
+            },
+            {
+                "Period": "22-Jun",
+                "Migration": 207.91,
+                "GDP": 3.8
+            },
+            {
+                "Period": "22-Sep",
+                "Migration": 348.63,
+                "GDP": 6.2
+            },
+            {
+                "Period": "22-Dec",
+                "Migration": 437.86,
+                "GDP": 3.2
+            },
+            {
+                "Period": "23-Mar",
+                "Migration": 495.83,
+                "GDP": 2.8
+            },
+            {
+                "Period": "23-Jun",
+                "Migration": 538.34,
+                "GDP": 2.3
+            },
+            {
+                "Period": "23-Sep",
+                "Migration": 555.8,
+                "GDP": 2.2
+            },
+            {
+                "Period": "23-Dec",
+                "Migration": 530.62,
+                "GDP": 1.3
+            },
+            {
+                "Period": "24-Mar",
+                "Migration": 493.82,
+                "GDP": 1.1
+            },
+            {
+                "Period": "24-Jun",
+                "Migration": 429.16,
+                "GDP": 0.9
+            },
+            {
+                "Period": "24-Sep",
+                "Migration": 364.82,
+                "GDP": 0.8
+            },
+            {
+                "Period": "24-Dec",
+                "Migration": 329.94,
+                "GDP": 1.2
+            },
+            {
+                "Period": "25-Mar",
+                "Migration": 311.27,
+                "GDP": 1.3
+            },
+            {
+                "Period": "25-Jun",
+                "Migration": 305.57,
+                "GDP": 1.9
+            }
+        ]
+    },
+    "transform": [
+        {
+            "calculate": "datum.Migration / 241.66 * 100",
+            "as": "MigrationIndex"
+        },
+        {
+            "calculate": "datum.GDP / 2.3 * 100",
+            "as": "GDPIndex"
+        },
+        {
+            "fold": [
+                "MigrationIndex",
+                "GDPIndex"
+            ],
+            "as": [
+                "Series",
+                "IndexValue"
+            ]
+        },
+        {
+            "calculate": "datum.Series == 'MigrationIndex' ? 'Net Overseas Migration' : 'GDP Growth'",
+            "as": "SeriesLabel"
+        }
+    ],
+    "mark": {
+        "type": "line",
+        "point": true,
+        "strokeWidth": 2.5
+    },
+    "encoding": {
+        "x": {
+            "field": "Period",
+            "type": "ordinal",
+            "title": "Period",
+            "axis": {
+                "labelAngle": -45
+            }
+        },
+        "y": {
+            "field": "IndexValue",
+            "type": "quantitative",
+            "title": "Index (17-Dec = 100)"
+        },
+        "color": {
+            "field": "SeriesLabel",
+            "type": "nominal",
+            "scale": {
+                "range": [
+                    "#F28E2B",
+                    "#2C7A7B"
+                ]
+            }
+        },
+        "tooltip": [
+            {
+                "field": "Period"
+            },
+            {
+                "field": "SeriesLabel",
+                "title": "Series"
+            },
+            {
+                "field": "IndexValue",
+                "format": ".1f",
+                "title": "Index"
+            }
+        ]
+    },
+    "title": {
+        "text": "Migration and GDP Growth Through Economic Shocks",
+        "subtitle": "Indexed comparison, 17-Dec = 100"
+    }
+}
