@@ -3,7 +3,7 @@
     "width": 720,
     "height": 420,
     "data": {
-        "url": "https://raw.githubusercontent.com/nngu0229/FIT2179/refs/heads/main/data/chart4%20-%20Migrant%20workers%20by%20industry%20and%20state%20.csv"
+        "url": "data/chart4%20-%20Migrant%20workers%20by%20industry%20and%20state%20.csv"
     },
     "transform": [
         {

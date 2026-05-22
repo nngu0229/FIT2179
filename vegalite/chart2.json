@@ -4,16 +4,7 @@
     "width": 700,
     "height": 500,
     "projection": {
-        "type": "mercator",
-        "center": [
-            133,
-            -28
-        ],
-        "scale": 700,
-        "translate": [
-            350,
-            250
-        ]
+        "type": "mercator"
     },
     "params": [
         {
@@ -42,7 +33,7 @@
                     "lookup": "properties.STATE_NAME",
                     "from": {
                         "data": {
-                            "url": "https://raw.githubusercontent.com/nngu0229/FIT2179/refs/heads/main/data/Chart2-resident%20population%20by%20state%20and%20territory.csv"
+                            "url": "data/chart2-resident%20population%20by%20state%20and%20territory.csv"
                         },
                         "key": "State",
                         "fields": [

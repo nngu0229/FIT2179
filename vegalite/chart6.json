@@ -9,7 +9,7 @@
     "width": 700,
     "height": 420,
     "data": {
-        "url": "https://raw.githubusercontent.com/nngu0229/FIT2179/refs/heads/main/data/chart6%20-%20visa%20categories.csv"
+        "url": "data/chart6%20-%20visa%20categories.csv"
     },
     "transform": [
         {

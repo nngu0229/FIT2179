@@ -4,7 +4,7 @@
   "width": 700,
   "height": 400,
   "data": {
-    "url": "https://raw.githubusercontent.com/nngu0229/FIT2179/refs/heads/main/data/Chart1-annual%20population%20change.csv"
+    "url": "data/Chart1-annual%20population%20change.csv"
   },
   "transform": [
     {
