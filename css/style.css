@@ -31,6 +31,7 @@
   --s1-color: var(--amber);
   --s2-color: var(--coral);
   --s3-color: var(--emerald);
+  --s4-color: var(--violet);
 
   /* Hero gradient — deep ocean-to-midnight */
   --gradient-hero: linear-gradient(150deg, #070a18 0%, #06080f 50%, #0a0a07 100%);
@@ -239,6 +240,7 @@ body {
 .nav-link:nth-child(1):hover { color: var(--amber);   border-bottom-color: var(--amber);   }
 .nav-link:nth-child(2):hover { color: var(--coral);   border-bottom-color: var(--coral);   }
 .nav-link:nth-child(3):hover { color: var(--emerald); border-bottom-color: var(--emerald); }
+.nav-link:nth-child(4):hover { color: var(--violet);  border-bottom-color: var(--violet);  }
 
 /* ═══════════════════════════════════════════════════════
    MAIN CONTAINER
@@ -278,6 +280,7 @@ body {
 #section-1 .section-number { background: var(--amber);   box-shadow: 0 4px 18px rgba(245,166,35,0.45); }
 #section-2 .section-number { background: var(--coral);   box-shadow: 0 4px 18px rgba(255,107,107,0.45); }
 #section-3 .section-number { background: var(--emerald); box-shadow: 0 4px 18px rgba(16,217,160,0.35); }
+#section-4 .section-number { background: var(--violet);  box-shadow: 0 4px 18px rgba(167,139,250,0.45); }
 
 .section-title {
   font-family: 'Playfair Display', serif;
@@ -307,6 +310,7 @@ body {
 #section-1 .section-sep { background: linear-gradient(90deg, var(--amber), transparent); }
 #section-2 .section-sep { background: linear-gradient(90deg, var(--coral), transparent); }
 #section-3 .section-sep { background: linear-gradient(90deg, var(--emerald), transparent); }
+#section-4 .section-sep { background: linear-gradient(90deg, var(--violet), transparent); }
 
 /* ═══════════════════════════════════════════════════════
    GRIDS
@@ -367,6 +371,7 @@ body {
 #section-1 .chart-card::before { background: linear-gradient(90deg, var(--amber), var(--orange)); }
 #section-2 .chart-card::before { background: linear-gradient(90deg, var(--coral), var(--rose));   }
 #section-3 .chart-card::before { background: linear-gradient(90deg, var(--emerald), var(--cyan)); }
+#section-4 .chart-card::before { background: linear-gradient(90deg, var(--violet), var(--cyan));  }
 
 .chart-card:hover {
   transform: translateY(-3px);
@@ -376,6 +381,7 @@ body {
 #section-1 .chart-card:hover { border-color: rgba(245,166,35,0.3);   box-shadow: var(--shadow-card), 0 0 28px rgba(245,166,35,0.1);   }
 #section-2 .chart-card:hover { border-color: rgba(255,107,107,0.3);  box-shadow: var(--shadow-card), 0 0 28px rgba(255,107,107,0.1);  }
 #section-3 .chart-card:hover { border-color: rgba(16,217,160,0.3);   box-shadow: var(--shadow-card), 0 0 28px rgba(16,217,160,0.1);   }
+#section-4 .chart-card:hover { border-color: rgba(167,139,250,0.3);  box-shadow: var(--shadow-card), 0 0 28px rgba(167,139,250,0.1);  }
 
 .chart-card:hover::before { opacity: 1; }
 
@@ -429,6 +435,12 @@ body {
   border: 1px solid rgba(16,217,160,0.25);
 }
 
+#section-4 .card-tag {
+  color: var(--violet);
+  background: rgba(167,139,250,0.1);
+  border: 1px solid rgba(167,139,250,0.25);
+}
+
 /* Chart area */
 .chart-container {
   flex: 1;
@@ -480,6 +492,11 @@ body {
   border: 1px solid rgba(16,217,160,0.2);
 }
 
+#section-4 .insight-box {
+  background: linear-gradient(135deg, rgba(167,139,250,0.07), rgba(34,211,238,0.04));
+  border: 1px solid rgba(167,139,250,0.2);
+}
+
 .insight-box p {
   font-size: 0.95rem;
   color: var(--text-muted);
@@ -490,6 +507,7 @@ body {
 #section-1 .insight-box strong { color: var(--amber);   }
 #section-2 .insight-box strong { color: var(--coral);   }
 #section-3 .insight-box strong { color: var(--emerald); }
+#section-4 .insight-box strong { color: var(--violet);  }
 
 /* ═══════════════════════════════════════════════════════
    FOOTER

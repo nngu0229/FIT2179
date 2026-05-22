@@ -58,7 +58,7 @@
                     <span class="stat-label">States Tracked</span>
                 </div>
                 <div class="stat-pill">
-                    <span class="stat-number rose">7</span>
+                    <span class="stat-number rose">9</span>
                     <span class="stat-label">Data Visualisations</span>
                 </div>
             </div>
@@ -75,6 +75,7 @@
             <a href="#section-1" class="nav-link">The Big Picture</a>
             <a href="#section-2" class="nav-link">Workforce Impact</a>
             <a href="#section-3" class="nav-link">Filling Skill Gaps</a>
+            <a href="#section-4" class="nav-link">Economic Contribution</a>
         </div>
     </nav>
 
@@ -299,6 +300,68 @@
 
             </div>
 
+            <!-- Transition insight box -->
+            <div class="insight-box">
+                <p>
+                    Beyond targeted skills, the overall volume of immigration operates as a macro-level
+                    dynamic that powers economic expansion. The final section examines how these aggregate
+                    flows closely correlate with <strong>GDP growth and the broader value of industrial output</strong>.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- ──────────────────────────────────────────────
+         SECTION 4 — Economic Contribution
+    ────────────────────────────────────────────── -->
+        <section class="section" id="section-4">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <div>
+                    <h2 class="section-title">Economic Contribution</h2>
+                </div>
+            </div>
+
+            <p class="section-description">
+                Immigration is not just a demographic driver; it is a major economic engine. By infusing the labour
+                market with diverse talents, bridging vital industry vacancies, and boosting consumer demand, migrants
+                directly stimulate economic output. This section visualises the tight coupling between migration trends
+                and GDP fluctuations, alongside a detailed breakdown of how key industry sectors lean on and prosper
+                from migrant labour to fuel Australia's economic future.
+            </p>
+
+            <div class="section-sep"></div>
+
+            <!-- Chart 8 + Chart 9 -->
+            <div class="grid-2">
+
+                <!-- Chart 8 -->
+                <div class="chart-card">
+                    <span class="card-tag">GDP vs Migration</span>
+                    <h3 class="card-title">Migration and GDP Growth Through Economic Shocks</h3>
+                    <p class="card-description">
+                        This indexed comparison shows the clear synchronisation between Net Overseas Migration and GDP
+                        growth in Australia. As external shocks like COVID-19 restricted travel, both migration and GDP
+                        plunged, while subsequent rebounds underscore how migration remains central to economic
+                        vitality.
+                    </p>
+                    <div class="chart-container" id="chart8"></div>
+                </div>
+
+                <!-- Chart 9 -->
+                <div class="chart-card">
+                    <span class="card-tag">Labour Power</span>
+                    <h3 class="card-title">Industries Powered by Migrant Labour</h3>
+                    <p class="card-description">
+                        Different industries have varying levels of reliance on migrant workers. Click the interactive
+                        legend on the chart to filter by sector, and see how the migrant share (color intensity) and
+                        total GDP contribution (circle size) distribute across key parts of the Australian workforce.
+                    </p>
+                    <div class="chart-container" id="chart9"></div>
+                </div>
+
+            </div>
+
         </section>
 
     </main>
@@ -362,6 +425,8 @@
         embedChart("vegalite/chart5.json", "chart5");
         embedChart("vegalite/chart6.json", "chart6");
         embedChart("vegalite/chart7.json", "chart7");
+        embedChart("vegalite/chart8.json", "chart8");
+        embedChart("vegalite/chart9.json", "chart9");
     </script>
 
 </body>

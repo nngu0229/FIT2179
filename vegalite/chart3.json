@@ -138,9 +138,7 @@
                     "field": "pop",
                     "type": "quantitative",
                     "axis": {
-                        "title": "Population ('000)",
-                        "grid": true,
-                        "gridOpacity": 1
+                        "title": "Population ('000)"
                     },
                     "scale": {
                         "zero": false,
@@ -159,17 +157,21 @@
                             "Philippines",
                             "Vietnam",
                             "South Africa",
-                            "Sri Lanka"
+                            "Nepal",
+                            "Sri Lanka",
+                            "Malaysia"
                         ],
                         "range": [
-                            "#FFC300",
-                            "#FFC300",
-                            "#B5179E",
-                            "#CF68C0",
-                            "#B5179E",
-                            "#CF68C0",
-                            "#B5179E",
-                            "#CF68C0"
+                            "#fbbf24",
+                            "#8898ba",
+                            "#ff6b6b",
+                            "#a78bfa",
+                            "#22d3ee",
+                            "#10d9a0",
+                            "#f97316",
+                            "#f43f5e",
+                            "#ff8500",
+                            "#4e5c7a"
                         ]
                     },
                     "legend": null
@@ -229,7 +231,7 @@
                     "filter": "datum.year == '2015'"
                 },
                 {
-                    "calculate": "datum.country == 'Philippines' ? datum.pop + 18 : datum.country == 'Vietnam' ? datum.pop - 18 : datum.country == 'Malaysia' ? datum.pop + 16 : datum.country == 'Sri Lanka' ? datum.pop - 16 : datum.country == 'South Africa' ? datum.pop + 10 : datum.pop",
+                    "calculate": "datum.country == 'Philippines' ? datum.pop + 12 : datum.country == 'Vietnam' ? datum.pop - 12 : datum.country == 'South Africa' ? datum.pop + 8 : datum.country == 'Malaysia' ? datum.pop : datum.country == 'Sri Lanka' ? datum.pop - 8 : datum.pop",
                     "as": "pop_offset"
                 }
             ],
@@ -270,7 +272,7 @@
                     "filter": "datum.year == '2025'"
                 },
                 {
-                    "calculate": "datum.country == 'England' ? datum.pop + 18 : datum.country == 'India' ? datum.pop - 18 : datum.country == 'Malaysia' ? datum.pop + 16 : datum.country == 'Sri Lanka' ? datum.pop - 16 : datum.country == 'South Africa' ? datum.pop + 10 : datum.pop",
+                    "calculate": "datum.country == 'England' ? datum.pop + 15 : datum.country == 'India' ? datum.pop - 15 : datum.country == 'South Africa' ? datum.pop + 12 : datum.country == 'Nepal' ? datum.pop - 12 : datum.country == 'Sri Lanka' ? datum.pop + 10 : datum.country == 'Malaysia' ? datum.pop - 10 : datum.pop",
                     "as": "pop_offset"
                 }
             ],
@@ -307,26 +309,45 @@
         }
     ],
     "config": {
-        "axis": {
-            "labelColor": "#ffffff",
-            "titleColor": "#ffffff",
-            "tickColor": "#ffffff",
-            "domainColor": "#ffffff",
-            "gridColor": "rgba(255,255,255,0.2)"
-        },
-        "title": {
-            "color": "#ffffff",
-            "subtitleColor": "#ffffff"
-        },
-        "legend": {
-            "labelColor": "#ffffff",
-            "titleColor": "#ffffff"
-        },
-        "text": {
-            "color": "#ffffff"
-        },
+        "font": "Inter, sans-serif",
+        "background": "transparent",
         "view": {
             "stroke": null
+        },
+        "axis": {
+            "labelFont": "Inter, sans-serif",
+            "titleFont": "Inter, sans-serif",
+            "labelColor": "#b2c1e0",
+            "titleColor": "#eef1ff",
+            "tickColor": "rgba(255,255,255,0.15)",
+            "domainColor": "rgba(255,255,255,0.15)",
+            "grid": false,
+            "labelFontSize": 11,
+            "titleFontSize": 12,
+            "titlePadding": 12
+        },
+        "title": {
+            "font": "Inter, sans-serif",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "color": "#eef1ff",
+            "subtitleFont": "Inter, sans-serif",
+            "subtitleFontSize": 12,
+            "subtitleColor": "#b2c1e0",
+            "subtitlePadding": 6
+        },
+        "legend": {
+            "labelFont": "Inter, sans-serif",
+            "titleFont": "Inter, sans-serif",
+            "labelColor": "#b2c1e0",
+            "titleColor": "#eef1ff",
+            "labelFontSize": 11,
+            "titleFontSize": 12,
+            "symbolSize": 100
+        },
+        "text": {
+            "font": "Inter, sans-serif",
+            "color": "#eef1ff"
         }
     }
 }

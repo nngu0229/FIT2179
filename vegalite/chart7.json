@@ -150,7 +150,6 @@
                         ]
                     },
                     "axis": {
-                        "gridColor": "#E5E7EB",
                         "labelFontSize": 11,
                         "titleFontSize": 12
                     }
@@ -166,7 +165,6 @@
                         ]
                     },
                     "axis": {
-                        "gridColor": "#E5E7EB",
                         "labelFontSize": 11,
                         "titleFontSize": 12
                     }
@@ -206,22 +204,22 @@
                             "Agriculture"
                         ],
                         "range": [
-                            "#bc00dd",
-                            "#db00b6",
-                            "#f20089",
-                            "#ff8500",
-                            "#ff9e00",
-                            "#ffb600",
-                            "#25a244",
-                            "#208b3a",
-                            "#155d27",
-                            "#ff4d6d",
-                            "#c9184a",
-                            "#800f2f",
-                            "#ff9e00",
-                            "#ff8500",
-                            "#ff5400",
-                            "#ff4800"
+                            "#10d9a0",
+                            "#059669",
+                            "#047857",
+                            "#065f46",
+                            "#0f766e",
+                            "#115e59",
+                            "#14b8a6",
+                            "#2dd4bf",
+                            "#5eead4",
+                            "#22d3ee",
+                            "#06b6d4",
+                            "#0891b2",
+                            "#0369a1",
+                            "#0284c7",
+                            "#0ea5e9",
+                            "#38bdf8"
                         ]
                     },
                     "legend": {
@@ -285,28 +283,46 @@
         "anchor": "center"
     },
     "config": {
+        "font": "Inter, sans-serif",
+        "background": "transparent",
         "view": {
             "stroke": null
         },
         "axis": {
+            "labelFont": "Inter, sans-serif",
+            "titleFont": "Inter, sans-serif",
+            "labelColor": "#8898ba",
+            "titleColor": "#eef1ff",
+            "tickColor": "rgba(255,255,255,0.15)",
+            "domainColor": "rgba(255,255,255,0.15)",
+            "gridColor": "rgba(255,255,255,0.08)",
+            "grid": true,
             "labelFontSize": 11,
             "titleFontSize": 12,
-            "labelColor": "#ffffff",
-            "titleColor": "#ffffff",
-            "tickColor": "#ffffff",
-            "domainColor": "#ffffff",
-            "gridColor": "rgba(255,255,255,0.2)"
+            "titlePadding": 12
         },
         "title": {
-            "color": "#ffffff",
-            "subtitleColor": "#ffffff"
+            "font": "Inter, sans-serif",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "color": "#eef1ff",
+            "subtitleFont": "Inter, sans-serif",
+            "subtitleFontSize": 12,
+            "subtitleColor": "#8898ba",
+            "subtitlePadding": 6
         },
         "legend": {
-            "labelColor": "#ffffff",
-            "titleColor": "#ffffff"
+            "labelFont": "Inter, sans-serif",
+            "titleFont": "Inter, sans-serif",
+            "labelColor": "#8898ba",
+            "titleColor": "#eef1ff",
+            "labelFontSize": 11,
+            "titleFontSize": 12,
+            "symbolSize": 100
         },
         "text": {
-            "color": "#ffffff"
+            "font": "Inter, sans-serif",
+            "color": "#eef1ff"
         }
     }
 }

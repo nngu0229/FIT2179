@@ -71,8 +71,7 @@
                     "type": "quantitative",
                     "title": "Number of migrant workers",
                     "axis": {
-                        "format": ",.0f",
-                        "gridColor": "#E5E7EB"
+                        "format": ",.0f"
                     }
                 },
                 "color": {
@@ -80,8 +79,8 @@
                     "type": "quantitative",
                     "scale": {
                         "range": [
-                            "#7209B7",
-                            "#F72585"
+                            "#fbbf24",
+                            "#f43f5e"
                         ]
                     },
                     "legend": null
@@ -133,28 +132,46 @@
         "subtitleFontSize": 12
     },
     "config": {
+        "font": "Inter, sans-serif",
+        "background": "transparent",
         "view": {
             "stroke": null
         },
         "axis": {
+            "labelFont": "Inter, sans-serif",
+            "titleFont": "Inter, sans-serif",
+            "labelColor": "#8898ba",
+            "titleColor": "#eef1ff",
+            "tickColor": "rgba(255,255,255,0.15)",
+            "domainColor": "rgba(255,255,255,0.15)",
+            "gridColor": "rgba(255,255,255,0.08)",
+            "grid": true,
             "labelFontSize": 11,
             "titleFontSize": 12,
-            "labelColor": "#ffffff",
-            "titleColor": "#ffffff",
-            "tickColor": "#ffffff",
-            "domainColor": "#ffffff",
-            "gridColor": "rgba(255,255,255,0.2)"
+            "titlePadding": 12
         },
         "title": {
-            "color": "#ffffff",
-            "subtitleColor": "#ffffff"
+            "font": "Inter, sans-serif",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "color": "#eef1ff",
+            "subtitleFont": "Inter, sans-serif",
+            "subtitleFontSize": 12,
+            "subtitleColor": "#8898ba",
+            "subtitlePadding": 6
         },
         "legend": {
-            "labelColor": "#ffffff",
-            "titleColor": "#ffffff"
+            "labelFont": "Inter, sans-serif",
+            "titleFont": "Inter, sans-serif",
+            "labelColor": "#8898ba",
+            "titleColor": "#eef1ff",
+            "labelFontSize": 11,
+            "titleFontSize": 12,
+            "symbolSize": 100
         },
         "text": {
-            "color": "#ffffff"
+            "font": "Inter, sans-serif",
+            "color": "#eef1ff"
         }
     }
 }

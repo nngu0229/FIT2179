@@ -1,0 +1,423 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Industries Powered by Migrant Labour",
+        "subtitle": "Circle size = GDP contribution ($M) · Colour intensity = migrant workforce share (%) · Click legend to filter",
+        "fontSize": 16,
+        "subtitleFontSize": 12,
+        "anchor": "start"
+    },
+    "width": 700,
+    "height": 420,
+    "data": {
+        "values": [
+            {
+                "Industry": "Healthcare",
+                "Short": "Healthcare",
+                "Migrant": 20.5,
+                "GDP": 218613,
+                "Sector": "Healthcare",
+                "x": 350.0,
+                "y": 210.0,
+                "r": 90.0
+            },
+            {
+                "Industry": "Finance & Insurance",
+                "Short": "Finance",
+                "Migrant": 23.1,
+                "GDP": 125966,
+                "Sector": "Finance",
+                "x": 518.0,
+                "y": 210.0,
+                "r": 72.6
+            },
+            {
+                "Industry": "Retail Trade",
+                "Short": "Retail",
+                "Migrant": 13.7,
+                "GDP": 115270,
+                "Sector": "Trade",
+                "x": 226.1,
+                "y": 323.5,
+                "r": 70.2
+            },
+            {
+                "Industry": "Wholesale Trade",
+                "Short": "Wholesale",
+                "Migrant": 17.2,
+                "GDP": 106035,
+                "Sector": "Trade",
+                "x": 454.4,
+                "y": 341.6,
+                "r": 68.1
+            },
+            {
+                "Industry": "Admin & Support",
+                "Short": "Admin",
+                "Migrant": 17.2,
+                "GDP": 90499,
+                "Sector": "Business",
+                "x": 192.0,
+                "y": 184.8,
+                "r": 64.1
+            },
+            {
+                "Industry": "Accom & Food",
+                "Short": "Accom & Food",
+                "Migrant": 17.6,
+                "GDP": 64388,
+                "Sector": "Hospitality",
+                "x": 275.5,
+                "y": 77.5,
+                "r": 56.6
+            },
+            {
+                "Industry": "Mining",
+                "Short": "Mining",
+                "Migrant": 12.7,
+                "GDP": 57726,
+                "Sector": "Resources",
+                "x": 407.5,
+                "y": 69.3,
+                "r": 54.4
+            },
+            {
+                "Industry": "Agriculture",
+                "Short": "Agriculture",
+                "Migrant": 6.6,
+                "GDP": 49807,
+                "Sector": "Resources",
+                "x": 517.8,
+                "y": 73.9,
+                "r": 51.5
+            },
+            {
+                "Industry": "Professional Svcs",
+                "Short": "Prof Services",
+                "Migrant": 22.4,
+                "GDP": 46753,
+                "Sector": "Business",
+                "x": 153.2,
+                "y": 72.6,
+                "r": 50.4
+            },
+            {
+                "Industry": "Other Services",
+                "Short": "Other Svcs",
+                "Migrant": 13.9,
+                "GDP": 42875,
+                "Sector": "Business",
+                "x": 111.2,
+                "y": 277.0,
+                "r": 48.8
+            },
+            {
+                "Industry": "Construction",
+                "Short": "Construction",
+                "Migrant": 11.0,
+                "GDP": 42419,
+                "Sector": "Industry",
+                "x": 582.2,
+                "y": 317.8,
+                "r": 48.6
+            },
+            {
+                "Industry": "Manufacturing",
+                "Short": "Manufacturing",
+                "Migrant": 17.0,
+                "GDP": 37870,
+                "Sector": "Industry",
+                "x": 608.7,
+                "y": 125.9,
+                "r": 46.6
+            },
+            {
+                "Industry": "Transport",
+                "Short": "Transport",
+                "Migrant": 17.3,
+                "GDP": 35764,
+                "Sector": "Logistics",
+                "x": 339.8,
+                "y": 369.7,
+                "r": 45.7
+            },
+            {
+                "Industry": "IT & Telecom",
+                "Short": "IT & Telecom",
+                "Migrant": 20.9,
+                "GDP": 24069,
+                "Sector": "Technology",
+                "x": 81.4,
+                "y": 167.1,
+                "r": 39.3
+            },
+            {
+                "Industry": "Arts & Recreation",
+                "Short": "Arts & Rec",
+                "Migrant": 11.4,
+                "GDP": 20523,
+                "Sector": "Recreation",
+                "x": 128.4,
+                "y": 381.1,
+                "r": 36.9
+            },
+            {
+                "Industry": "Real Estate",
+                "Short": "Real Estate",
+                "Migrant": 15.0,
+                "GDP": 10566,
+                "Sector": "Finance",
+                "x": 213.8,
+                "y": 22.2,
+                "r": 22.0
+            }
+        ]
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "circle",
+                "stroke": "white",
+                "strokeWidth": 1.5
+            },
+            "params": [
+                {
+                    "name": "sector_select",
+                    "select": {
+                        "type": "point",
+                        "fields": [
+                            "Sector"
+                        ]
+                    },
+                    "bind": "legend"
+                }
+            ],
+            "encoding": {
+                "x": {
+                    "field": "x",
+                    "type": "quantitative",
+                    "axis": null,
+                    "scale": {
+                        "domain": [
+                            0,
+                            700
+                        ]
+                    }
+                },
+                "y": {
+                    "field": "y",
+                    "type": "quantitative",
+                    "axis": null,
+                    "scale": {
+                        "domain": [
+                            0,
+                            420
+                        ]
+                    }
+                },
+                "size": {
+                    "field": "r",
+                    "type": "quantitative",
+                    "scale": {
+                        "range": [
+                            1900,
+                            32000
+                        ]
+                    },
+                    "legend": null
+                },
+                "color": {
+                    "field": "Migrant",
+                    "type": "quantitative",
+                    "scale": {
+                        "scheme": "yelloworangered",
+                        "domain": [
+                            5,
+                            25
+                        ]
+                    },
+                    "legend": {
+                        "title": "Migrant share (%)",
+                        "orient": "bottom-right",
+                        "direction": "horizontal",
+                        "titleOrient": "top",
+                        "gradientLength": 120
+                    }
+                },
+                "opacity": {
+                    "condition": {
+                        "param": "sector_select",
+                        "value": 0.88
+                    },
+                    "value": 0.08
+                },
+                "tooltip": [
+                    {
+                        "field": "Industry",
+                        "type": "nominal",
+                        "title": "Industry"
+                    },
+                    {
+                        "field": "Sector",
+                        "type": "nominal",
+                        "title": "Sector"
+                    },
+                    {
+                        "field": "Migrant",
+                        "type": "quantitative",
+                        "title": "Migrant share (%)",
+                        "format": ".1f"
+                    },
+                    {
+                        "field": "GDP",
+                        "type": "quantitative",
+                        "title": "GDP ($M)",
+                        "format": ",.0f"
+                    }
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "fontSize": 11,
+                "fontWeight": "bold",
+                "align": "center",
+                "baseline": "middle"
+            },
+            "encoding": {
+                "x": {
+                    "field": "x",
+                    "type": "quantitative",
+                    "scale": {
+                        "domain": [
+                            0,
+                            700
+                        ]
+                    }
+                },
+                "y": {
+                    "field": "y",
+                    "type": "quantitative",
+                    "scale": {
+                        "domain": [
+                            0,
+                            420
+                        ]
+                    }
+                },
+                "text": {
+                    "field": "Short",
+                    "type": "nominal"
+                },
+                "opacity": {
+                    "condition": {
+                        "param": "sector_select",
+                        "value": 1
+                    },
+                    "value": 0.08
+                },
+                "color": {
+                    "condition": {
+                        "test": "datum.Migrant > 18",
+                        "value": "white"
+                    },
+                    "value": "#222222"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "fontSize": 10,
+                "align": "center",
+                "baseline": "middle",
+                "dy": 14
+            },
+            "encoding": {
+                "x": {
+                    "field": "x",
+                    "type": "quantitative",
+                    "scale": {
+                        "domain": [
+                            0,
+                            700
+                        ]
+                    }
+                },
+                "y": {
+                    "field": "y",
+                    "type": "quantitative",
+                    "scale": {
+                        "domain": [
+                            0,
+                            420
+                        ]
+                    }
+                },
+                "text": {
+                    "field": "Migrant",
+                    "type": "quantitative",
+                    "format": ".1f"
+                },
+                "opacity": {
+                    "condition": {
+                        "param": "sector_select",
+                        "value": 0.8
+                    },
+                    "value": 0.05
+                },
+                "color": {
+                    "condition": {
+                        "test": "datum.Migrant > 18",
+                        "value": "white"
+                    },
+                    "value": "#444444"
+                }
+            }
+        }
+    ],
+    "config": {
+        "font": "Inter, sans-serif",
+        "background": "transparent",
+        "view": {
+            "stroke": null
+        },
+        "axis": {
+            "labelFont": "Inter, sans-serif",
+            "titleFont": "Inter, sans-serif",
+            "labelColor": "#8898ba",
+            "titleColor": "#eef1ff",
+            "tickColor": "rgba(255,255,255,0.15)",
+            "domainColor": "rgba(255,255,255,0.15)",
+            "gridColor": "rgba(255,255,255,0.08)",
+            "grid": true,
+            "labelFontSize": 11,
+            "titleFontSize": 12,
+            "titlePadding": 12
+        },
+        "title": {
+            "font": "Inter, sans-serif",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "color": "#eef1ff",
+            "subtitleFont": "Inter, sans-serif",
+            "subtitleFontSize": 12,
+            "subtitleColor": "#8898ba",
+            "subtitlePadding": 6
+        },
+        "legend": {
+            "labelFont": "Inter, sans-serif",
+            "titleFont": "Inter, sans-serif",
+            "labelColor": "#8898ba",
+            "titleColor": "#eef1ff",
+            "labelFontSize": 11,
+            "titleFontSize": 12,
+            "symbolSize": 100
+        },
+        "text": {
+            "font": "Inter, sans-serif",
+            "color": "#eef1ff"
+        }
+    }
+}

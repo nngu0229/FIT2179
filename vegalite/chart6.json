@@ -98,22 +98,22 @@
                     },
                     "scale": {
                         "domain": [
-                            "Special Category",
-                            "Visitor",
+                            "Temporary Resident (Skilled Employment)",
                             "Student",
                             "Working Holiday Maker",
-                            "Temporary Resident (Skilled Employment)",
+                            "Visitor",
+                            "Special Category",
                             "Bridging",
                             "Other"
                         ],
                         "range": [
-                            "#480CA8",
-                            "#E80054",
-                            "#FF69B4",
-                            "#7209B7",
-                            "#560BAD",
-                            "#F72585",
-                            "#00234A"
+                            "#10d9a0",
+                            "#22d3ee",
+                            "#06b6d4",
+                            "#0284c7",
+                            "#a78bfa",
+                            "#6366f1",
+                            "#4e5c7a"
                         ]
                     },
                     "legend": {
@@ -154,12 +154,13 @@
             },
             "mark": {
                 "type": "rule",
-                "color": "white",
+                "color": "#eef1ff",
                 "strokeDash": [
                     4,
                     4
                 ],
-                "strokeWidth": 1.5
+                "strokeWidth": 1.5,
+                "opacity": 0.5
             },
             "encoding": {
                 "x": {
@@ -184,7 +185,8 @@
                 "dy": -6,
                 "fontSize": 11,
                 "fontStyle": "italic",
-                "color": "white"
+                "color": "#eef1ff",
+                "opacity": 0.8
             },
             "encoding": {
                 "x": {
@@ -202,28 +204,46 @@
         }
     ],
     "config": {
+        "font": "Inter, sans-serif",
+        "background": "transparent",
         "view": {
             "stroke": null
         },
         "axis": {
+            "labelFont": "Inter, sans-serif",
+            "titleFont": "Inter, sans-serif",
+            "labelColor": "#8898ba",
+            "titleColor": "#eef1ff",
+            "tickColor": "rgba(255,255,255,0.15)",
+            "domainColor": "rgba(255,255,255,0.15)",
+            "gridColor": "rgba(255,255,255,0.08)",
+            "grid": true,
             "labelFontSize": 11,
             "titleFontSize": 12,
-            "labelColor": "#ffffff",
-            "titleColor": "#ffffff",
-            "tickColor": "#ffffff",
-            "domainColor": "#ffffff",
-            "gridColor": "rgba(255,255,255,0.2)"
+            "titlePadding": 12
         },
         "title": {
-            "color": "#ffffff",
-            "subtitleColor": "#ffffff"
+            "font": "Inter, sans-serif",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "color": "#eef1ff",
+            "subtitleFont": "Inter, sans-serif",
+            "subtitleFontSize": 12,
+            "subtitleColor": "#8898ba",
+            "subtitlePadding": 6
         },
         "legend": {
-            "labelColor": "#ffffff",
-            "titleColor": "#ffffff"
+            "labelFont": "Inter, sans-serif",
+            "titleFont": "Inter, sans-serif",
+            "labelColor": "#8898ba",
+            "titleColor": "#eef1ff",
+            "labelFontSize": 11,
+            "titleFontSize": 12,
+            "symbolSize": 100
         },
         "text": {
-            "color": "#ffffff"
+            "font": "Inter, sans-serif",
+            "color": "#eef1ff"
         }
     }
 }

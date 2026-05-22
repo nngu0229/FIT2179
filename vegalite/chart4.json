@@ -19,7 +19,8 @@
     ],
     "mark": {
         "type": "rect",
-        "cornerRadius": 0
+        "cornerRadius": 0,
+        "opacity": 1
     },
     "encoding": {
         "x": {
@@ -44,16 +45,16 @@
             "scale": {
                 "domain": [
                     50,
-                    15000
+                    8000
                 ],
                 "range": [
-                    "#E7B2DF",
-                    "#CF68C0",
-                    "#8B38BA",
-                    "#8626B2",
-                    "#5D17B5",
-                    "#5518C1",
-                    "#0400DA"
+                    "#fbbf24",
+                    "#faaa2e",
+                    "#f99538",
+                    "#f87f42",
+                    "#f76a4c",
+                    "#f55455",
+                    "#f43f5e"
                 ]
             },
             "legend": {
@@ -84,26 +85,46 @@
         "subtitle": "Temporary skilled migrant workers by industry and state, 2022–23"
     },
     "config": {
-        "axis": {
-            "labelColor": "#ffffff",
-            "titleColor": "#ffffff",
-            "tickColor": "#ffffff",
-            "domainColor": "#ffffff",
-            "gridColor": "rgba(255,255,255,0.2)"
-        },
-        "title": {
-            "color": "#ffffff",
-            "subtitleColor": "#ffffff"
-        },
-        "legend": {
-            "labelColor": "#ffffff",
-            "titleColor": "#ffffff"
-        },
-        "text": {
-            "color": "#ffffff"
-        },
+        "font": "Inter, sans-serif",
+        "background": "transparent",
         "view": {
             "stroke": null
+        },
+        "axis": {
+            "labelFont": "Inter, sans-serif",
+            "titleFont": "Inter, sans-serif",
+            "labelColor": "#8898ba",
+            "titleColor": "#eef1ff",
+            "tickColor": "rgba(255,255,255,0.15)",
+            "domainColor": "rgba(255,255,255,0.15)",
+            "gridColor": "rgba(255,255,255,0.08)",
+            "grid": false,
+            "labelFontSize": 11,
+            "titleFontSize": 12,
+            "titlePadding": 12
+        },
+        "title": {
+            "font": "Inter, sans-serif",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "color": "#eef1ff",
+            "subtitleFont": "Inter, sans-serif",
+            "subtitleFontSize": 12,
+            "subtitleColor": "#8898ba",
+            "subtitlePadding": 6
+        },
+        "legend": {
+            "labelFont": "Inter, sans-serif",
+            "titleFont": "Inter, sans-serif",
+            "labelColor": "#8898ba",
+            "titleColor": "#eef1ff",
+            "labelFontSize": 11,
+            "titleFontSize": 12,
+            "symbolSize": 100
+        },
+        "text": {
+            "font": "Inter, sans-serif",
+            "color": "#eef1ff"
         }
     }
 }
