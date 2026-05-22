@@ -19,7 +19,7 @@
     ],
     "mark": {
         "type": "rect",
-        "cornerRadius": 2
+        "cornerRadius": 0
     },
     "encoding": {
         "x": {

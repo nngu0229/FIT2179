@@ -11,7 +11,8 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
 
     <!-- Vega-Lite -->
@@ -25,278 +26,335 @@
 
 <body>
 
-    <!-- Header Banner -->
-    <header class="header-banner">
-        <div class="header-banner-top">
-            <div class="header-banner-left">Migrant in Australia</div>
-            <div class="header-banner-right">2026</div>
+    <!-- ═══════════════════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════════════════ -->
+    <header class="hero">
+        <div class="hero-inner">
+            <div class="hero-eyebrow">Australia &nbsp;·&nbsp; Data Story &nbsp;·&nbsp; 2026</div>
+
+            <h1 class="hero-title">
+                How Immigration <span>Powers</span><br />
+                Australia's Workforce &amp; Economy
+            </h1>
+
+            <p class="hero-subtitle">
+                When a nation opens its doors — a data story on how overseas-born workers
+                silently underpin every pillar of the Australian economy.
+            </p>
+
+            <!-- Key stats row -->
+            <div class="hero-stats">
+                <div class="stat-pill">
+                    <span class="stat-number">30%</span>
+                    <span class="stat-label">Overseas-Born Share of Population</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="stat-number amber">3</span>
+                    <span class="stat-label">Decades of Net Migration Growth</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="stat-number teal">6</span>
+                    <span class="stat-label">States Tracked</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="stat-number rose">7</span>
+                    <span class="stat-label">Data Visualisations</span>
+                </div>
+            </div>
+
+            <div class="hero-divider"></div>
         </div>
-        <h1 class="header-title">How Immigration Powers Australia's Workforce and Economy</h1>
     </header>
 
-    <!-- Main Container -->
+    <!-- ═══════════════════════════════════════════════════
+       STICKY NAV
+  ═══════════════════════════════════════════════════ -->
+    <nav class="section-nav" aria-label="Section navigation">
+        <div class="section-nav-inner">
+            <a href="#section-1" class="nav-link">The Big Picture</a>
+            <a href="#section-2" class="nav-link">Workforce Impact</a>
+            <a href="#section-3" class="nav-link">Filling Skill Gaps</a>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════════
+       MAIN CONTENT
+  ═══════════════════════════════════════════════════ -->
     <main class="container">
 
-        <!-- ═══════════════════════════════════════════════════
-         SECTION 1: The Big Picture
-    ══════════════════════════════════════════════════════ -->
-        <section class="section">
-            <h2 class="section-title">1. The Big Picture</h2>
+        <!-- ──────────────────────────────────────────────
+         SECTION 1 — The Big Picture
+    ────────────────────────────────────────────── -->
+        <section class="section" id="section-1">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <div>
+                    <h2 class="section-title">The Big Picture</h2>
+                </div>
+            </div>
+
             <p class="section-description">
-                Australia's economy has been strongly shaped by immigration, as migrants bring skills, labour, and
-                cultural diversity
-                into the workforce. This visualisation explores how immigration contributes to economic growth by
-                showing where migrants
-                settle, which industries they support, and how they help address labour demand. Rather than viewing
-                immigration only as
-                population growth, this project presents it as an important force behind Australia's workforce and
-                long-term economic
-                development.
+                Australia's economy has been strongly shaped by immigration. Migrants bring skills, labour, and cultural
+                diversity into the workforce. This visualisation explores how immigration contributes to economic growth
+                by
+                showing where migrants settle, which industries they support, and how they help address labour demand.
+                Rather than viewing immigration only as population growth, this project presents it as an important
+                force
+                behind Australia's workforce and long-term economic development.
             </p>
+
+            <div class="section-sep"></div>
 
             <!-- Row 1: Chart 1 + Chart 2 -->
             <div class="grid-2">
 
-                <!-- Chart 1 Card -->
-                <div class="card-wrapper">
-                    <div class="chart-card">
-                        <div class="card-title-block">Australia's Overseas-Born Population Continues to Rise</div>
-                        <p class="card-description">
-                            Australia's population growth has been closely tied to net overseas migration rather than
-                            natural population
-                            increase alone. While natural increase remained relatively stable over time, migration
-                            became the largest
-                            contributor to total population growth, particularly after the reopening of international
-                            borders following
-                            COVID-19.
-                        </p>
-                        <div class="chart-container" id="chart1"></div>
-                    </div>
+                <!-- Chart 1 -->
+                <div class="chart-card">
+                    <span class="card-tag">Population Growth</span>
+                    <h3 class="card-title">Australia's Overseas-Born Population Continues to Rise</h3>
+                    <p class="card-description">
+                        Australia's population growth has been closely tied to net overseas migration rather than
+                        natural
+                        increase alone. Migration became the largest contributor to total population growth,
+                        particularly
+                        after the reopening of international borders following COVID-19.
+                    </p>
+                    <div class="chart-container" id="chart1"></div>
                 </div>
 
-                <!-- Chart 2 Card -->
-                <div class="card-wrapper">
-                    <div class="chart-card">
-                        <div class="card-title-block">Where Migrants Settle in Australia</div>
-                        <p class="card-description">
-                            Migrants are not evenly distributed across Australia. States such as Western Australia,
-                            Victoria, and
-                            New South Wales consistently show higher overseas-born population shares, reflecting their
-                            stronger
-                            links to jobs, universities, and urban economic centres. The slider shows how migrant
-                            settlement has grown across most states from 2001 to 2021.
-                        </p>
-                        <div class="chart-container" id="chart2"></div>
-                    </div>
+                <!-- Chart 2 -->
+                <div class="chart-card">
+                    <span class="card-tag">Settlement Patterns</span>
+                    <h3 class="card-title">Where Migrants Settle in Australia</h3>
+                    <p class="card-description">
+                        Migrants are not evenly distributed across Australia. States such as Western Australia,
+                        Victoria,
+                        and New South Wales consistently show higher overseas-born population shares, reflecting their
+                        stronger
+                        links to jobs, universities, and urban economic centres. The slider shows how migrant settlement
+                        has
+                        grown from 2001 to 2021.
+                    </p>
+                    <div class="chart-container" id="chart2"></div>
                 </div>
 
             </div>
 
-            <!-- Row 2: Chart 3 + Plain Text Card -->
-            <div class="grid-wide-narrow">
+            <!-- Row 2: Chart 3 full width -->
+            <div class="grid-full">
 
-                <!-- Chart 3 Card -->
-                <div class="card-wrapper">
-                    <div class="chart-card">
-                        <div class="card-title-block">Top Migrant-Origin Country in Australia</div>
-                        <p class="card-description">
-                            Australia's migrant population comes from a wide range of countries, reflecting the nation's
-                            multicultural
-                            identity and global migration links. Countries such as England, India, China, and New
-                            Zealand represent some of the largest overseas-born communities, contributing significantly
-                            to Australia's workforce, education sector, and economic growth.
-                        </p>
-                        <div class="chart-container" id="chart3"></div>
-                    </div>
+                <!-- Chart 3 -->
+                <div class="chart-card">
+                    <span class="card-tag">Country of Origin</span>
+                    <h3 class="card-title">Top Migrant-Origin Countries in Australia</h3>
+                    <p class="card-description">
+                        Australia's migrant population comes from a wide range of countries, reflecting the nation's
+                        multicultural identity and global migration links. Countries such as England, India, China, and
+                        New Zealand represent some of the largest overseas-born communities, contributing significantly
+                        to
+                        Australia's workforce, education sector, and economic growth.
+                    </p>
+                    <div class="chart-container" id="chart3"></div>
                 </div>
 
             </div>
-            </div <p class="section-description" style="margin-top: 40px; margin-bottom: 0;">
-            Behind Australia's economic growth is a workforce quietly holding industries together. Migrants make
-            up a significant
-            share of workers across nearly every sector — from hospitals and construction sites to tech offices
-            and restaurant
-            kitchens. But their contribution isn't spread evenly. Some industries lean heavily on overseas-born
-            workers to fill
-            roles that not enough Australians are taking up. This section maps where migrants are working across
-            Australia —
-            by industry and by state — revealing the invisible backbone of the Australian labour market.
-            </p>
+
+            <!-- Transition insight box -->
+            <div class="insight-box">
+                <p>
+                    Behind Australia's economic growth is a workforce quietly holding industries together.
+                    Migrants make up a significant share of workers across nearly every sector — from hospitals and
+                    construction sites to tech offices and restaurant kitchens. But their contribution isn't spread
+                    evenly.
+                    Some industries lean heavily on overseas-born workers to fill roles that not enough Australians are
+                    taking up. <strong>The next section maps where migrants are working across Australia</strong> — by
+                    industry and by state — revealing the invisible backbone of the Australian labour market.
+                </p>
+            </div>
 
         </section>
 
-        <!-- ═══════════════════════════════════════════════════
-         SECTION 2: Migrants Power the Workforce
-    ══════════════════════════════════════════════════════ -->
-        <section class="section">
-            <h2 class="section-title">2. Migrants Power the Workforce</h2>
+        <!-- ──────────────────────────────────────────────
+         SECTION 2 — Migrants Power the Workforce
+    ────────────────────────────────────────────── -->
+        <section class="section" id="section-2">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <div>
+                    <h2 class="section-title">Migrants Power the Workforce</h2>
+                </div>
+            </div>
+
             <p class="section-description">
                 Behind Australia's economic growth is a workforce quietly holding industries together. Migrants make up
-                a significant
-                share of workers across nearly every sector — from hospitals and construction sites to tech offices and
-                restaurant
-                kitchens. But their contribution isn't spread evenly. Some industries lean heavily on overseas-born
-                workers to fill
-                roles that not enough Australians are taking up. This section maps where migrants are working across
-                Australia —
-                by industry and by state — revealing the invisible backbone of the Australian labour market.
+                a
+                significant share of workers across nearly every sector — from hospitals and construction sites to tech
+                offices and restaurant kitchens. But their contribution isn't spread evenly. Some industries lean
+                heavily on
+                overseas-born workers to fill roles that not enough Australians are taking up. This section maps where
+                migrants are working across Australia — by industry and by state — revealing the invisible backbone of
+                the
+                Australian labour market.
             </p>
+
+            <div class="section-sep"></div>
 
             <!-- Chart 4 + Chart 5 -->
             <div class="grid-2">
 
-                <!-- Chart 4 Card -->
-                <div class="card-wrapper">
-                    <div class="chart-card">
-                        <div class="card-title-block">Migrant Worker Support Key Australian Industries</div>
-                        <p class="card-description">
-                            Australia's population growth has been closely tied to net overseas migration rather than
-                            natural population
-                            increase alone. While natural increase remained relatively stable over time, migration
-                            became the largest
-                            contributor to total population growth, particularly after the reopening of international
-                            borders following
-                            COVID-19.
-                        </p>
-                        <div class="chart-container" id="chart4"></div>
-                    </div>
+                <!-- Chart 4 -->
+                <div class="chart-card">
+                    <span class="card-tag">Industry Breakdown</span>
+                    <h3 class="card-title">Migrant Workers Support Key Australian Industries</h3>
+                    <p class="card-description">
+                        Certain industries rely disproportionately on overseas-born workers. Healthcare, construction,
+                        professional services, and accommodation sectors all show elevated shares of migrant employees,
+                        many of whom fill critical shortages in specialised roles.
+                    </p>
+                    <div class="chart-container" id="chart4"></div>
                 </div>
 
-                <!-- Chart 5 Card -->
-                <div class="card-wrapper">
-                    <div class="chart-card">
-                        <div class="card-title-block">Top Occupations Filled by Skilled Migrants</div>
-                        <p class="card-description">
-                            Skilled migrants play an important role in filling workforce shortages across Australia's
-                            essential industries. Healthcare, construction, hospitality, and technology-related
-                            occupations consistently rely on migrant workers to meet growing labour demand and support
-                            economic productivity.
-                        </p>
-                        <div class="chart-container" id="chart5"></div>
-                    </div>
+                <!-- Chart 5 -->
+                <div class="chart-card">
+                    <span class="card-tag">Occupational Roles</span>
+                    <h3 class="card-title">Top Occupations Filled by Skilled Migrants</h3>
+                    <p class="card-description">
+                        Skilled migrants play an important role in filling workforce shortages across Australia's
+                        essential
+                        industries. Healthcare, construction, hospitality, and technology-related occupations
+                        consistently rely
+                        on migrant workers to meet growing labour demand and support economic productivity.
+                    </p>
+                    <div class="chart-container" id="chart5"></div>
                 </div>
 
             </div>
 
-            <!-- Additional description below the row -->
-            <p class="section-description" style="margin-top: 40px; margin-bottom: 0;">
-                Behind Australia's economic growth is a workforce quietly holding industries together. Migrants make up
-                a significant
-                share of workers across nearly every sector — from hospitals and construction sites to tech offices and
-                restaurant
-                kitchens. But their contribution isn't spread evenly. Some industries lean heavily on overseas-born
-                workers to fill
-                roles that not enough Australians are taking up. This section maps where migrants are working across
-                Australia —
-                by industry and by state — revealing the invisible backbone of the Australian labour market.
-            </p>
+            <!-- Transition insight box -->
+            <div class="insight-box">
+                <p>
+                    While migrants fill immediate workforce gaps across many sectors, a more pressing question is
+                    whether
+                    migration is being strategically directed to address Australia's <strong>critical skill
+                        shortages</strong>.
+                    The following section examines how skilled migration pathways align — or misalign — with the
+                    occupational needs projected for Australia's future economy.
+                </p>
+            </div>
+
         </section>
 
-        <!-- ═══════════════════════════════════════════════════
-         SECTION 3: Filling Australia's Skill Gaps
-    ══════════════════════════════════════════════════════ -->
-        <section class="section">
-            <h2 class="section-title">3. Filling Australia's Skill Gaps</h2>
+        <!-- ──────────────────────────────────────────────
+         SECTION 3 — Filling Australia's Skill Gaps
+    ────────────────────────────────────────────── -->
+        <section class="section" id="section-3">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <div>
+                    <h2 class="section-title">Filling Australia's Skill Gaps</h2>
+                </div>
+            </div>
+
             <p class="section-description">
-                Behind Australia's economic growth is a workforce quietly holding industries together. Migrants make up
-                a significant
-                share of workers across nearly every sector — from hospitals and construction sites to tech offices and
-                restaurant
-                kitchens. But their contribution isn't spread evenly. Some industries lean heavily on overseas-born
-                workers to fill
-                roles that not enough Australians are taking up. This section maps where migrants are working across
-                Australia —
-                by industry and by state — revealing the invisible backbone of the Australian labour market.
+                Australia's economy is increasingly dependent on targeted skilled migration to address chronic shortages
+                in key professions. Whether it is nurses in regional hospitals, engineers in mining, or software
+                developers
+                in capital cities, the evidence points to a labour market that cannot sustain growth without
+                international
+                talent. This section examines the distribution of skill gaps and the role migrants play in closing them.
             </p>
+
+            <div class="section-sep"></div>
 
             <!-- Chart 6 + Chart 7 -->
             <div class="grid-2">
 
-                <!-- Chart 6 Card -->
-                <div class="card-wrapper">
-                    <div class="chart-card">
-                        <div class="card-title-block">Migrant Worker Support Key Australian Industries</div>
-                        <p class="card-description">
-                            Australia's population growth has been closely tied to net overseas migration rather than
-                            natural population
-                            increase alone. While natural increase remained relatively stable over time, migration
-                            became the largest
-                            contributor to total population growth, particularly after the reopening of international
-                            borders following
-                            COVID-19.
-                        </p>
-                        <div class="chart-container" id="chart6"></div>
-                    </div>
+                <!-- Chart 6 -->
+                <div class="chart-card">
+                    <span class="card-tag">Skills Analysis</span>
+                    <h3 class="card-title">Industries with the Highest Migrant Skill Reliance</h3>
+                    <p class="card-description">
+                        Certain high-skill sectors — including information technology, medical specialties, and advanced
+                        manufacturing — show a particularly strong dependence on overseas-qualified workers,
+                        highlighting
+                        structural gaps in Australia's domestic training pipeline.
+                    </p>
+                    <div class="chart-container" id="chart6"></div>
                 </div>
 
-                <!-- Chart 7 Card -->
-                <div class="card-wrapper">
-                    <div class="chart-card">
-                        <div class="card-title-block">Top Occupations Filled by Skilled Migrants</div>
-                        <p class="card-description">
-                            Skilled migrants play an important role in filling workforce shortages across Australia's
-                            essential industries. Healthcare, construction, hospitality, and technology-related
-                            occupations consistently rely on migrant workers to meet growing labour demand and support
-                            economic productivity.
-                        </p>
-                        <div class="chart-container" id="chart7"></div>
-                    </div>
+                <!-- Chart 7 -->
+                <div class="chart-card">
+                    <span class="card-tag">Economic Contribution</span>
+                    <h3 class="card-title">How Skilled Migrants Drive Economic Output</h3>
+                    <p class="card-description">
+                        Skilled migrants contribute disproportionately to Australia's GDP relative to their population
+                        share.
+                        By taking roles in high-value sectors, they not only fill vacancies but actively expand
+                        Australia's
+                        productive capacity and international competitiveness.
+                    </p>
+                    <div class="chart-container" id="chart7"></div>
                 </div>
 
             </div>
+
         </section>
 
     </main>
 
-    <!-- Vega-Lite Embedding Logic -->
+    <!-- ═══════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════ -->
+    <footer>
+        <div class="footer-inner">
+            <p>Data sources: Australian Bureau of Statistics (ABS) · Department of Home Affairs · OECD Migration Outlook
+            </p>
+            <p style="margin-top: 8px;">FIT2179 Data Visualisation &nbsp;·&nbsp; Monash University &nbsp;·&nbsp; 2026
+            </p>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════════
+       VEGA-LITE EMBEDDING LOGIC
+  ═══════════════════════════════════════════════════ -->
     <script>
-        // Shared embedding configuration
         const embedOpt = {
             renderer: "svg",
             actions: false,
             theme: "default"
         };
 
-        // Helper function to load and embed Vega-Lite chart specs
         async function embedChart(specPath, divId) {
             try {
                 const res = await fetch(specPath);
-                if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
                 const spec = await res.json();
 
-                // Responsive modifications
                 spec.width = "container";
-                // Remove hardcoded dimensions to let CSS flex/grid handle it smoothly
-                if (spec.height) {
-                    // If height is a static number, we can scale it nicely
-                    spec.height = 360;
-                }
+                if (spec.height) spec.height = 360;
 
-                // For layered charts, ensure width propagates to sub-layers
                 if (spec.layer) {
                     spec.layer.forEach(layer => {
                         if (layer.width === undefined) layer.width = "container";
                     });
                 }
 
-                // Configure theme / backgrounds to integrate beautifully with the green container
                 if (!spec.config) spec.config = {};
                 spec.config.background = "transparent";
                 spec.config.view = { stroke: null };
 
                 await vegaEmbed(`#${divId}`, spec, embedOpt);
             } catch (err) {
-                console.error(`Failed to load or render chart ${specPath}:`, err);
+                console.error(`Failed to load chart ${specPath}:`, err);
                 document.getElementById(divId).innerHTML = `
-          <div style="color: #ef4444; font-weight: 500; font-size: 0.9rem; text-align: center;">
-            ⚠️ Failed to load visualization.<br/>
-            <span style="font-size: 0.75rem; color: #991b1b; font-family: monospace;">(${err.message})</span>
-          </div>
-        `;
+          <div class="chart-error">
+            ⚠️ Failed to load visualisation<br/>
+            <span style="font-size:0.72rem;font-family:monospace;color:#7a8499;">${err.message}</span>
+          </div>`;
             }
         }
 
-        // Load each Vega-Lite JSON specification
         embedChart("vegalite/chart1.json", "chart1");
         embedChart("vegalite/chart2.json", "chart2");
         embedChart("vegalite/chart3.json", "chart3");

@@ -1,192 +1,192 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Annual Population Change - Australia",
-    "width": 700,
-    "height": 400,
-    "data": {
-        "url": "https://raw.githubusercontent.com/nngu0229/FIT2179/refs/heads/main/data/Chart1-annual%20population%20change.csv"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Annual Population Change - Australia",
+  "width": 700,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/nngu0229/FIT2179/refs/heads/main/data/Chart1-annual%20population%20change.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.Time != null && datum.Time != '' && datum['Total growth'] != null && datum['Total growth'] != ''"
     },
-    "transform": [
-        {
-            "filter": "datum.Time != null && datum.Time != '' && datum['Total growth'] != null && datum['Total growth'] != ''"
+    {
+      "calculate": "toNumber(replace(datum['Natural increase'], ',', ''))",
+      "as": "Natural Increase"
+    },
+    {
+      "calculate": "toNumber(replace(datum['Net overseas migration'], ',', ''))",
+      "as": "Net Overseas Migration"
+    },
+    {
+      "calculate": "toNumber(replace(datum['Total growth'], ',', ''))",
+      "as": "Total Growth"
+    },
+    {
+      "fold": [
+        "Natural Increase",
+        "Net Overseas Migration",
+        "Total Growth"
+      ],
+      "as": [
+        "Series",
+        "Value"
+      ]
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {
+            "start": "20-Dec",
+            "end": "23-Dec"
+          }
+        ]
+      },
+      "mark": {
+        "type": "rect",
+        "opacity": 0.12,
+        "color": "#ffffff"
+      },
+      "encoding": {
+        "x": {
+          "field": "start",
+          "type": "ordinal"
         },
-        {
-            "calculate": "toNumber(replace(datum['Natural increase'], ',', ''))",
-            "as": "Natural Increase"
+        "x2": {
+          "field": "end"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "ordinal",
+          "axis": {
+            "labelAngle": -45,
+            "labelOverlap": true,
+            "labelFontSize": 9
+          },
+          "title": "Year",
+          "fontColor": "#ffffff"
         },
-        {
-            "calculate": "toNumber(replace(datum['Net overseas migration'], ',', ''))",
-            "as": "Net Overseas Migration"
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "title": "Annual Population Change",
+          "axis": {
+            "format": ",.0f"
+          }
         },
-        {
-            "calculate": "toNumber(replace(datum['Total growth'], ',', ''))",
-            "as": "Total Growth"
-        },
-        {
-            "fold": [
-                "Natural Increase",
-                "Net Overseas Migration",
-                "Total Growth"
+        "color": {
+          "field": "Series",
+          "type": "nominal",
+          "title": "Component",
+          "scale": {
+            "domain": [
+              "Natural Increase",
+              "Net Overseas Migration",
+              "Total Growth"
             ],
-            "as": [
-                "Series",
-                "Value"
+            "range": [
+              "#560BAD",
+              "#FFC300",
+              "#E80054"
             ]
-        }
-    ],
-    "layer": [
-        {
-            "data": {
-                "values": [
-                    {
-                        "start": "20-Dec",
-                        "end": "23-Dec"
-                    }
-                ]
-            },
-            "mark": {
-                "type": "rect",
-                "opacity": 0.12,
-                "color": "#ffffff"
-            },
-            "encoding": {
-                "x": {
-                    "field": "start",
-                    "type": "ordinal"
-                },
-                "x2": {
-                    "field": "end"
-                }
-            }
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "titleOrient": "left"
+          }
         },
-        {
-            "mark": {
-                "type": "line",
-                "strokeWidth": 3
-            },
-            "encoding": {
-                "x": {
-                    "field": "Time",
-                    "type": "ordinal",
-                    "axis": {
-                        "labelAngle": -45,
-                        "labelOverlap": true,
-                        "labelFontSize": 9
-                    },
-                    "title": "Year",
-                    "fontColor": "#ffffff"
-                },
-                "y": {
-                    "field": "Value",
-                    "type": "quantitative",
-                    "title": "Annual Population Change",
-                    "axis": {
-                        "format": ",.0f"
-                    }
-                },
-                "color": {
-                    "field": "Series",
-                    "type": "nominal",
-                    "title": "Component",
-                    "scale": {
-                        "domain": [
-                            "Natural Increase",
-                            "Net Overseas Migration",
-                            "Total Growth"
-                        ],
-                        "range": [
-                            "#560BAD",
-                            "#FFC300",
-                            "#E80054"
-                        ]
-                    },
-                    "legend": {
-                        "orient": "bottom",
-                        "direction": "horizontal",
-                        "titleOrient": "left"
-                    }
-                },
-                "tooltip": [
-                    {
-                        "field": "Time",
-                        "type": "ordinal",
-                        "title": "Quarter"
-                    },
-                    {
-                        "field": "Series",
-                        "type": "nominal",
-                        "title": "Component"
-                    },
-                    {
-                        "field": "Value",
-                        "type": "quantitative",
-                        "title": "Value",
-                        "format": ",.0f"
-                    }
-                ]
-            }
-        },
-        {
-            "data": {
-                "values": [
-                    {
-                        "Time": "21-Dec",
-                        "Value": 680000,
-                        "label": "COVID-19 border closures\nmigration drops"
-                    }
-                ]
-            },
-            "mark": {
-                "type": "text",
-                "align": "center",
-                "baseline": "middle",
-                "fontSize": 12,
-                "fontWeight": "bold",
-                "lineBreak": "\n",
-                "color": "#ffffff"
-            },
-            "encoding": {
-                "x": {
-                    "field": "Time",
-                    "type": "ordinal"
-                },
-                "y": {
-                    "field": "Value",
-                    "type": "quantitative"
-                },
-                "text": {
-                    "field": "label"
-                }
-            }
-        }
-    ],
-    "title": {
-        "text": "Annual Population Change in Australia",
-        "subtitle": "Natural Increase, Net Overseas Migration, and Total Growth (per quarter)",
-        "fontSize": 16,
-        "subtitleFontSize": 12
+        "tooltip": [
+          {
+            "field": "Time",
+            "type": "ordinal",
+            "title": "Quarter"
+          },
+          {
+            "field": "Series",
+            "type": "nominal",
+            "title": "Component"
+          },
+          {
+            "field": "Value",
+            "type": "quantitative",
+            "title": "Value",
+            "format": ",.0f"
+          }
+        ]
+      }
     },
-    "config": {
-        "axis": {
-            "labelColor": "#ffffff",
-            "titleColor": "#ffffff",
-            "tickColor": "#ffffff",
-            "domainColor": "#ffffff",
-            "gridColor": "rgba(255,255,255,0.2)"
+    {
+      "data": {
+        "values": [
+          {
+            "Time": "21-Dec",
+            "Value": 680000,
+            "label": "COVID-19 border closures\nmigration drops"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "lineBreak": "\n",
+        "color": "#ffffff"
+      },
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "ordinal"
         },
-        "title": {
-            "color": "#ffffff",
-            "subtitleColor": "#ffffff"
-        },
-        "legend": {
-            "labelColor": "#ffffff",
-            "titleColor": "#ffffff"
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
         },
         "text": {
-            "color": "#ffffff"
-        },
-        "view": {
-            "stroke": null
+          "field": "label"
         }
+      }
     }
+  ],
+  "title": {
+    "text": "Annual Population Change in Australia",
+    "subtitle": "Natural Increase, Net Overseas Migration, and Total Growth (per quarter)",
+    "fontSize": 16,
+    "subtitleFontSize": 12
+  },
+  "config": {
+    "axis": {
+      "labelColor": "#ffffff",
+      "titleColor": "#ffffff",
+      "tickColor": "#ffffff",
+      "domainColor": "#ffffff",
+      "gridColor": "rgba(255,255,255,0.2)"
+    },
+    "title": {
+      "color": "#ffffff",
+      "subtitleColor": "#ffffff"
+    },
+    "legend": {
+      "labelColor": "#ffffff",
+      "titleColor": "#ffffff"
+    },
+    "text": {
+      "color": "#ffffff"
+    },
+    "view": {
+      "stroke": null
+    }
+  }
 }
