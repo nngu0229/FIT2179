@@ -1,0 +1,664 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Migrants vs Australian-Born: Unemployment & Wages",
+        "subtitle": "Myth check — do migrants take jobs or lower wages?",
+        "fontSize": 16,
+        "subtitleFontSize": 12,
+        "anchor": "start",
+        "subtitlePadding": 8
+    },
+    "data": {
+        "url": "data/chart%2010%20-%20connected%20dot%20plot.csv"
+    },
+    "vconcat": [
+        {
+            "title": {
+                "text": "Unemployment Rate",
+                "fontSize": 13,
+                "color": "#eef1ff",
+                "font": "Inter, sans-serif"
+            },
+            "width": 500,
+            "height": 120,
+            "transform": [
+                {
+                    "filter": "datum.Metric == 'Unemployment rate (%)'"
+                }
+            ],
+            "layer": [
+                {
+                    "transform": [
+                        {
+                            "pivot": "Group",
+                            "value": "Value",
+                            "groupby": [
+                                "Metric"
+                            ]
+                        }
+                    ],
+                    "mark": {
+                        "type": "rule",
+                        "strokeWidth": 3
+                    },
+                    "encoding": {
+                        "y": {
+                            "field": "Metric",
+                            "type": "nominal",
+                            "axis": null
+                        },
+                        "x": {
+                            "field": "Australian-born",
+                            "type": "quantitative",
+                            "scale": {
+                                "domain": [
+                                    4.5,
+                                    5.0
+                                ]
+                            },
+                            "axis": {
+                                "title": "Unemployment Rate (%)",
+                                "grid": true
+                            }
+                        },
+                        "x2": {
+                            "field": "Overseas-born"
+                        },
+                        "color": {
+                            "condition": {
+                                "test": "datum['Overseas-born'] <= datum['Australian-born']",
+                                "value": "#10b981"
+                            },
+                            "value": "#f43f5e"
+                        }
+                    }
+                },
+                {
+                    "transform": [
+                        {
+                            "filter": "datum.Group == 'Australian-born'"
+                        }
+                    ],
+                    "mark": {
+                        "type": "point",
+                        "filled": true,
+                        "size": 200
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "Value",
+                            "type": "quantitative",
+                            "scale": {
+                                "domain": [
+                                    4.5,
+                                    5.0
+                                ]
+                            }
+                        },
+                        "y": {
+                            "field": "Metric",
+                            "type": "nominal",
+                            "axis": {
+                                "title": null,
+                                "labelColor": "#8898ba",
+                                "labelFontSize": 12,
+                                "labelFontWeight": "bold"
+                            }
+                        },
+                        "color": {
+                            "value": "#38bdf8"
+                        },
+                        "tooltip": [
+                            {
+                                "field": "Group",
+                                "type": "nominal"
+                            },
+                            {
+                                "field": "Value",
+                                "type": "quantitative",
+                                "title": "Unemployment (%)"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "transform": [
+                        {
+                            "filter": "datum.Group == 'Overseas-born'"
+                        }
+                    ],
+                    "mark": {
+                        "type": "point",
+                        "filled": true,
+                        "size": 200
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "Value",
+                            "type": "quantitative",
+                            "scale": {
+                                "domain": [
+                                    4.5,
+                                    5.0
+                                ]
+                            }
+                        },
+                        "y": {
+                            "field": "Metric",
+                            "type": "nominal",
+                            "axis": null
+                        },
+                        "color": {
+                            "value": "#f43f5e"
+                        },
+                        "tooltip": [
+                            {
+                                "field": "Group",
+                                "type": "nominal"
+                            },
+                            {
+                                "field": "Value",
+                                "type": "quantitative",
+                                "title": "Unemployment (%)"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "transform": [
+                        {
+                            "filter": "datum.Group == 'Australian-born'"
+                        }
+                    ],
+                    "mark": {
+                        "type": "text",
+                        "dy": -18,
+                        "fontSize": 12,
+                        "fontWeight": "bold"
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "Value",
+                            "type": "quantitative",
+                            "scale": {
+                                "domain": [
+                                    4.5,
+                                    5.0
+                                ]
+                            }
+                        },
+                        "y": {
+                            "field": "Metric",
+                            "type": "nominal",
+                            "axis": null
+                        },
+                        "text": {
+                            "field": "Value",
+                            "type": "quantitative",
+                            "format": ".1f"
+                        },
+                        "color": {
+                            "value": "#38bdf8"
+                        }
+                    }
+                },
+                {
+                    "transform": [
+                        {
+                            "filter": "datum.Group == 'Overseas-born'"
+                        }
+                    ],
+                    "mark": {
+                        "type": "text",
+                        "dy": -18,
+                        "fontSize": 12,
+                        "fontWeight": "bold"
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "Value",
+                            "type": "quantitative",
+                            "scale": {
+                                "domain": [
+                                    4.5,
+                                    5.0
+                                ]
+                            }
+                        },
+                        "y": {
+                            "field": "Metric",
+                            "type": "nominal",
+                            "axis": null
+                        },
+                        "text": {
+                            "field": "Value",
+                            "type": "quantitative",
+                            "format": ".1f"
+                        },
+                        "color": {
+                            "value": "#f43f5e"
+                        }
+                    }
+                },
+                {
+                    "transform": [
+                        {
+                            "filter": "datum.Group == 'Australian-born'"
+                        }
+                    ],
+                    "mark": {
+                        "type": "text",
+                        "dy": 22,
+                        "fontSize": 11
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "Value",
+                            "type": "quantitative",
+                            "scale": {
+                                "domain": [
+                                    4.5,
+                                    5.0
+                                ]
+                            }
+                        },
+                        "y": {
+                            "field": "Metric",
+                            "type": "nominal",
+                            "axis": null
+                        },
+                        "text": {
+                            "value": "Australian-born"
+                        },
+                        "color": {
+                            "value": "#38bdf8"
+                        }
+                    }
+                },
+                {
+                    "transform": [
+                        {
+                            "filter": "datum.Group == 'Overseas-born'"
+                        }
+                    ],
+                    "mark": {
+                        "type": "text",
+                        "dy": 22,
+                        "fontSize": 11
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "Value",
+                            "type": "quantitative",
+                            "scale": {
+                                "domain": [
+                                    4.5,
+                                    5.0
+                                ]
+                            }
+                        },
+                        "y": {
+                            "field": "Metric",
+                            "type": "nominal",
+                            "axis": null
+                        },
+                        "text": {
+                            "value": "Overseas-born"
+                        },
+                        "color": {
+                            "value": "#f43f5e"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "title": {
+                "text": "Median Weekly Earnings",
+                "fontSize": 13,
+                "color": "#eef1ff",
+                "font": "Inter, sans-serif"
+            },
+            "width": 500,
+            "height": 120,
+            "transform": [
+                {
+                    "filter": "datum.Metric == 'Median weekly earnings ($)'"
+                }
+            ],
+            "layer": [
+                {
+                    "transform": [
+                        {
+                            "pivot": "Group",
+                            "value": "Value",
+                            "groupby": [
+                                "Metric"
+                            ]
+                        }
+                    ],
+                    "mark": {
+                        "type": "rule",
+                        "strokeWidth": 3
+                    },
+                    "encoding": {
+                        "y": {
+                            "field": "Metric",
+                            "type": "nominal",
+                            "axis": null
+                        },
+                        "x": {
+                            "field": "Australian-born",
+                            "type": "quantitative",
+                            "scale": {
+                                "domain": [
+                                    500,
+                                    1200
+                                ]
+                            },
+                            "axis": {
+                                "title": "Median Weekly Earnings (AUD $)",
+                                "grid": true,
+                                "format": ",.0f"
+                            }
+                        },
+                        "x2": {
+                            "field": "Overseas-born"
+                        },
+                        "color": {
+                            "condition": {
+                                "test": "datum['Overseas-born'] >= datum['Australian-born']",
+                                "value": "#10b981"
+                            },
+                            "value": "#f43f5e"
+                        }
+                    }
+                },
+                {
+                    "transform": [
+                        {
+                            "filter": "datum.Group == 'Australian-born'"
+                        }
+                    ],
+                    "mark": {
+                        "type": "point",
+                        "filled": true,
+                        "size": 200
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "Value",
+                            "type": "quantitative",
+                            "scale": {
+                                "domain": [
+                                    500,
+                                    1200
+                                ]
+                            }
+                        },
+                        "y": {
+                            "field": "Metric",
+                            "type": "nominal",
+                            "axis": {
+                                "title": null,
+                                "labelColor": "#8898ba",
+                                "labelFontSize": 12,
+                                "labelFontWeight": "bold"
+                            }
+                        },
+                        "color": {
+                            "value": "#38bdf8"
+                        },
+                        "tooltip": [
+                            {
+                                "field": "Group",
+                                "type": "nominal"
+                            },
+                            {
+                                "field": "Value",
+                                "type": "quantitative",
+                                "title": "Weekly Earnings ($)",
+                                "format": ",.0f"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "transform": [
+                        {
+                            "filter": "datum.Group == 'Overseas-born'"
+                        }
+                    ],
+                    "mark": {
+                        "type": "point",
+                        "filled": true,
+                        "size": 200
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "Value",
+                            "type": "quantitative",
+                            "scale": {
+                                "domain": [
+                                    500,
+                                    1200
+                                ]
+                            }
+                        },
+                        "y": {
+                            "field": "Metric",
+                            "type": "nominal",
+                            "axis": null
+                        },
+                        "color": {
+                            "value": "#f43f5e"
+                        },
+                        "tooltip": [
+                            {
+                                "field": "Group",
+                                "type": "nominal"
+                            },
+                            {
+                                "field": "Value",
+                                "type": "quantitative",
+                                "title": "Weekly Earnings ($)",
+                                "format": ",.0f"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "transform": [
+                        {
+                            "filter": "datum.Group == 'Australian-born'"
+                        }
+                    ],
+                    "mark": {
+                        "type": "text",
+                        "dy": -18,
+                        "fontSize": 12,
+                        "fontWeight": "bold"
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "Value",
+                            "type": "quantitative",
+                            "scale": {
+                                "domain": [
+                                    500,
+                                    1200
+                                ]
+                            }
+                        },
+                        "y": {
+                            "field": "Metric",
+                            "type": "nominal",
+                            "axis": null
+                        },
+                        "text": {
+                            "field": "Value",
+                            "type": "quantitative",
+                            "format": ",.0f"
+                        },
+                        "color": {
+                            "value": "#38bdf8"
+                        }
+                    }
+                },
+                {
+                    "transform": [
+                        {
+                            "filter": "datum.Group == 'Overseas-born'"
+                        }
+                    ],
+                    "mark": {
+                        "type": "text",
+                        "dy": -18,
+                        "fontSize": 12,
+                        "fontWeight": "bold"
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "Value",
+                            "type": "quantitative",
+                            "scale": {
+                                "domain": [
+                                    500,
+                                    1200
+                                ]
+                            }
+                        },
+                        "y": {
+                            "field": "Metric",
+                            "type": "nominal",
+                            "axis": null
+                        },
+                        "text": {
+                            "field": "Value",
+                            "type": "quantitative",
+                            "format": ",.0f"
+                        },
+                        "color": {
+                            "value": "#f43f5e"
+                        }
+                    }
+                },
+                {
+                    "transform": [
+                        {
+                            "filter": "datum.Group == 'Australian-born'"
+                        }
+                    ],
+                    "mark": {
+                        "type": "text",
+                        "dy": 22,
+                        "fontSize": 11
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "Value",
+                            "type": "quantitative",
+                            "scale": {
+                                "domain": [
+                                    500,
+                                    1200
+                                ]
+                            }
+                        },
+                        "y": {
+                            "field": "Metric",
+                            "type": "nominal",
+                            "axis": null
+                        },
+                        "text": {
+                            "value": "Australian-born"
+                        },
+                        "color": {
+                            "value": "#38bdf8"
+                        }
+                    }
+                },
+                {
+                    "transform": [
+                        {
+                            "filter": "datum.Group == 'Overseas-born'"
+                        }
+                    ],
+                    "mark": {
+                        "type": "text",
+                        "dy": 22,
+                        "fontSize": 11
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "Value",
+                            "type": "quantitative",
+                            "scale": {
+                                "domain": [
+                                    500,
+                                    1200
+                                ]
+                            }
+                        },
+                        "y": {
+                            "field": "Metric",
+                            "type": "nominal",
+                            "axis": null
+                        },
+                        "text": {
+                            "value": "Overseas-born"
+                        },
+                        "color": {
+                            "value": "#f43f5e"
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "config": {
+        "view": {
+            "stroke": null
+        },
+        "background": "transparent",
+        "font": "Inter, sans-serif",
+        "concat": {
+            "spacing": 40
+        },
+        "title": {
+            "font": "Inter, sans-serif",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "color": "#eef1ff",
+            "subtitleFont": "Inter, sans-serif",
+            "subtitleFontSize": 12,
+            "subtitleColor": "#8898ba",
+            "subtitlePadding": 6
+        },
+        "axis": {
+            "labelFont": "Inter, sans-serif",
+            "titleFont": "Inter, sans-serif",
+            "labelColor": "#8898ba",
+            "titleColor": "#eef1ff",
+            "tickColor": "rgba(255,255,255,0.15)",
+            "domainColor": "rgba(255,255,255,0.15)",
+            "gridColor": "rgba(255,255,255,0.08)",
+            "grid": true,
+            "labelFontSize": 11,
+            "titleFontSize": 12,
+            "titlePadding": 12
+        },
+        "legend": {
+            "labelFont": "Inter, sans-serif",
+            "titleFont": "Inter, sans-serif",
+            "labelColor": "#8898ba",
+            "titleColor": "#eef1ff",
+            "labelFontSize": 11,
+            "titleFontSize": 12
+        },
+        "text": {
+            "font": "Inter, sans-serif",
+            "color": "#eef1ff"
+        }
+    }
+}

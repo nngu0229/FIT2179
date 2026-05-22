@@ -220,8 +220,8 @@
                     "type": "quantitative",
                     "scale": {
                         "range": [
-                            1900,
-                            32000
+                            1000,
+                            15000
                         ]
                     },
                     "legend": null
@@ -238,10 +238,11 @@
                     },
                     "legend": {
                         "title": "Migrant share (%)",
-                        "orient": "bottom-right",
+                        "orient": "bottom",
                         "direction": "horizontal",
-                        "titleOrient": "top",
-                        "gradientLength": 120
+                        "titleOrient": "left",
+                        "gradientLength": 160,
+                        "offset": 15
                     }
                 },
                 "opacity": {
@@ -280,7 +281,7 @@
         {
             "mark": {
                 "type": "text",
-                "fontSize": 11,
+                "fontSize": 10,
                 "fontWeight": "bold",
                 "align": "center",
                 "baseline": "middle"
@@ -329,10 +330,10 @@
         {
             "mark": {
                 "type": "text",
-                "fontSize": 10,
+                "fontSize": 8.5,
                 "align": "center",
                 "baseline": "middle",
-                "dy": 14
+                "dy": 11
             },
             "encoding": {
                 "x": {
