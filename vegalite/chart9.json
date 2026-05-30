@@ -2,10 +2,10 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
         "text": "Industries Powered by Migrant Labour",
-        "subtitle": "Circle size = GDP contribution ($M) · Colour intensity = migrant workforce share (%) · Click legend to filter",
+        "subtitle": "Circle size = GDP contribution ($M) · Colour intensity = migrant workforce share (%)",
         "fontSize": 16,
         "subtitleFontSize": 12,
-        "anchor": "start"
+        "anchor": "centre"
     },
     "width": 700,
     "height": 420,

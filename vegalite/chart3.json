@@ -53,7 +53,7 @@
             {
                 "country": "Philippines",
                 "year": "2015",
-                "pop": 241.13
+                "pop": 270.13
             },
             {
                 "country": "Philippines",
@@ -78,7 +78,7 @@
             {
                 "country": "South Africa",
                 "year": "2025",
-                "pop": 229.95
+                "pop": 250.95
             },
             {
                 "country": "Nepal",
@@ -108,7 +108,7 @@
             {
                 "country": "Malaysia",
                 "year": "2025",
-                "pop": 184.32
+                "pop": 150.32
             }
         ]
     },
@@ -142,7 +142,7 @@
                     },
                     "scale": {
                         "zero": false,
-                        "padding": 30
+                        "padding": 10
                     }
                 },
                 "color": {
@@ -197,7 +197,7 @@
                     "type": "quantitative",
                     "scale": {
                         "zero": false,
-                        "padding": 30
+                        "padding": 10
                     }
                 },
                 "color": {
@@ -252,7 +252,7 @@
                     "type": "quantitative",
                     "scale": {
                         "zero": false,
-                        "padding": 30
+                        "padding": 10
                     }
                 },
                 "text": {
@@ -272,7 +272,7 @@
                     "filter": "datum.year == '2025'"
                 },
                 {
-                    "calculate": "datum.country == 'England' ? datum.pop + 15 : datum.country == 'India' ? datum.pop - 15 : datum.country == 'South Africa' ? datum.pop + 12 : datum.country == 'Nepal' ? datum.pop - 12 : datum.country == 'Sri Lanka' ? datum.pop + 10 : datum.country == 'Malaysia' ? datum.pop - 10 : datum.pop",
+                    "calculate": "datum.country == 'England' ? datum.pop + 20 : datum.country == 'India' ? datum.pop - 20 : datum.country == 'South Africa' ? datum.pop + 32 : datum.country == 'Nepal' ? datum.pop + 12 : datum.country == 'Sri Lanka' ? datum.pop - 10 : datum.country == 'Malaysia' ? datum.pop - 30 : datum.pop",
                     "as": "pop_offset"
                 }
             ],
@@ -293,7 +293,7 @@
                     "type": "quantitative",
                     "scale": {
                         "zero": false,
-                        "padding": 30
+                        "padding": 10
                     }
                 },
                 "text": {
@@ -321,7 +321,9 @@
             "titleColor": "#eef1ff",
             "tickColor": "rgba(255,255,255,0.15)",
             "domainColor": "rgba(255,255,255,0.15)",
-            "grid": false,
+            "grid": true,
+            "gridColor": "#b2c1e0",
+            "gridOpacity": 0.2,
             "labelFontSize": 11,
             "titleFontSize": 12,
             "titlePadding": 12

@@ -185,50 +185,176 @@
             "as": "SeriesLabel"
         }
     ],
-    "mark": {
-        "type": "line",
-        "point": true,
-        "strokeWidth": 2.5
-    },
-    "encoding": {
-        "x": {
-            "field": "Period",
-            "type": "ordinal",
-            "title": "Period",
-            "axis": {
-                "labelAngle": -45
-            }
-        },
-        "y": {
-            "field": "IndexValue",
-            "type": "quantitative",
-            "title": "Index (17-Dec = 100)"
-        },
-        "color": {
-            "field": "SeriesLabel",
-            "type": "nominal",
-            "scale": {
-                "range": [
-                    "#ff007f",
-                    "#00e5ff"
+    "layer": [
+        {
+            "name": "lines",
+            "mark": {
+                "type": "line",
+                "point": true,
+                "strokeWidth": 2.5
+            },
+            "encoding": {
+                "x": {
+                    "field": "Period",
+                    "type": "ordinal",
+                    "title": "Period",
+                    "axis": {
+                        "labelAngle": -45,
+                        "labelExpr": "indexof(datum.value, '-Dec') >= 0 ? datum.label : ''"
+                    }
+                },
+                "y": {
+                    "field": "IndexValue",
+                    "type": "quantitative",
+                    "title": "Index (17-Dec = 100)"
+                },
+                "color": {
+                    "field": "SeriesLabel",
+                    "type": "nominal",
+                    "scale": {
+                        "range": [
+                            "#ff007f",
+                            "#00e5ff"
+                        ]
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "Period"
+                    },
+                    {
+                        "field": "SeriesLabel",
+                        "title": "Series"
+                    },
+                    {
+                        "field": "IndexValue",
+                        "format": ".1f",
+                        "title": "Index"
+                    }
                 ]
             }
         },
-        "tooltip": [
-            {
-                "field": "Period"
+        {
+            "name": "annotation-covid-rule",
+            "data": {
+                "values": [
+                    {
+                        "Period": "20-Jun"
+                    }
+                ]
             },
-            {
-                "field": "SeriesLabel",
-                "title": "Series"
+            "mark": {
+                "type": "rule",
+                "color": "#ff3b30",
+                "strokeDash": [
+                    5,
+                    5
+                ],
+                "strokeWidth": 1.5,
+                "opacity": 0.8
             },
-            {
-                "field": "IndexValue",
-                "format": ".1f",
-                "title": "Index"
+            "encoding": {
+                "x": {
+                    "field": "Period",
+                    "type": "ordinal"
+                }
             }
-        ]
-    },
+        },
+        {
+            "name": "annotation-covid-text",
+            "data": {
+                "values": [
+                    {
+                        "Period": "20-Jun",
+                        "y": 280,
+                        "text": "COVID-19 Borders Close"
+                    }
+                ]
+            },
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "dx": -8,
+                "dy": -4,
+                "color": "#ff3b30",
+                "fontSize": 11,
+                "fontWeight": 600
+            },
+            "encoding": {
+                "x": {
+                    "field": "Period",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "y",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "text"
+                }
+            }
+        },
+        {
+            "name": "annotation-peak-rule",
+            "data": {
+                "values": [
+                    {
+                        "Period": "23-Sep"
+                    }
+                ]
+            },
+            "mark": {
+                "type": "rule",
+                "color": "#00e5ff",
+                "strokeDash": [
+                    5,
+                    5
+                ],
+                "strokeWidth": 1.5,
+                "opacity": 0.8
+            },
+            "encoding": {
+                "x": {
+                    "field": "Period",
+                    "type": "ordinal"
+                }
+            }
+        },
+        {
+            "name": "annotation-peak-text",
+            "data": {
+                "values": [
+                    {
+                        "Period": "23-Sep",
+                        "y": 320,
+                        "text": "Post-Pandemic Peak"
+                    }
+                ]
+            },
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": -5,
+                "dy": -4,
+                "color": "#00e5ff",
+                "fontSize": 11,
+                "fontWeight": 600
+            },
+            "encoding": {
+                "x": {
+                    "field": "Period",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "y",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "text"
+                }
+            }
+        }
+    ],
     "title": {
         "text": "Migration and GDP Growth Through Economic Shocks",
         "subtitle": "Indexed comparison, 17-Dec = 100",
