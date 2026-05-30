@@ -291,7 +291,7 @@
         "axis": {
             "labelFont": "Inter, sans-serif",
             "titleFont": "Inter, sans-serif",
-            "labelColor": "#8898ba",
+            "labelColor": "#b6c4e0",
             "titleColor": "#eef1ff",
             "tickColor": "rgba(255,255,255,0.15)",
             "domainColor": "rgba(255,255,255,0.15)",
@@ -308,13 +308,13 @@
             "color": "#eef1ff",
             "subtitleFont": "Inter, sans-serif",
             "subtitleFontSize": 12,
-            "subtitleColor": "#8898ba",
+            "subtitleColor": "#b6c4e0",
             "subtitlePadding": 6
         },
         "legend": {
             "labelFont": "Inter, sans-serif",
             "titleFont": "Inter, sans-serif",
-            "labelColor": "#8898ba",
+            "labelColor": "#b6c4e0",
             "titleColor": "#eef1ff",
             "labelFontSize": 11,
             "titleFontSize": 12,
