@@ -36,7 +36,7 @@
                             "lookup": "properties.STATE_NAME",
                             "from": {
                                 "data": {
-                                    "url": "data/chart2-resident%20population%20by%20state%20and%20territory.csv"
+                                    "url": "data/Chart2-resident%20population%20by%20state%20and%20territory.csv"
                                 },
                                 "key": "State",
                                 "fields": [
@@ -143,7 +143,7 @@
             "width": 260,
             "height": 440,
             "data": {
-                "url": "data/chart2-resident%20population%20by%20state%20and%20territory.csv"
+                "url": "data/Chart2-resident%20population%20by%20state%20and%20territory.csv"
             },
             "transform": [
                 {
