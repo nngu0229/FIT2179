@@ -1,11 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Chart 2 - Overseas-born resident population by Australian state and territory with year slider",
-    "width": 700,
-    "height": 500,
-    "projection": {
-        "type": "mercator"
-    },
+    "description": "Chart 2 - Interactive choropleth + state ranking for overseas-born population",
     "params": [
         {
             "name": "selectedYear",
@@ -19,33 +14,138 @@
             }
         }
     ],
-    "layer": [
+    "hconcat": [
         {
-            "data": {
-                "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
-                "format": {
-                    "type": "json",
-                    "property": "features"
-                }
+            "name": "map_panel",
+            "width": 680,
+            "height": 440,
+            "projection": {
+                "type": "mercator"
             },
-            "transform": [
+            "layer": [
                 {
-                    "lookup": "properties.STATE_NAME",
-                    "from": {
-                        "data": {
-                            "url": "data/chart2-resident%20population%20by%20state%20and%20territory.csv"
+                    "data": {
+                        "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+                        "format": {
+                            "type": "json",
+                            "property": "features"
+                        }
+                    },
+                    "transform": [
+                        {
+                            "lookup": "properties.STATE_NAME",
+                            "from": {
+                                "data": {
+                                    "url": "data/chart2-resident%20population%20by%20state%20and%20territory.csv"
+                                },
+                                "key": "State",
+                                "fields": [
+                                    "Abbr",
+                                    "2001 (%)",
+                                    "2006 (%)",
+                                    "2011 (%)",
+                                    "2016 (%)",
+                                    "2021 (%)"
+                                ]
+                            }
                         },
-                        "key": "State",
-                        "fields": [
-                            "Abbr",
-                            "2001 (%)",
-                            "2006 (%)",
-                            "2011 (%)",
-                            "2016 (%)",
-                            "2021 (%)"
+                        {
+                            "fold": [
+                                "2001 (%)",
+                                "2006 (%)",
+                                "2011 (%)",
+                                "2016 (%)",
+                                "2021 (%)"
+                            ],
+                            "as": [
+                                "Year",
+                                "Population"
+                            ]
+                        },
+                        {
+                            "calculate": "toNumber(replace(datum.Year, ' (%)', ''))",
+                            "as": "YearNum"
+                        },
+                        {
+                            "calculate": "toNumber(datum.Population)",
+                            "as": "PopulationPercent"
+                        },
+                        {
+                            "filter": "datum.YearNum == selectedYear"
+                        }
+                    ],
+                    "mark": {
+                        "type": "geoshape",
+                        "stroke": "#0f1220",
+                        "strokeWidth": 1.2
+                    },
+                    "encoding": {
+                        "color": {
+                            "field": "PopulationPercent",
+                            "type": "quantitative",
+                            "title": "Overseas-born (%)",
+                            "scale": {
+                                "domain": [
+                                    10,
+                                    35
+                                ],
+                                "range": [
+                                    "#121626",
+                                    "#323c5a",
+                                    "#687ca8",
+                                    "#fbbf24",
+                                    "#f5a623"
+                                ]
+                            },
+                            "legend": {
+                                "orient": "bottom",
+                                "direction": "horizontal",
+                                "titleOrient": "left",
+                                "values": [
+                                    10,
+                                    15,
+                                    20,
+                                    25,
+                                    30,
+                                    35
+                                ],
+                                "labelColor": "#8898ba",
+                                "titleColor": "#eef1ff",
+                                "labelFontSize": 11,
+                                "titleFontSize": 12
+                            }
+                        },
+                        "tooltip": [
+                            {
+                                "field": "properties.STATE_NAME",
+                                "type": "nominal",
+                                "title": "State / Territory"
+                            },
+                            {
+                                "field": "YearNum",
+                                "type": "quantitative",
+                                "title": "Year",
+                                "format": ".0f"
+                            },
+                            {
+                                "field": "PopulationPercent",
+                                "type": "quantitative",
+                                "title": "Overseas-born (%)",
+                                "format": ".1f"
+                            }
                         ]
                     }
-                },
+                }
+            ]
+        },
+        {
+            "name": "bar_panel",
+            "width": 260,
+            "height": 440,
+            "data": {
+                "url": "data/chart2-resident%20population%20by%20state%20and%20territory.csv"
+            },
+            "transform": [
                 {
                     "fold": [
                         "2001 (%)",
@@ -71,71 +171,114 @@
                     "filter": "datum.YearNum == selectedYear"
                 }
             ],
-            "mark": {
-                "type": "geoshape",
-                "stroke": "#0f1220",
-                "strokeWidth": 1.2
-            },
-            "encoding": {
-                "color": {
-                    "field": "PopulationPercent",
-                    "type": "quantitative",
-                    "title": "Overseas-born population (%)",
-                    "scale": {
-                        "domain": [
-                            10,
-                            35
-                        ],
-                        "range": [
-                            "#121626",
-                            "#323c5a",
-                            "#687ca8",
-                            "#fbbf24",
-                            "#f5a623"
-                        ]
+            "layer": [
+                {
+                    "mark": {
+                        "type": "bar",
+                        "cornerRadiusEnd": 3,
+                        "size": 22
                     },
-                    "legend": {
-                        "orient": "bottom",
-                        "direction": "horizontal",
-                        "titleOrient": "left",
-                        "values": [
-                            10,
-                            15,
-                            20,
-                            25,
-                            30,
-                            35
+                    "encoding": {
+                        "y": {
+                            "field": "Abbr",
+                            "type": "nominal",
+                            "sort": {
+                                "field": "PopulationPercent",
+                                "order": "descending"
+                            },
+                            "title": null,
+                            "axis": {
+                                "labelColor": "#8898ba",
+                                "labelFontSize": 11,
+                                "tickSize": 0,
+                                "domain": false
+                            }
+                        },
+                        "x": {
+                            "field": "PopulationPercent",
+                            "type": "quantitative",
+                            "axis": null
+                        },
+                        "color": {
+                            "field": "PopulationPercent",
+                            "type": "quantitative",
+                            "scale": {
+                                "domain": [
+                                    10,
+                                    35
+                                ],
+                                "range": [
+                                    "#323c5a",
+                                    "#687ca8",
+                                    "#fbbf24",
+                                    "#f5a623"
+                                ]
+                            },
+                            "legend": null
+                        },
+                        "tooltip": [
+                            {
+                                "field": "State",
+                                "type": "nominal",
+                                "title": "State / Territory"
+                            },
+                            {
+                                "field": "Abbr",
+                                "type": "nominal",
+                                "title": "Abbreviation"
+                            },
+                            {
+                                "field": "PopulationPercent",
+                                "type": "quantitative",
+                                "title": "Overseas-born (%)",
+                                "format": ".1f"
+                            }
                         ]
                     }
                 },
-                "tooltip": [
-                    {
-                        "field": "properties.STATE_NAME",
-                        "type": "nominal",
-                        "title": "State/Territory"
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "left",
+                        "dx": 5,
+                        "dy": 0,
+                        "fontSize": 10.5,
+                        "fontWeight": 600,
+                        "color": "#eef1ff"
                     },
-                    {
-                        "field": "YearNum",
-                        "type": "quantitative",
-                        "title": "Year",
-                        "format": ".0f"
-                    },
-                    {
-                        "field": "PopulationPercent",
-                        "type": "quantitative",
-                        "title": "Overseas-born population",
-                        "format": ".1f"
+                    "encoding": {
+                        "y": {
+                            "field": "Abbr",
+                            "type": "nominal",
+                            "sort": {
+                                "field": "PopulationPercent",
+                                "order": "descending"
+                            }
+                        },
+                        "x": {
+                            "field": "PopulationPercent",
+                            "type": "quantitative"
+                        },
+                        "text": {
+                            "field": "PopulationPercent",
+                            "type": "quantitative",
+                            "format": ".1f"
+                        }
                     }
-                ]
+                }
+            ],
+            "title": {
+                "text": "States by Overseas-born Share",
+                "subtitle": "Ranked for selected year — drag slider to update",
+                "fontSize": 13,
+                "color": "#eef1ff",
+                "subtitleColor": "#8898ba",
+                "subtitleFontSize": 10,
+                "anchor": "start",
+                "offset": 10
             }
         }
     ],
-    "title": {
-        "text": "Where Migrants Settle in Australia",
-        "subtitle": "Share of resident population born overseas by state and territory, 2001–2021",
-        "fontSize": 16,
-        "subtitleFontSize": 12
-    },
     "config": {
         "font": "Inter, sans-serif",
         "background": "transparent",
@@ -147,21 +290,17 @@
             "titleFont": "Inter, sans-serif",
             "labelColor": "#8898ba",
             "titleColor": "#eef1ff",
-            "tickColor": "rgba(255,255,255,0.15)",
-            "domainColor": "rgba(255,255,255,0.15)",
-            "gridColor": "rgba(255,255,255,0.08)",
-            "grid": true,
             "labelFontSize": 11,
             "titleFontSize": 12,
             "titlePadding": 12
         },
         "title": {
             "font": "Inter, sans-serif",
-            "fontSize": 16,
+            "fontSize": 14,
             "fontWeight": 600,
             "color": "#eef1ff",
             "subtitleFont": "Inter, sans-serif",
-            "subtitleFontSize": 12,
+            "subtitleFontSize": 11,
             "subtitleColor": "#8898ba",
             "subtitlePadding": 6
         },

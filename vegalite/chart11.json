@@ -1,0 +1,436 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Chart 11 - Interactive Migration Density Dashboard",
+  "params": [
+    {
+      "name": "stateSelect",
+      "value": "Australia",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Australia",
+          "New South Wales",
+          "Victoria",
+          "Queensland",
+          "Western Australia",
+          "South Australia",
+          "Tasmania",
+          "Northern Territory",
+          "Australian Capital Territory"
+        ],
+        "name": "Filter by Region: "
+      }
+    }
+  ],
+  "config": {
+    "font": "Inter, sans-serif",
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "font": "Inter, sans-serif",
+      "fontSize": 16,
+      "fontWeight": 600,
+      "color": "#eef1ff",
+      "subtitleFont": "Inter, sans-serif",
+      "subtitleFontSize": 12,
+      "subtitleColor": "#8898ba",
+      "subtitlePadding": 6
+    }
+  },
+  "hconcat": [
+    {
+      "name": "left_panel",
+      "width": 260,
+      "height": 460,
+      "data": {
+        "values": [
+          {
+            "name": "Australia",
+            "nom": "396,400",
+            "share": "100.0%",
+            "density": "National Overview",
+            "line1": "Migration is highly concentrated in capital",
+            "line2": "cities. Use the dropdown filter to focus the",
+            "line3": "map. Hover over individual geocoded dots",
+            "line4": "to see suburb-level Net Migration (NOM)."
+          },
+          {
+            "name": "New South Wales",
+            "nom": "125,800",
+            "share": "31.7%",
+            "density": "Extremely High",
+            "line1": "NSW dominates national intake, with Sydney",
+            "line2": "absorbing the vast majority of skilled and",
+            "line3": "student arrivals, forming intense clusters",
+            "line4": "along the eastern metropolitan coastline."
+          },
+          {
+            "name": "Victoria",
+            "nom": "114,200",
+            "share": "28.8%",
+            "density": "Extremely High",
+            "line1": "Victoria's migration is heavily centered",
+            "line2": "in metropolitan Melbourne, driving rapid",
+            "line3": "urban expansion and workforce support in",
+            "line4": "construction, retail, and healthcare."
+          },
+          {
+            "name": "Queensland",
+            "nom": "59,400",
+            "share": "15.0%",
+            "density": "Very High",
+            "line1": "Queensland's migration is more distributed,",
+            "line2": "spreading across Brisbane, the Gold Coast,",
+            "line3": "and regional agricultural or tourist zones",
+            "line4": "along the eastern seaboard."
+          },
+          {
+            "name": "Western Australia",
+            "nom": "52,700",
+            "share": "13.3%",
+            "density": "Very High",
+            "line1": "WA attracts skilled workers to fuel its mining,",
+            "line2": "resources, and engineering sectors, heavily",
+            "line3": "concentrated in Perth's metropolitan hubs",
+            "line4": "and key regional resource capitals."
+          },
+          {
+            "name": "South Australia",
+            "nom": "22,800",
+            "share": "5.8%",
+            "density": "High / Moderate",
+            "line1": "South Australia uses targeted migration to",
+            "line2": "address skilled shortages in its defense,",
+            "line3": "manufacturing, agricultural, and high-tech",
+            "line4": "sectors in Adelaide and surrounds."
+          },
+          {
+            "name": "Tasmania",
+            "nom": "4,200",
+            "share": "1.1%",
+            "density": "Low / Moderate",
+            "line1": "Tasmania's intake is smaller but vital for",
+            "line2": "addressing demographic aging, providing",
+            "line3": "essential labor for regional healthcare,",
+            "line4": "education, and agricultural sectors."
+          },
+          {
+            "name": "Northern Territory",
+            "nom": "2,700",
+            "share": "0.7%",
+            "density": "Low",
+            "line1": "The Northern Territory relies on targeted",
+            "line2": "regional agreements to attract skilled and",
+            "line3": "semi-skilled workers to sustain vital public",
+            "line4": "services and primary industries."
+          },
+          {
+            "name": "Australian Capital Territory",
+            "nom": "14,600",
+            "share": "3.7%",
+            "density": "High / Moderate",
+            "line1": "The ACT attracts highly educated professional",
+            "line2": "migrants, focused around public administration,",
+            "line3": "education, and research institutions in the",
+            "line4": "Canberra metropolitan region."
+          }
+        ]
+      },
+      "transform": [
+        {
+          "filter": "stateSelect === datum.name"
+        }
+      ],
+      "layer": [
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "x": 0,
+            "y": 10,
+            "fontSize": 18,
+            "fontWeight": "bold",
+            "color": "#eef1ff"
+          },
+          "encoding": {
+            "text": {
+              "field": "name",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "x": 0,
+            "y": 45,
+            "fontSize": 9,
+            "fontWeight": 600,
+            "color": "#8898ba"
+          },
+          "encoding": {
+            "text": {
+              "value": "NET OVERSEAS MIGRATION (NOM)"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "x": 0,
+            "y": 62,
+            "fontSize": 26,
+            "fontWeight": "bold",
+            "color": "#f5a623"
+          },
+          "encoding": {
+            "text": {
+              "field": "nom",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "x": 0,
+            "y": 115,
+            "fontSize": 9,
+            "fontWeight": 600,
+            "color": "#8898ba"
+          },
+          "encoding": {
+            "text": {
+              "value": "SHARE OF NATIONAL INTAKE"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "x": 0,
+            "y": 132,
+            "fontSize": 22,
+            "fontWeight": "bold",
+            "color": "#22d3ee"
+          },
+          "encoding": {
+            "text": {
+              "field": "share",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "x": 0,
+            "y": 180,
+            "fontSize": 9,
+            "fontWeight": 600,
+            "color": "#8898ba"
+          },
+          "encoding": {
+            "text": {
+              "value": "MIGRATION DENSITY"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "x": 0,
+            "y": 197,
+            "fontSize": 18,
+            "fontWeight": "bold",
+            "color": "#ff6b6b"
+          },
+          "encoding": {
+            "text": {
+              "field": "density",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "x": 0,
+            "y": 240,
+            "fontSize": 10.5,
+            "color": "#8898ba"
+          },
+          "encoding": {
+            "text": {
+              "field": "line1",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "x": 0,
+            "y": 258,
+            "fontSize": 10.5,
+            "color": "#8898ba"
+          },
+          "encoding": {
+            "text": {
+              "field": "line2",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "x": 0,
+            "y": 276,
+            "fontSize": 10.5,
+            "color": "#8898ba"
+          },
+          "encoding": {
+            "text": {
+              "field": "line3",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "x": 0,
+            "y": 294,
+            "fontSize": 10.5,
+            "color": "#8898ba"
+          },
+          "encoding": {
+            "text": {
+              "field": "line4",
+              "type": "nominal"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "map_panel",
+      "width": 680,
+      "height": 460,
+      "projection": {
+        "type": "mercator"
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+            "format": {
+              "type": "json",
+              "property": "features"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "stroke": "#1e293b",
+            "strokeWidth": 0.8
+          },
+          "encoding": {
+            "color": {
+              "condition": {
+                "test": "stateSelect === 'Aistralia' || datum.properties.STATE_NAME === stateSelect",
+                "value": "rgba(245, 166, 35, 0.08)"
+              },
+              "value": "#0b0d18"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/chart11_dot_density_points.csv",
+            "format": {
+              "type": "csv",
+              "parse": {
+                "longitude": "number",
+                "latitude": "number",
+                "NOM_2024_25": "number"
+              }
+            }
+          },
+          "transform": [
+            {
+              "filter": "datum.longitude >= 110 && datum.longitude <= 155 && datum.latitude >= -45 && datum.latitude <= -9"
+            },
+            {
+              "filter": "stateSelect === 'Australia' || datum.State_Name === stateSelect"
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "size": 15,
+            "color": "#f5a623",
+            "opacity": 0.8
+          },
+          "encoding": {
+            "longitude": {
+              "field": "longitude",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "latitude",
+              "type": "quantitative"
+            },
+            "tooltip": [
+              {
+                "field": "SA2_Name",
+                "type": "nominal",
+                "title": "Suburb (SA2)"
+              },
+              {
+                "field": "State_Name",
+                "type": "nominal",
+                "title": "State"
+              },
+              {
+                "field": "NOM_2024_25",
+                "type": "quantitative",
+                "title": "Net Overseas Migration (NOM)",
+                "format": ","
+              },
+              {
+                "field": "Dot_Value",
+                "type": "quantitative",
+                "title": "1 Dot Equals",
+                "format": ",d"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "title": null
+}

@@ -1,0 +1,144 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Chart 12 - Top 10 Suburbs by Net Overseas Migration",
+  "width": "container",
+  "height": 360,
+  "data": {
+    "url": "data/chart11_dot_density_points.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "NOM_2024_25": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "aggregate": [
+        {
+          "op": "max",
+          "field": "NOM_2024_25",
+          "as": "Total_NOM"
+        }
+      ],
+      "groupby": [
+        "SA2_Name",
+        "State_Name"
+      ]
+    },
+    {
+      "window": [
+        {
+          "op": "row_number",
+          "as": "rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "Total_NOM",
+          "order": "descending"
+        }
+      ]
+    },
+    {
+      "filter": "datum.rank <= 10"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 3,
+        "size": 12
+      },
+      "encoding": {
+        "y": {
+          "field": "SA2_Name",
+          "type": "nominal",
+          "sort": {
+            "field": "Total_NOM",
+            "order": "descending"
+          },
+          "title": null,
+          "axis": {
+            "labelColor": "#8898ba",
+            "labelFontSize": 10,
+            "tickSize": 0,
+            "domain": false
+          }
+        },
+        "x": {
+          "field": "Total_NOM",
+          "type": "quantitative",
+          "axis": null
+        },
+        "tooltip": [
+          {
+            "field": "SA2_Name",
+            "type": "nominal",
+            "title": "Suburb"
+          },
+          {
+            "field": "State_Name",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "Total_NOM",
+            "type": "quantitative",
+            "title": "Net Arrivals",
+            "format": ","
+          }
+        ],
+        "color": {
+          "field": "Total_NOM",
+          "type": "quantitative",
+          "scale": {
+            "range": [
+              "#ff9d00",
+              "#e87400"
+            ]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "dy": 0,
+        "color": "#eef1ff",
+        "fontSize": 9.5,
+        "fontWeight": 600
+      },
+      "encoding": {
+        "y": {
+          "field": "SA2_Name",
+          "type": "nominal",
+          "sort": {
+            "field": "Total_NOM",
+            "order": "descending"
+          }
+        },
+        "x": {
+          "field": "Total_NOM",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "Total_NOM",
+          "type": "quantitative",
+          "format": ","
+        }
+      }
+    }
+  ],
+  "config": {
+    "font": "Inter, sans-serif",
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    }
+  }
+}

@@ -97,17 +97,83 @@
             </div>
 
             <p class="section-description">
-                Australia’s modern identity and economic trajectory are deeply linked with global migration. Today, over 
-                <strong>30% of the Australian population was born overseas</strong>—a demographic proportion higher than that of 
-                almost any other major OECD nation. This section traces the macroeconomic "big picture" of Australia's 
-                demographic foundation. By analyzing net overseas migration trends, mapping where migrants establish 
-                their homes, and tracing shifting global origins, we uncover how immigration has transitioned from simple 
+                Australia’s modern identity and economic trajectory are deeply linked with global migration. Today, over
+                <strong>30% of the Australian population was born overseas</strong>—a demographic proportion higher than
+                that of
+                almost any other major OECD nation. This section traces the macroeconomic "big picture" of Australia's
+                demographic foundation. By analyzing net overseas migration trends, mapping where migrants establish
+                their homes, and tracing shifting global origins, we uncover how immigration has transitioned from
+                simple
                 population growth to the primary driver of the nation’s social and economic development.
             </p>
 
             <div class="section-sep"></div>
 
-            <!-- Row 1: Chart 1 + Chart 2 -->
+            <!-- Row 1: Interactive Dashboard (Chart 11 + Chart 12) -->
+            <div style="display: grid; grid-template-columns: 2.2fr 1fr; gap: 24px; margin-bottom: 32px;">
+                
+                <!-- Chart 11 (Stats & Map Dashboard) -->
+                <div class="chart-card">
+                    <span class="card-tag">Migration Density</span>
+                    <h3 class="card-title">Mapping Regional Migration Distribution</h3>
+                    <p class="card-description">
+                        Interactive dot-density map of net overseas migration (NOM) across Australia's SA2 suburbs (2024–25). 
+                        <strong>Each dot = 100 net overseas migrants.</strong> Use the dropdown to filter by state — hover dots to see suburb stats.
+                    </p>
+                    <div class="chart-container" id="chart11" style="height: 540px;"></div>
+                    <div class="chart-metadata">
+                        <span><strong>Data Source:</strong> <a
+                                href="https://www.abs.gov.au/statistics/people/population/regional-population/latest-release"
+                                target="_blank" class="metadata-link">ABS Regional Population (SA2-level NOM, 2024–25)</a></span>
+                        <span>&nbsp;·&nbsp;</span>
+                        <span><a
+                                href="https://digital.atlas.gov.au/datasets/abs-asgs-edition-3-2021-statistical-area-level-2/about"
+                                target="_blank" class="metadata-link">Digital Atlas — ASGS SA2 Boundaries (2021)</a></span>
+                    </div>
+                </div>
+
+                <!-- Chart 12 (Suburb Ranking Chart) -->
+                <div class="chart-card">
+                    <span class="card-tag">Suburb Ranking</span>
+                    <h3 class="card-title">Top 10 Migrant Suburbs</h3>
+                    <p class="card-description">
+                        Ranking the top 10 individual suburbs in Australia by absolute net overseas migration (NOM) volume.
+                    </p>
+                    <div class="chart-container" id="chart12" style="height: 540px;"></div>
+                    <div class="chart-metadata">
+                        <span><strong>Data Source:</strong> <a
+                                href="https://www.abs.gov.au/statistics/people/population/regional-population/latest-release"
+                                target="_blank" class="metadata-link">ABS Regional Population (SA2-level NOM, 2024–25)</a></span>
+                        <span>&nbsp;·&nbsp;</span>
+                        <span><a
+                                href="https://digital.atlas.gov.au/datasets/abs-asgs-edition-3-2021-statistical-area-level-2/about"
+                                target="_blank" class="metadata-link">Digital Atlas — ASGS SA2 Boundaries (2021)</a></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Row 2: Where Migrants Settle in Australia (Chart 2 - full width) -->
+            <div class="grid-full" style="margin-bottom: 32px;">
+                <div class="chart-card">
+                    <span class="card-tag">Settlement Patterns</span>
+                    <h3 class="card-title">Where Migrants Settle in Australia</h3>
+                    <p class="card-description">
+                        Migrants cluster in metropolitan hubs with strong employment, education, and infrastructure. 
+                        <strong>NSW, Victoria, and Western Australia</strong> consistently lead. 
+                        Drag the year slider to watch settlement densities shift across two decades (2001–2021) — the ranked bar chart on the right updates in sync.
+                    </p>
+                    <div class="chart-container" id="chart2" style="height: 490px;"></div>
+                    <div class="chart-metadata">
+                        <span><strong>Data Source:</strong> <a
+                                href="https://www.abs.gov.au/statistics/people/population/australias-population-country-birth/latest-release#state-and-territory"
+                                target="_blank" class="metadata-link">ABS Australia's Population by Country of Birth
+                                (State & Territory)</a></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: NOM line chart & Origin countries chart (Chart 1 + Chart 3 - side-by-side) -->
             <div class="grid-2">
 
                 <!-- Chart 1 -->
@@ -115,10 +181,14 @@
                     <span class="card-tag">Population Growth</span>
                     <h3 class="card-title">Australia's Overseas-Born Population Continues to Rise</h3>
                     <p class="card-description">
-                        Australia's population growth has shifted fundamentally, with Net Overseas Migration (NOM) now eclipsing 
-                        natural increase as the primary driver. This transition became particularly dramatic following the post-COVID-19 
-                        border reopening in late 2022, which triggered a record spike in student and skilled arrivals to over 
-                        <strong>500,000 net annual migrants</strong>, illustrating the rapid correction of structural labour shortages.
+                        Australia's population growth has shifted fundamentally, with Net Overseas Migration (NOM) now
+                        eclipsing
+                        natural increase as the primary driver. This transition became particularly dramatic following
+                        the post-COVID-19
+                        border reopening in late 2022, which triggered a record spike in student and skilled arrivals to
+                        over
+                        <strong>500,000 net annual migrants</strong>, illustrating the rapid correction of structural
+                        labour shortages.
                     </p>
                     <div class="chart-container" id="chart1"></div>
                     <div class="chart-metadata">
@@ -129,41 +199,19 @@
                     </div>
                 </div>
 
-                <!-- Chart 2 -->
-                <div class="chart-card">
-                    <span class="card-tag">Settlement Patterns</span>
-                    <h3 class="card-title">Where Migrants Settle in Australia</h3>
-                    <p class="card-description">
-                        Migrants are highly strategic in their settlement patterns, aligning with metropolitan hubs that offer robust 
-                        employment, education, and social infrastructure. States with large capital cities—specifically 
-                        <strong>New South Wales (Sydney), Victoria (Melbourne), and Western Australia (Perth)</strong>—consistently 
-                        attract the highest concentrations of overseas-born residents. Use the slider below to watch these 
-                        settlement densities expand dynamically over two decades (2001–2021).
-                    </p>
-                    <div class="chart-container" id="chart2"></div>
-                    <div class="chart-metadata">
-                        <span><strong>Data Source:</strong> <a
-                                href="https://www.abs.gov.au/statistics/people/population/australias-population-country-birth/latest-release#state-and-territory"
-                                target="_blank" class="metadata-link">ABS Australia's Population by Country of Birth
-                                (State & Territory)</a></span>
-
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Row 2: Chart 3 full width -->
-            <div class="grid-full">
-
                 <!-- Chart 3 -->
                 <div class="chart-card">
                     <span class="card-tag">Country of Origin</span>
                     <h3 class="card-title">Top Migrant-Origin Countries in Australia</h3>
                     <p class="card-description">
-                        The national composition of Australia's overseas-born community has undergone a profound structural shift. 
-                        While historical migration was dominated by European arrivals (particularly England), recent decades 
-                        have seen a massive rise in migration from <strong>Asia, led by India and China</strong>. This diversification shapes 
-                        Australia's multicultural social fabric and establishes critical trade and educational corridors.
+                        The national composition of Australia's overseas-born community has undergone a profound
+                        structural shift.
+                        While historical migration was dominated by European arrivals (particularly England), recent
+                        decades
+                        have seen a massive rise in migration from <strong>Asia, led by India and China</strong>. This
+                        diversification shapes
+                        Australia's multicultural social fabric and establishes critical trade and educational
+                        corridors.
                     </p>
                     <div class="chart-container" id="chart3"></div>
                     <div class="chart-metadata">
@@ -179,11 +227,16 @@
             <!-- Transition insight box -->
             <div class="insight-box">
                 <p>
-                    The demographic realities of immigration lay the groundwork, but the real engine room of this story lies in the 
-                    workplace. Today, over <strong>35% of Australia's total workforce is comprised of migrant labour</strong>, 
-                    quietly sustaining vital public services and corporate industries. But how are these workers distributed across 
-                    different employment markets? Do they cluster in specific sectors, or are they spread evenly across the country? 
-                    <strong>The next section maps where migrants are working across Australia</strong>, revealing the invisible 
+                    The demographic realities of immigration lay the groundwork, but the real engine room of this story
+                    lies in the
+                    workplace. Today, over <strong>35% of Australia's total workforce is comprised of migrant
+                        labour</strong>,
+                    quietly sustaining vital public services and corporate industries. But how are these workers
+                    distributed across
+                    different employment markets? Do they cluster in specific sectors, or are they spread evenly across
+                    the country?
+                    <strong>The next section maps where migrants are working across Australia</strong>, revealing the
+                    invisible
                     backbone of the Australian labour market.
                 </p>
             </div>
@@ -202,10 +255,14 @@
             </div>
 
             <p class="section-description">
-                Behind Australia's economic growth sits a diverse, highly active workforce. Migrants do not merely participate in the 
-                Australian labour market; they serve as its operational foundation. From high-stakes medical facilities and large-scale 
-                infrastructure projects to digital technology departments and critical service sectors, overseas-born workers are heavily 
-                represented. This section explores the distribution of migrant labour across key industries and occupational categories, 
+                Behind Australia's economic growth sits a diverse, highly active workforce. Migrants do not merely
+                participate in the
+                Australian labour market; they serve as its operational foundation. From high-stakes medical facilities
+                and large-scale
+                infrastructure projects to digital technology departments and critical service sectors, overseas-born
+                workers are heavily
+                represented. This section explores the distribution of migrant labour across key industries and
+                occupational categories,
                 illustrating how specific sectors have developed a structural reliance on global talent.
             </p>
 
@@ -219,9 +276,12 @@
                     <span class="card-tag">Industry Breakdown</span>
                     <h3 class="card-title">Migrant Workers Support Key Australian Industries</h3>
                     <p class="card-description">
-                        Certain sectors of the Australian economy have developed an acute reliance on overseas-born workers. 
-                        <strong>Healthcare, Hospitality (Accommodation & Food Services), and Professional, Scientific & Technical Services</strong> 
-                        display disproportionately high concentrations of migrant employees. Many of these workers hold specialized roles 
+                        Certain sectors of the Australian economy have developed an acute reliance on overseas-born
+                        workers.
+                        <strong>Healthcare, Hospitality (Accommodation & Food Services), and Professional, Scientific &
+                            Technical Services</strong>
+                        display disproportionately high concentrations of migrant employees. Many of these workers hold
+                        specialized roles
                         that are essential for daily industry operations.
                     </p>
                     <div class="chart-container" id="chart4"></div>
@@ -237,9 +297,12 @@
                     <span class="card-tag">Occupational Roles</span>
                     <h3 class="card-title">Top Occupations Filled by Skilled Migrants</h3>
                     <p class="card-description">
-                        An examination of specific roles reveals that skilled migrants are highly represented in core professional and 
-                        technical fields. High-demand vocations—including <strong>Registered Nurses, Software Engineers, Construction Managers, 
-                        and Chefs</strong>—regularly draw from international recruitment pipelines to mitigate domestic supply shortfalls 
+                        An examination of specific roles reveals that skilled migrants are highly represented in core
+                        professional and
+                        technical fields. High-demand vocations—including <strong>Registered Nurses, Software Engineers,
+                            Construction Managers,
+                            and Chefs</strong>—regularly draw from international recruitment pipelines to mitigate
+                        domestic supply shortfalls
                         and support economic productivity.
                     </p>
                     <div class="chart-container" id="chart5"></div>
@@ -255,9 +318,12 @@
             <!-- Transition insight box -->
             <div class="insight-box">
                 <p>
-                    While migrants fill immediate operational vacancies across the workforce, a critical question remains: is Australia's 
-                    migration intake strategically aligned to address the economy's most severe <strong>long-term skill deficits</strong>? 
-                    The next section looks beyond general employment to examine how targeted visa pathways map directly against the nation's 
+                    While migrants fill immediate operational vacancies across the workforce, a critical question
+                    remains: is Australia's
+                    migration intake strategically aligned to address the economy's most severe <strong>long-term skill
+                        deficits</strong>?
+                    The next section looks beyond general employment to examine how targeted visa pathways map directly
+                    against the nation's
                     official occupational shortage registers.
                 </p>
             </div>
@@ -276,10 +342,14 @@
             </div>
 
             <p class="section-description">
-                Modern economies cannot rely solely on general labor; they require highly specialized skills to drive innovation 
-                and maintain productivity. Australia faces chronic structural deficits in key technical, engineering, and medical 
-                fields. By focusing on targeted visa categories, the immigration system acts as a release valve for these labor bottlenecks. 
-                This section analyzes the tight alignment between migration streams and the official skill shortage indices, showing how 
+                Modern economies cannot rely solely on general labor; they require highly specialized skills to drive
+                innovation
+                and maintain productivity. Australia faces chronic structural deficits in key technical, engineering,
+                and medical
+                fields. By focusing on targeted visa categories, the immigration system acts as a release valve for
+                these labor bottlenecks.
+                This section analyzes the tight alignment between migration streams and the official skill shortage
+                indices, showing how
                 international talent directly preserves the integrity of crucial professional pipelines.
             </p>
 
@@ -293,9 +363,12 @@
                     <span class="card-tag">Skills Analysis</span>
                     <h3 class="card-title">Industries with the Highest Migrant Skill Reliance</h3>
                     <p class="card-description">
-                        High-technology and advanced medical sectors exhibit a severe domestic training deficit. This visual shows the 
-                        distribution of visa categories across different shortage-stricken areas, revealing that <strong>temporary and 
-                        permanent skilled visas</strong> act as the primary structural bridge to supply the developers, engineers, and 
+                        High-technology and advanced medical sectors exhibit a severe domestic training deficit. This
+                        visual shows the
+                        distribution of visa categories across different shortage-stricken areas, revealing that
+                        <strong>temporary and
+                            permanent skilled visas</strong> act as the primary structural bridge to supply the
+                        developers, engineers, and
                         healthcare specialists that domestic pipelines are not producing fast enough.
                     </p>
                     <div class="chart-container" id="chart6"></div>
@@ -312,9 +385,12 @@
                     <span class="card-tag">Economic Contribution</span>
                     <h3 class="card-title">How Skilled Migrants Drive Economic Output</h3>
                     <p class="card-description">
-                        By mapping industry-wide skill shortages against migrant workforce shares, a clear correlation emerges: the 
-                        sectors facing the most severe shortages (often exceeding <strong>40% vacancy rates</strong> in technical trades and 
-                        medical professionals) are the ones that lean most heavily on skilled migration. This demonstrates that global 
+                        By mapping industry-wide skill shortages against migrant workforce shares, a clear correlation
+                        emerges: the
+                        sectors facing the most severe shortages (often exceeding <strong>40% vacancy rates</strong> in
+                        technical trades and
+                        medical professionals) are the ones that lean most heavily on skilled migration. This
+                        demonstrates that global
                         recruitment is not supplementary—it is vital to preventing critical project delays.
                     </p>
                     <div class="chart-container" id="chart7"></div>
@@ -335,10 +411,13 @@
             <!-- Transition insight box -->
             <div class="insight-box">
                 <p>
-                    Targeted skilled migration is essential for resolving localized talent shortages, but the aggregate flow of global 
-                    workers also has massive macroeconomic implications. How do these individual skilled contributions scale up to 
-                    impact the wider national economy? <strong>The next section connects the dots between population-level migration 
-                    and Australia's national GDP growth</strong>.
+                    Targeted skilled migration is essential for resolving localized talent shortages, but the aggregate
+                    flow of global
+                    workers also has massive macroeconomic implications. How do these individual skilled contributions
+                    scale up to
+                    impact the wider national economy? <strong>The next section connects the dots between
+                        population-level migration
+                        and Australia's national GDP growth</strong>.
                 </p>
             </div>
 
@@ -356,10 +435,14 @@
             </div>
 
             <p class="section-description">
-                Immigration is a major catalyst for broader economic expansion. By introducing young, productive workers into the labor 
-                force, bridging critical technical vacancies, and driving domestic consumption, migrants actively expand the nation's GDP. 
-                This section visualizes the direct, historical relationship between Net Overseas Migration and national economic growth, 
-                alongside a detailed breakdown of how key industries translate migrant labor directly into billions of dollars of national 
+                Immigration is a major catalyst for broader economic expansion. By introducing young, productive workers
+                into the labor
+                force, bridging critical technical vacancies, and driving domestic consumption, migrants actively expand
+                the nation's GDP.
+                This section visualizes the direct, historical relationship between Net Overseas Migration and national
+                economic growth,
+                alongside a detailed breakdown of how key industries translate migrant labor directly into billions of
+                dollars of national
                 economic output.
             </p>
 
@@ -373,9 +456,12 @@
                     <span class="card-tag">GDP vs Migration</span>
                     <h3 class="card-title">Migration and GDP Growth Through Economic Shocks</h3>
                     <p class="card-description">
-                        Analyzing historical data reveals a close synchronization between Net Overseas Migration and real GDP growth, 
-                        particularly highlighted during economic shocks. The extreme contraction during the <strong>COVID-19 border closures 
-                        (2020-21)</strong> saw both immigration and GDP drop to historic lows, while the subsequent joint recovery highlights 
+                        Analyzing historical data reveals a close synchronization between Net Overseas Migration and
+                        real GDP growth,
+                        particularly highlighted during economic shocks. The extreme contraction during the
+                        <strong>COVID-19 border closures
+                            (2020-21)</strong> saw both immigration and GDP drop to historic lows, while the subsequent
+                        joint recovery highlights
                         Net Overseas Migration as a vital pillar of national economic resilience.
                     </p>
                     <div class="chart-container" id="chart8"></div>
@@ -395,9 +481,12 @@
                     <span class="card-tag">Labour Power</span>
                     <h3 class="card-title">Industries Powered by Migrant Labour</h3>
                     <p class="card-description">
-                        By examining the intersection of GDP output (bubble size) and migrant concentration (color intensity), we see the 
-                        financial footprint of migrant workers. High-value sectors like <strong>Professional Services, Finance, and Healthcare</strong>—which 
-                        contribute hundreds of billions to GDP—rely heavily on migrant talents, proving that global workers are concentrated 
+                        By examining the intersection of GDP output (bubble size) and migrant concentration (color
+                        intensity), we see the
+                        financial footprint of migrant workers. High-value sectors like <strong>Professional Services,
+                            Finance, and Healthcare</strong>—which
+                        contribute hundreds of billions to GDP—rely heavily on migrant talents, proving that global
+                        workers are concentrated
                         in the highest-productivity engines of the economy.
                     </p>
                     <div class="chart-container" id="chart9"></div>
@@ -418,10 +507,14 @@
             <!-- Transition insight box to Section 5 -->
             <div class="insight-box">
                 <p>
-                    Connecting migration to macroeconomic GDP growth and technical skill-filling highlights its immense economic benefits. 
-                    However, public discussions often shift from these broad benefits to localized anxieties. <strong>Does a high intake of 
-                    overseas-born workers lead to higher unemployment for locals, or depress domestic wages?</strong> The final section 
-                    shifts from macroeconomic trends to microeconomic realities, comparing Australian-born and overseas-born employment 
+                    Connecting migration to macroeconomic GDP growth and technical skill-filling highlights its immense
+                    economic benefits.
+                    However, public discussions often shift from these broad benefits to localized anxieties.
+                    <strong>Does a high intake of
+                        overseas-born workers lead to higher unemployment for locals, or depress domestic
+                        wages?</strong> The final section
+                    shifts from macroeconomic trends to microeconomic realities, comparing Australian-born and
+                    overseas-born employment
                     outcomes to separate evidence-based facts from common myths.
                 </p>
             </div>
@@ -440,10 +533,14 @@
             </div>
 
             <p class="section-description">
-                The public debate surrounding immigration is often charged with concerns that foreign workers displace local employees or 
-                suppress wages. To evaluate these claims objectively, we must compare the labor market performance of domestic and migrant 
-                workforces. By contrasting real unemployment rates and median weekly earnings, this section uses official ABS data to separate 
-                empirical facts from popular misconceptions, demonstrating a highly integrated and mutually beneficial labor market.
+                The public debate surrounding immigration is often charged with concerns that foreign workers displace
+                local employees or
+                suppress wages. To evaluate these claims objectively, we must compare the labor market performance of
+                domestic and migrant
+                workforces. By contrasting real unemployment rates and median weekly earnings, this section uses
+                official ABS data to separate
+                empirical facts from popular misconceptions, demonstrating a highly integrated and mutually beneficial
+                labor market.
             </p>
 
             <div class="section-sep"></div>
@@ -455,10 +552,14 @@
                     <span class="card-tag">Myth Check</span>
                     <h3 class="card-title">Labour Market Integration</h3>
                     <p class="card-description">
-                        Comparing the labor market outcomes of Australian-born and overseas-born residents reveals remarkable integration. 
-                        <strong>Unemployment rates for both groups track closely within a fraction of a percent (around 4.8% vs 5.1%)</strong>, 
-                        while median weekly earnings show strong income parity (averaging <strong>$1,400 per week</strong>). This wage alignment 
-                        proves that migrant workers do not undercut local salaries, but rather integrate smoothly into a collaborative labor market.
+                        Comparing the labor market outcomes of Australian-born and overseas-born residents reveals
+                        remarkable integration.
+                        <strong>Unemployment rates for both groups track closely within a fraction of a percent (around
+                            4.8% vs 5.1%)</strong>,
+                        while median weekly earnings show strong income parity (averaging <strong>$1,400 per
+                            week</strong>). This wage alignment
+                        proves that migrant workers do not undercut local salaries, but rather integrate smoothly into a
+                        collaborative labor market.
                     </p>
                     <div class="chart-container" id="chart10"></div>
                     <div class="chart-metadata">
@@ -529,6 +630,10 @@
                     target="_blank" class="footer-link">ABS Permanent Migrants in Australia</a>
                 <a href="https://www.abs.gov.au/statistics/people/people-and-communities/characteristics-recent-migrants/latest-release#labour-market-outcomes"
                     target="_blank" class="footer-link">ABS Characteristics of Recent Migrants</a>
+                <a href="https://www.abs.gov.au/statistics/people/population/regional-population/latest-release"
+                    target="_blank" class="footer-link">ABS Regional Population (SA2-level NOM)</a>
+                <a href="https://digital.atlas.gov.au/datasets/abs-asgs-edition-3-2021-statistical-area-level-2/about"
+                    target="_blank" class="footer-link">Digital Atlas — ASGS SA2 Boundaries</a>
             </div>
 
             <div class="footer-divider"></div>
@@ -552,7 +657,7 @@
             theme: "default"
         };
 
-        async function embedChart(specPath, divId) {
+        async function embedChart(specPath, divId, heightPx) {
             try {
                 const res = await fetch(specPath);
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -560,8 +665,12 @@
 
                 // Recursively set width to container for nested views
                 function makeResponsive(s) {
+                    if (s.hconcat) {
+                        // Skip responsiveness for horizontal concatenations to preserve column widths!
+                        return;
+                    }
                     s.width = "container";
-                    if (s.layer) {
+                    if (s.layer && !s.projection) {
                         s.layer.forEach(l => {
                             if (l.width === undefined) l.width = "container";
                         });
@@ -569,13 +678,13 @@
                     if (s.vconcat) {
                         s.vconcat.forEach(sub => makeResponsive(sub));
                     }
-                    if (s.hconcat) {
-                        s.hconcat.forEach(sub => makeResponsive(sub));
-                    }
                 }
 
                 makeResponsive(spec);
-                if (spec.height && !spec.vconcat && !spec.hconcat) spec.height = 360;
+                // Use explicit height if provided, otherwise cap at 360 for standard charts
+                if (!spec.vconcat && !spec.hconcat) {
+                    spec.height = heightPx || 360;
+                }
 
                 if (!spec.config) spec.config = {};
                 spec.config.background = "transparent";
@@ -592,6 +701,8 @@
             }
         }
 
+        embedChart("vegalite/chart11.json", "chart11");
+        embedChart("vegalite/chart12.json", "chart12", 460);
         embedChart("vegalite/chart1.json", "chart1");
         embedChart("vegalite/chart2.json", "chart2");
         embedChart("vegalite/chart3.json", "chart3");
