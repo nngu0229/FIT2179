@@ -277,7 +277,7 @@
     "title": {
         "text": "Industries with Skill Shortages Depend More on Migrant Workers",
         "subtitle": "Bubble size = GDP contribution - Click legend to filter by sector - Hover for details",
-        "fontSize": 18,
+        "fontSize": 16,
         "subtitleFontSize": 12,
         "orient": "top",
         "anchor": "center"

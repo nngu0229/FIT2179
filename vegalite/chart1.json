@@ -46,7 +46,7 @@
       },
       "mark": {
         "type": "rect",
-        "opacity": 0.05,
+        "opacity": 0.1,
         "color": "#ffffff"
       },
       "encoding": {

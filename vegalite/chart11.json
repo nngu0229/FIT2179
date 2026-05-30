@@ -130,7 +130,7 @@
             "baseline": "top",
             "x": 0,
             "y": 10,
-            "fontSize": 18,
+            "fontSize": 30,
             "fontWeight": "bold",
             "color": "#eef1ff"
           },
@@ -165,7 +165,7 @@
             "baseline": "top",
             "x": 0,
             "y": 93,
-            "fontSize": 26,
+            "fontSize": 20,
             "fontWeight": "bold",
             "color": "#f5a623"
           },
@@ -200,7 +200,7 @@
             "baseline": "top",
             "x": 0,
             "y": 186,
-            "fontSize": 22,
+            "fontSize": 20,
             "fontWeight": "bold",
             "color": "#22d3ee"
           },
@@ -235,7 +235,7 @@
             "baseline": "top",
             "x": 0,
             "y": 279,
-            "fontSize": 18,
+            "fontSize": 20,
             "fontWeight": "bold",
             "color": "#ff6b6b"
           },
@@ -253,7 +253,7 @@
             "baseline": "top",
             "x": 0,
             "y": 345,
-            "fontSize": 14,
+            "fontSize": 18,
             "color": "#8898ba"
           },
           "encoding": {
@@ -270,7 +270,7 @@
             "baseline": "top",
             "x": 0,
             "y": 363,
-            "fontSize": 14,
+            "fontSize": 18,
             "color": "#8898ba"
           },
           "encoding": {
@@ -287,7 +287,7 @@
             "baseline": "top",
             "x": 0,
             "y": 381,
-            "fontSize": 14,
+            "fontSize": 18,
             "color": "#8898ba"
           },
           "encoding": {
@@ -304,7 +304,7 @@
             "baseline": "top",
             "x": 0,
             "y": 399,
-            "fontSize": 14,
+            "fontSize": 18,
             "color": "#8898ba"
           },
           "encoding": {
@@ -321,7 +321,7 @@
             "baseline": "top",
             "x": 0,
             "y": 445,
-            "fontSize": 14,
+            "fontSize": 15,
             "fontStyle": "italic",
             "color": "#3d4f6e"
           },
