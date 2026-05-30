@@ -1,27 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Chart 11 - Interactive Migration Density Dashboard",
-  "params": [
-    {
-      "name": "stateSelect",
-      "value": "Australia",
-      "bind": {
-        "input": "select",
-        "options": [
-          "Australia",
-          "New South Wales",
-          "Victoria",
-          "Queensland",
-          "Western Australia",
-          "South Australia",
-          "Tasmania",
-          "Northern Territory",
-          "Australian Capital Territory"
-        ],
-        "name": "Filter by Region: "
-      }
-    }
-  ],
+  "description": "Chart 11 - Interactive Migration Density Dashboard (click-to-select state)",
   "config": {
     "font": "Inter, sans-serif",
     "background": "transparent",
@@ -30,13 +9,13 @@
     },
     "title": {
       "font": "Inter, sans-serif",
-      "fontSize": 16,
+      "fontSize": 20,
       "fontWeight": 600,
       "color": "#eef1ff",
       "subtitleFont": "Inter, sans-serif",
       "subtitleFontSize": 12,
       "subtitleColor": "#8898ba",
-      "subtitlePadding": 6
+      "subtitlePadding": 12
     }
   },
   "hconcat": [
@@ -47,17 +26,17 @@
       "data": {
         "values": [
           {
-            "name": "Australia",
+            "STATE_NAME": "Australia",
             "nom": "396,400",
             "share": "100.0%",
             "density": "National Overview",
             "line1": "Migration is highly concentrated in capital",
-            "line2": "cities. Use the dropdown filter to focus the",
-            "line3": "map. Hover over individual geocoded dots",
-            "line4": "to see suburb-level Net Migration (NOM)."
+            "line2": "cities. Click any state on the map to explore",
+            "line3": "regional stats. Hover over dots to see",
+            "line4": "suburb-level Net Migration (NOM) details."
           },
           {
-            "name": "New South Wales",
+            "STATE_NAME": "New South Wales",
             "nom": "125,800",
             "share": "31.7%",
             "density": "Extremely High",
@@ -67,17 +46,17 @@
             "line4": "along the eastern metropolitan coastline."
           },
           {
-            "name": "Victoria",
+            "STATE_NAME": "Victoria",
             "nom": "114,200",
             "share": "28.8%",
             "density": "Extremely High",
-            "line1": "Victoria's migration is heavily centered",
-            "line2": "in metropolitan Melbourne, driving rapid",
-            "line3": "urban expansion and workforce support in",
+            "line1": "Victoria's migration is heavily centred in",
+            "line2": "metropolitan Melbourne, driving rapid urban",
+            "line3": "expansion and workforce support across",
             "line4": "construction, retail, and healthcare."
           },
           {
-            "name": "Queensland",
+            "STATE_NAME": "Queensland",
             "nom": "59,400",
             "share": "15.0%",
             "density": "Very High",
@@ -87,37 +66,37 @@
             "line4": "along the eastern seaboard."
           },
           {
-            "name": "Western Australia",
+            "STATE_NAME": "Western Australia",
             "nom": "52,700",
             "share": "13.3%",
             "density": "Very High",
-            "line1": "WA attracts skilled workers to fuel its mining,",
+            "line1": "WA attracts skilled workers to fuel mining,",
             "line2": "resources, and engineering sectors, heavily",
             "line3": "concentrated in Perth's metropolitan hubs",
             "line4": "and key regional resource capitals."
           },
           {
-            "name": "South Australia",
+            "STATE_NAME": "South Australia",
             "nom": "22,800",
             "share": "5.8%",
             "density": "High / Moderate",
             "line1": "South Australia uses targeted migration to",
-            "line2": "address skilled shortages in its defense,",
+            "line2": "address skilled shortages in its defence,",
             "line3": "manufacturing, agricultural, and high-tech",
             "line4": "sectors in Adelaide and surrounds."
           },
           {
-            "name": "Tasmania",
+            "STATE_NAME": "Tasmania",
             "nom": "4,200",
             "share": "1.1%",
             "density": "Low / Moderate",
             "line1": "Tasmania's intake is smaller but vital for",
-            "line2": "addressing demographic aging, providing",
-            "line3": "essential labor for regional healthcare,",
+            "line2": "addressing demographic ageing, providing",
+            "line3": "essential labour for regional healthcare,",
             "line4": "education, and agricultural sectors."
           },
           {
-            "name": "Northern Territory",
+            "STATE_NAME": "Northern Territory",
             "nom": "2,700",
             "share": "0.7%",
             "density": "Low",
@@ -127,20 +106,20 @@
             "line4": "services and primary industries."
           },
           {
-            "name": "Australian Capital Territory",
+            "STATE_NAME": "Australian Capital Territory",
             "nom": "14,600",
             "share": "3.7%",
             "density": "High / Moderate",
             "line1": "The ACT attracts highly educated professional",
-            "line2": "migrants, focused around public administration,",
-            "line3": "education, and research institutions in the",
-            "line4": "Canberra metropolitan region."
+            "line2": "migrants, focused on public administration,",
+            "line3": "education, and research institutions across",
+            "line4": "the Canberra metropolitan region."
           }
         ]
       },
       "transform": [
         {
-          "filter": "stateSelect === datum.name"
+          "filter": "length(data('stateSelect_store')) === 0 ? datum.STATE_NAME === 'Australia' : vlSelectionTest('stateSelect_store', datum)"
         }
       ],
       "layer": [
@@ -157,7 +136,7 @@
           },
           "encoding": {
             "text": {
-              "field": "name",
+              "field": "STATE_NAME",
               "type": "nominal"
             }
           }
@@ -168,8 +147,8 @@
             "align": "left",
             "baseline": "top",
             "x": 0,
-            "y": 45,
-            "fontSize": 9,
+            "y": 72,
+            "fontSize": 14,
             "fontWeight": 600,
             "color": "#8898ba"
           },
@@ -185,7 +164,7 @@
             "align": "left",
             "baseline": "top",
             "x": 0,
-            "y": 62,
+            "y": 93,
             "fontSize": 26,
             "fontWeight": "bold",
             "color": "#f5a623"
@@ -203,8 +182,8 @@
             "align": "left",
             "baseline": "top",
             "x": 0,
-            "y": 115,
-            "fontSize": 9,
+            "y": 165,
+            "fontSize": 14,
             "fontWeight": 600,
             "color": "#8898ba"
           },
@@ -220,7 +199,7 @@
             "align": "left",
             "baseline": "top",
             "x": 0,
-            "y": 132,
+            "y": 186,
             "fontSize": 22,
             "fontWeight": "bold",
             "color": "#22d3ee"
@@ -238,8 +217,8 @@
             "align": "left",
             "baseline": "top",
             "x": 0,
-            "y": 180,
-            "fontSize": 9,
+            "y": 258,
+            "fontSize": 14,
             "fontWeight": 600,
             "color": "#8898ba"
           },
@@ -255,7 +234,7 @@
             "align": "left",
             "baseline": "top",
             "x": 0,
-            "y": 197,
+            "y": 279,
             "fontSize": 18,
             "fontWeight": "bold",
             "color": "#ff6b6b"
@@ -273,8 +252,8 @@
             "align": "left",
             "baseline": "top",
             "x": 0,
-            "y": 240,
-            "fontSize": 10.5,
+            "y": 345,
+            "fontSize": 14,
             "color": "#8898ba"
           },
           "encoding": {
@@ -290,8 +269,8 @@
             "align": "left",
             "baseline": "top",
             "x": 0,
-            "y": 258,
-            "fontSize": 10.5,
+            "y": 363,
+            "fontSize": 14,
             "color": "#8898ba"
           },
           "encoding": {
@@ -307,8 +286,8 @@
             "align": "left",
             "baseline": "top",
             "x": 0,
-            "y": 276,
-            "fontSize": 10.5,
+            "y": 381,
+            "fontSize": 14,
             "color": "#8898ba"
           },
           "encoding": {
@@ -324,14 +303,31 @@
             "align": "left",
             "baseline": "top",
             "x": 0,
-            "y": 294,
-            "fontSize": 10.5,
+            "y": 399,
+            "fontSize": 14,
             "color": "#8898ba"
           },
           "encoding": {
             "text": {
               "field": "line4",
               "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "x": 0,
+            "y": 445,
+            "fontSize": 14,
+            "fontStyle": "italic",
+            "color": "#3d4f6e"
+          },
+          "encoding": {
+            "text": {
+              "value": "Click a state on the map  \u00b7  Double-click to reset"
             }
           }
         }
@@ -346,6 +342,20 @@
       },
       "layer": [
         {
+          "params": [
+            {
+              "name": "stateSelect",
+              "select": {
+                "type": "point",
+                "fields": [
+                  "STATE_NAME"
+                ],
+                "on": "click",
+                "toggle": false,
+                "clear": "dblclick"
+              }
+            }
+          ],
           "data": {
             "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
             "format": {
@@ -353,19 +363,34 @@
               "property": "features"
             }
           },
+          "transform": [
+            {
+              "calculate": "datum.properties.STATE_NAME",
+              "as": "STATE_NAME"
+            }
+          ],
           "mark": {
             "type": "geoshape",
             "stroke": "#1e293b",
-            "strokeWidth": 0.8
+            "strokeWidth": 0.8,
+            "cursor": "pointer"
           },
           "encoding": {
             "color": {
               "condition": {
-                "test": "stateSelect === 'Aistralia' || datum.properties.STATE_NAME === stateSelect",
-                "value": "rgba(245, 166, 35, 0.08)"
+                "param": "stateSelect",
+                "empty": true,
+                "value": "rgba(245, 166, 35, 0.1)"
               },
               "value": "#0b0d18"
-            }
+            },
+            "tooltip": [
+              {
+                "field": "STATE_NAME",
+                "type": "nominal",
+                "title": "Click to explore"
+              }
+            ]
           }
         },
         {
@@ -385,7 +410,14 @@
               "filter": "datum.longitude >= 110 && datum.longitude <= 155 && datum.latitude >= -45 && datum.latitude <= -9"
             },
             {
-              "filter": "stateSelect === 'Australia' || datum.State_Name === stateSelect"
+              "calculate": "datum.State_Name",
+              "as": "STATE_NAME"
+            },
+            {
+              "filter": {
+                "param": "stateSelect",
+                "empty": true
+              }
             }
           ],
           "mark": {
