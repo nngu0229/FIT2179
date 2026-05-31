@@ -125,12 +125,6 @@
             }
         }
     ],
-    "title": {
-        "text": "Top Occupations Filled by Skilled Migrants",
-        "subtitle": "Skilled migrants support workforce shortages",
-        "fontSize": 18,
-        "subtitleFontSize": 12
-    },
     "config": {
         "font": "Inter, sans-serif",
         "background": "transparent",
@@ -140,7 +134,7 @@
         "axis": {
             "labelFont": "Inter, sans-serif",
             "titleFont": "Inter, sans-serif",
-            "labelColor": "#b6c4e0",
+            "labelColor": "#eef1ff",
             "titleColor": "#eef1ff",
             "tickColor": "rgba(255,255,255,0.15)",
             "domainColor": "rgba(255,255,255,0.15)",
@@ -157,13 +151,13 @@
             "color": "#eef1ff",
             "subtitleFont": "Inter, sans-serif",
             "subtitleFontSize": 12,
-            "subtitleColor": "#b6c4e0",
+            "subtitleColor": "#eef1ff",
             "subtitlePadding": 6
         },
         "legend": {
             "labelFont": "Inter, sans-serif",
             "titleFont": "Inter, sans-serif",
-            "labelColor": "#b6c4e0",
+            "labelColor": "#eef1ff",
             "titleColor": "#eef1ff",
             "labelFontSize": 11,
             "titleFontSize": 12,

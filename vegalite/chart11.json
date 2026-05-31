@@ -14,7 +14,7 @@
       "color": "#eef1ff",
       "subtitleFont": "Inter, sans-serif",
       "subtitleFontSize": 12,
-      "subtitleColor": "#b6c4e0",
+      "subtitleColor": "#eef1ff",
       "subtitlePadding": 12
     }
   },
@@ -150,7 +150,7 @@
             "y": 72,
             "fontSize": 14,
             "fontWeight": 600,
-            "color": "#b6c4e0"
+            "color": "#eef1ff"
           },
           "encoding": {
             "text": {
@@ -185,7 +185,7 @@
             "y": 165,
             "fontSize": 14,
             "fontWeight": 600,
-            "color": "#b6c4e0"
+            "color": "#eef1ff"
           },
           "encoding": {
             "text": {
@@ -220,7 +220,7 @@
             "y": 258,
             "fontSize": 14,
             "fontWeight": 600,
-            "color": "#b6c4e0"
+            "color": "#eef1ff"
           },
           "encoding": {
             "text": {
@@ -254,7 +254,7 @@
             "x": 0,
             "y": 345,
             "fontSize": 18,
-            "color": "#b6c4e0"
+            "color": "#eef1ff"
           },
           "encoding": {
             "text": {
@@ -271,7 +271,7 @@
             "x": 0,
             "y": 363,
             "fontSize": 18,
-            "color": "#b6c4e0"
+            "color": "#eef1ff"
           },
           "encoding": {
             "text": {
@@ -288,7 +288,7 @@
             "x": 0,
             "y": 381,
             "fontSize": 18,
-            "color": "#b6c4e0"
+            "color": "#eef1ff"
           },
           "encoding": {
             "text": {
@@ -305,7 +305,7 @@
             "x": 0,
             "y": 399,
             "fontSize": 18,
-            "color": "#b6c4e0"
+            "color": "#eef1ff"
           },
           "encoding": {
             "text": {
@@ -323,7 +323,7 @@
             "y": 445,
             "fontSize": 15,
             "fontStyle": "italic",
-            "color": "#3d4f6e"
+            "color": "#eef1ff"
           },
           "encoding": {
             "text": {

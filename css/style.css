@@ -14,7 +14,7 @@
 
   /* Typography */
   --text-primary: #eef1ff;
-  --text-muted: ##b6c4e0;
+  --text-muted: ##eef1ff;
   --text-dim: #4e5c7a;
 
   /* ── Vibrant accent palette ── */
@@ -520,11 +520,33 @@ body {
 
 /* Card title */
 .card-title {
-  font-size: 1rem;
-  font-weight: 600;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 10px;
-  line-height: 1.35;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  transition: color 0.25s ease;
+}
+
+#section-1 .chart-card:hover .card-title {
+  color: var(--amber);
+}
+
+#section-2 .chart-card:hover .card-title {
+  color: var(--coral);
+}
+
+#section-3 .chart-card:hover .card-title {
+  color: var(--emerald);
+}
+
+#section-4 .chart-card:hover .card-title {
+  color: var(--violet);
+}
+
+#section-5 .chart-card:hover .card-title {
+  color: var(--rose);
 }
 
 /* Card description */
@@ -891,4 +913,15 @@ footer::before {
 .metadata-link:hover {
   color: var(--cyan);
   border-bottom-color: var(--cyan);
+}
+
+/* ── Section 6 Conclusion Callout ── */
+#section-conclusion .insight-box {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.08), rgba(245, 166, 35, 0.04));
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  box-shadow: 0 8px 32px rgba(34, 211, 238, 0.08);
+}
+
+#section-conclusion .insight-box strong {
+  color: var(--cyan);
 }

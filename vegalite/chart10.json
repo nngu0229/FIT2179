@@ -1,13 +1,5 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-        "text": "Migrants vs Australian-Born: Unemployment & Wages",
-        "subtitle": "Myth check — do migrants take jobs or lower wages?",
-        "fontSize": 16,
-        "subtitleFontSize": 12,
-        "anchor": "start",
-        "subtitlePadding": 8
-    },
     "data": {
         "url": "data/chart%2010%20-%20connected%20dot%20plot.csv"
     },
@@ -15,7 +7,7 @@
         {
             "title": {
                 "text": "Unemployment Rate",
-                "fontSize": 13,
+                "fontSize": 15,
                 "color": "#eef1ff",
                 "font": "Inter, sans-serif"
             },
@@ -100,7 +92,7 @@
                             "type": "nominal",
                             "axis": {
                                 "title": null,
-                                "labelColor": "#b6c4e0",
+                                "labelColor": "#eef1ff",
                                 "labelFontSize": 12,
                                 "labelFontWeight": "bold"
                             }
@@ -315,7 +307,7 @@
         {
             "title": {
                 "text": "Median Weekly Earnings",
-                "fontSize": 13,
+                "fontSize": 15,
                 "color": "#eef1ff",
                 "font": "Inter, sans-serif"
             },
@@ -401,7 +393,7 @@
                             "type": "nominal",
                             "axis": {
                                 "title": null,
-                                "labelColor": "#b6c4e0",
+                                "labelColor": "#eef1ff",
                                 "labelFontSize": 12,
                                 "labelFontWeight": "bold"
                             }
@@ -632,13 +624,13 @@
             "color": "#eef1ff",
             "subtitleFont": "Inter, sans-serif",
             "subtitleFontSize": 12,
-            "subtitleColor": "#b6c4e0",
+            "subtitleColor": "#eef1ff",
             "subtitlePadding": 6
         },
         "axis": {
             "labelFont": "Inter, sans-serif",
             "titleFont": "Inter, sans-serif",
-            "labelColor": "#b6c4e0",
+            "labelColor": "#eef1ff",
             "titleColor": "#eef1ff",
             "tickColor": "rgba(255,255,255,0.15)",
             "domainColor": "rgba(255,255,255,0.15)",
@@ -651,7 +643,7 @@
         "legend": {
             "labelFont": "Inter, sans-serif",
             "titleFont": "Inter, sans-serif",
-            "labelColor": "#b6c4e0",
+            "labelColor": "#eef1ff",
             "titleColor": "#eef1ff",
             "labelFontSize": 11,
             "titleFontSize": 12

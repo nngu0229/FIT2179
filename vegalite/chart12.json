@@ -61,7 +61,7 @@
           },
           "title": null,
           "axis": {
-            "labelColor": "#b6c4e0",
+            "labelColor": "#eef1ff",
             "labelFontSize": 10,
             "tickSize": 0,
             "domain": false
